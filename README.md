@@ -1,0 +1,139 @@
+# Ten Themes
+
+A weekly thematic equity + options research pipeline. Ten industry themes, 72 public tickers, 74 private-market competitors — scored into PICK / NEUTRAL / AVOID, sized into a model portfolio, and turned into defined-risk option trade tickets. Output is a dark dashboard page and an HTML email digest.
+
+Everything here runs on **free, unauthenticated data sources**. No paid API keys. Python **standard library only** — no `pip install` required.
+
+Data snapshot in `data/` is as of **2026-08-14** (market close), generated 2026-08-16.
+
+---
+
+## Quick start
+
+```bash
+cd pipeline
+python3 prices.py        # -> prices.json
+python3 enrich.py        # -> enrich.json
+python3 tech.py          # -> tech.json, hist.json
+python3 score.py         # -> data.json
+python3 options.py       # -> options.json
+python3 score2.py        # -> data2.json
+python3 build_site2.py   # -> site2.html
+python3 build_email2.py  # -> email2.html, email2_params.json
+```
+
+Or from the repo root:
+
+```bash
+./run_weekly.sh
+```
+
+`prices.py`, `enrich.py` and `tech.py` are independent and can run in any order. All three must finish before `score.py`.
+
+The scripts read and write JSON in their working directory. To reproduce against the committed snapshot, copy `data/*.json` into `pipeline/` first (`run_weekly.sh` does this for you).
+
+---
+
+## Repo layout
+
+```
+pipeline/       The weekly pipeline. Run in the order above.
+  universe.py     10 themes -> 72 tickers. Single source of truth.
+  prices.py       2y daily history, 52w range, 1w/1m/3m/1y returns
+  enrich.py       Yahoo crumb handshake -> fundamentals, short interest, earnings dates
+  tech.py         RSI, SMAs, realized vol, beta, Sharpe, drawdown, theme correlation matrix
+  score.py        Five-factor composite -> PICK / NEUTRAL / AVOID
+  options.py      CBOE chains -> IV/RV, flow, implied moves, defined-risk trade tickets
+  score2.py       Merges everything -> squeeze scores, watchlist, model portfolio, risk
+  build_site2.py  Generates the dashboard HTML
+  build_email2.py Generates the email HTML + Gmail params
+
+research/       Scripts behind the research JSON that the pipeline consumes.
+                EDGAR Form 4 / SC 13D screening. These produce insiders.json
+                and activists.json. Analyst, private-company, event and IPO data
+                were gathered by LLM research passes rather than scripts — see
+                docs/DATA_SOURCES.md for the schemas they must satisfy.
+
+data/           Committed snapshot of every input and intermediate file.
+output/         Rendered dashboard.html and email.html from that snapshot.
+legacy/         The v1 light-themed generators, superseded by build_site2/build_email2.
+docs/           METHODOLOGY.md, DATA_SOURCES.md, AGENT.md, CHANGELOG.md
+```
+
+---
+
+## Data flow
+
+```
+universe.py
+    |
+    +-- prices.py ------> prices.json ---+
+    +-- enrich.py ------> enrich.json ---|
+    +-- tech.py --------> tech.json -----|
+                          hist.json      |
+                                         v
+  research passes                    score.py --> data.json
+    analysts_*.json ------------------->  |            |
+    insiders.json --------------------->  |            v
+    activists.json -------------------->  |       options.py --> options.json
+    hedgefunds.json ------------------->  |            |
+    private_*.json -------------------->  +            |
+    events.json  ----------------------------------+   |
+    ipos.json  ------------------------------------+   |
+                                                   v   v
+                                                 score2.py --> data2.json
+                                                       |
+                                          +------------+------------+
+                                          v                         v
+                                   build_site2.py           build_email2.py
+                                   -> site2.html            -> email2.html
+```
+
+---
+
+## Scoring in one table
+
+Composite is a weighted 1–5 score. **PICK ≥ 3.70, AVOID < 3.05**, everything else NEUTRAL.
+
+| Factor | Weight | How it's derived |
+|---|---|---|
+| Secular demand | 25% | Theme-level judgment call, hardcoded in `THEME` in `score.py`. The only deliberately subjective input. |
+| Moat vs. private disruption | 20% | Mega-cap base 4.4 / other 3.4, minus 0.28 per tracked private challenger (floor −1.4) |
+| Valuation | 20% | Upside to mean analyst target: >40%→5.0, >25%→4.3, >12%→3.5, >2%→2.8, >−10%→2.0, else 1.3 |
+| Analyst momentum | 20% | Consensus base (Strong Buy 4.6 → Sell 1.4), +0.3 per upgrade/PT raise, −0.4 per downgrade/PT cut |
+| Smart-money flow | 15% | Insider signal (buying 4.6 → heavy selling 2.0), ±0.7 for 13F accumulating/distributing, +0.4 for a known activist |
+
+Weighted lowest on purpose: smart-money flow, because free 13F coverage is thin and 45 days stale.
+
+**Squeeze score (0–100)**, separate from the composite: short % of float ×4 (cap 40) + days-to-cover ×4 (cap 20) + % over 50-day ÷2 (cap 15) + RSI above 55 (cap 10) + short-interest increase ÷2 (cap 15).
+
+**Model portfolio:** picks only, weighted by composite ÷ realized vol, bucketed into Core / Contrarian / Tactical sleeves targeting 60/22/13%, then hard-capped at 12% per name. Overflow above the cap becomes **cash, not redistribution** — the leftover is the signal that the model wants more concentration than is prudent. Do not "fix" it by renormalising.
+
+---
+
+## Findings from the committed snapshot
+
+- **13 picks, 52 neutrals, 7 avoids.** 82.9% invested, 17.1% cash.
+- **Book beta 2.06.** Not a defensive portfolio.
+- **67% of invested capital sits in three themes correlating 0.65–0.68** (AI Compute, Power & Grid, Enterprise Software). One trade at three layers of the stack.
+- Cybersecurity and Enterprise Software correlate at **0.80** — the highest pair in the matrix, so the short side isn't a diversifier either.
+- 17 of 28 shortlisted names produced a tradeable option ticket. The other 11 failed the liquidity screen and were left empty.
+
+---
+
+## Known limitations
+
+Read `docs/DATA_SOURCES.md` for the full list. The ones that matter most:
+
+- **13F is 45 days stale**, long US equity only, and position-level data was confirmable for only 27 of 72 tickers from free sources. "No data" appears throughout and is correct.
+- **Short interest is up to two weeks stale** by construction — it mirrors FINRA's bi-monthly consolidated report.
+- **Option quotes are delayed**, so real fills will differ from the mid prices in the tickets.
+- **Insider signal conflates** open-market sales with grants and 10b5-1 exercises. Dollar values were parsed from Form 4 XML for 59 of 69 covered issuers; the rest are volume-based only.
+- **Private valuations** are last disclosed post-money, press-reported, frequently stale and preference-laden.
+- Event dates flagged `expected` or `rumored` are **not confirmed**.
+
+---
+
+## This is not investment advice
+
+This repo generates research output. Nothing in it accounts for anyone's existing exposure, tax situation, time horizon, or risk tolerance. The option structures are illustrative and generated mechanically from delayed quotes; options can and do expire worthless. Max loss figures are per single lot.

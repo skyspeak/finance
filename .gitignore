@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.DS_Store
+link.txt
+email2_params.json
+site2.html
+email2.html
+*.tmp
