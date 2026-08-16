@@ -1,0 +1,1166 @@
+{
+  "as_of_quarter": "Q2 2026",
+  "report_period_end": "2026-06-30",
+  "filing_deadline": "2026-08-14",
+  "generated": "2026-08-16",
+  "limitations": "13F filings are point-in-time snapshots as of June 30, 2026, filed by Aug 14, 2026. They reflect long U.S. equity positions only; shorts, options (except some reported puts/calls), non-U.S. holdings, and derivatives are not disclosed. Data here is sourced from news articles, last10k.com 13F aggregators, danielscrivner.com, newsquawk.com, and particle.news -- all citing SEC EDGAR filings. SEC EDGAR was used to verify Coatue (CIK 1135730, accession 0000919574-26-005478) and Bridgewater (CIK 1350694, accession 0001350694-26-000003) 13F-HR filings filed 2026-08-14. For many of the 71 universe tickers, no specific hedge-fund-level data was found in available sources; those are marked 'no data'. Institutional aggregate signals (e.g. '48% net buyers of semis') are from a Reuters analysis of 6,371 filers. Dollar values and share counts for Tiger Global and Coatue are sourced from danielscrivner.com which cites the SEC 13F; Bridgewater and Viking from last10k.com which parses SEC filings; Appaloosa from particle.news, newsquawk.com, and Yahoo Finance, all citing SEC filings. No data has been fabricated.",
+  "moves": [
+    {
+      "fund": "Tiger Global Management",
+      "ticker": "NVDA",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 2240000000,
+      "pct_of_portfolio": 9.3,
+      "change_pct": -7,
+      "notes": "Position trimmed ~7%; remained top-3 holding at $2.24B",
+      "source_url": "https://www.danielscrivner.com/chase-coleman-trades-and-holdings-q2-2026/"
+    },
+    {
+      "fund": "Tiger Global Management",
+      "ticker": "GOOGL",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 2070000000,
+      "pct_of_portfolio": 8.7,
+      "change_pct": -45,
+      "shares_held": 5800000,
+      "notes": "Reduced Alphabet exposure by 45.4% to 5.8 million shares (Reuters); danielscrivner shows $2.07B at 8.7% weight",
+      "source_url": "https://www.danielscrivner.com/chase-coleman-trades-and-holdings-q2-2026/"
+    },
+    {
+      "fund": "Tiger Global Management",
+      "ticker": "MSFT",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 845600000,
+      "pct_of_portfolio": 3.5,
+      "change_pct": -9,
+      "notes": "Position trimmed ~9%",
+      "source_url": "https://www.danielscrivner.com/chase-coleman-trades-and-holdings-q2-2026/"
+    },
+    {
+      "fund": "Tiger Global Management",
+      "ticker": "TSM",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 2330000000,
+      "pct_of_portfolio": 9.7,
+      "change_pct": -12,
+      "notes": "Top holding but trimmed 12%; Reuters confirms Tiger reduced TSM holdings",
+      "source_url": "https://www.danielscrivner.com/chase-coleman-trades-and-holdings-q2-2026/"
+    },
+    {
+      "fund": "Tiger Global Management",
+      "ticker": "AMD",
+      "action": "new position",
+      "quarter": "Q2 2026",
+      "size_usd": 391960000,
+      "pct_of_portfolio": 1.6,
+      "notes": "New position, $391.96M",
+      "source_url": "https://www.danielscrivner.com/chase-coleman-trades-and-holdings-q2-2026/"
+    },
+    {
+      "fund": "Tiger Global Management",
+      "ticker": "V",
+      "action": "new position",
+      "quarter": "Q2 2026",
+      "size_usd": 274020000,
+      "pct_of_portfolio": 1.1,
+      "notes": "New position, $274.02M",
+      "source_url": "https://www.danielscrivner.com/chase-coleman-trades-and-holdings-q2-2026/"
+    },
+    {
+      "fund": "Tiger Global Management",
+      "ticker": "AVGO",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 662600000,
+      "pct_of_portfolio": 2.8,
+      "change_pct": -51,
+      "notes": "Broadcom trimmed ~51%",
+      "source_url": "https://www.danielscrivner.com/chase-coleman-trades-and-holdings-q2-2026/"
+    },
+    {
+      "fund": "Tiger Global Management",
+      "ticker": "MSFT",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 845600000,
+      "pct_of_portfolio": 3.5,
+      "change_pct": -9,
+      "notes": "Confirmed in Reuters analysis: Tiger cut MSFT holdings",
+      "source_url": "https://economictimes.indiatimes.com/markets/us-stocks/news/institutional-investors-reveal-cautious-approach-to-tech-favorites-in-us-quarterly-13f-filings/articleshow/133256229.cms"
+    },
+    {
+      "fund": "Coatue Management",
+      "ticker": "MU",
+      "action": "added",
+      "quarter": "Q2 2026",
+      "size_usd": 3630000000,
+      "pct_of_portfolio": 7.46,
+      "shares_held": 3142269,
+      "change_pct": 1794,
+      "notes": "Massive add: +1,794% increase, from ~166K to 3.14M shares; now 3rd largest position",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    {
+      "fund": "Coatue Management",
+      "ticker": "NVDA",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 1210000000,
+      "pct_of_portfolio": 2.49,
+      "shares_held": 6055197,
+      "change_pct": -4,
+      "notes": "Trimmed ~4%, 276,423 shares removed",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    {
+      "fund": "Coatue Management",
+      "ticker": "TSM",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 4260000000,
+      "pct_of_portfolio": 8.76,
+      "shares_held": 8914995,
+      "change_pct": -4,
+      "notes": "Still top holding but trimmed ~4% (-368,552 shares)",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    {
+      "fund": "Coatue Management",
+      "ticker": "AVGO",
+      "action": "added",
+      "quarter": "Q2 2026",
+      "size_usd": 2210000000,
+      "pct_of_portfolio": 4.54,
+      "shares_held": 5846831,
+      "change_pct": 6,
+      "notes": "Added ~6% (+342,979 shares)",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    {
+      "fund": "Coatue Management",
+      "ticker": "ETN",
+      "action": "added",
+      "quarter": "Q2 2026",
+      "size_usd": 2120000000,
+      "pct_of_portfolio": 4.35,
+      "shares_held": 4968415,
+      "change_pct": 5,
+      "notes": "Eaton Corp, added ~5% (+219,917 shares)",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    {
+      "fund": "Coatue Management",
+      "ticker": "GOOGL",
+      "action": "added",
+      "quarter": "Q2 2026",
+      "size_usd": 1740000000,
+      "pct_of_portfolio": 3.57,
+      "shares_held": 4856251,
+      "change_pct": 13,
+      "notes": "Added +13% (+542,825 shares)",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    {
+      "fund": "Coatue Management",
+      "ticker": "AMD",
+      "action": "new position",
+      "quarter": "Q2 2026",
+      "size_usd": 55760000,
+      "pct_of_portfolio": 0.11,
+      "shares_held": 95987,
+      "notes": "New position, 95,987 shares, $55.76M",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    {
+      "fund": "Coatue Management",
+      "ticker": "V",
+      "action": "exited",
+      "quarter": "Q2 2026",
+      "size_usd": 0,
+      "shares_held": 0,
+      "notes": "Exited full Visa position (-718,753 shares, ~$217.24M)",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    {
+      "fund": "Coatue Management",
+      "ticker": "ISRG",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 315640000,
+      "pct_of_portfolio": 0.65,
+      "shares_held": 793704,
+      "change_pct": -7,
+      "notes": "Trimmed ~7% (-61,521 shares)",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    {
+      "fund": "Coatue Management",
+      "ticker": "ENPH",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 76660000,
+      "pct_of_portfolio": 0.16,
+      "shares_held": 1556941,
+      "change_pct": -6,
+      "notes": "Trimmed ~6% (-90,952 shares)",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    {
+      "fund": "Coatue Management",
+      "ticker": "PYPL",
+      "action": "no change",
+      "quarter": "Q2 2026",
+      "size_usd": 53700000,
+      "pct_of_portfolio": 0.11,
+      "shares_held": 1243590,
+      "notes": "No change in position",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    {
+      "fund": "Appaloosa Management",
+      "ticker": "MU",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 1100000000,
+      "pct_of_portfolio": 14.57,
+      "shares_held": 975000,
+      "shares_sold": 690000,
+      "change_pct": -41,
+      "notes": "Sold ~690K shares (-41.44%), remaining 975K shares worth ~$1.1B at June 30 price; avg quarterly price ~$743.35. Classic sell-into-strength after 240%+ YTD move.",
+      "source_url": "https://particle.news/story/tepper-trims-micron-stake-and-moves-into-large-tech-names"
+    },
+    {
+      "fund": "Appaloosa Management",
+      "ticker": "TSM",
+      "action": "added",
+      "quarter": "Q2 2026",
+      "pct_of_portfolio": 10.2,
+      "notes": "Added to TSM; 10.2% of $7.5B portfolio = ~$765M",
+      "source_url": "https://particle.news/story/tepper-trims-micron-stake-and-moves-into-large-tech-names"
+    },
+    {
+      "fund": "Appaloosa Management",
+      "ticker": "AVGO",
+      "action": "new position",
+      "quarter": "Q2 2026",
+      "notes": "New stake in Broadcom per Newsquawk 13F summary",
+      "source_url": "https://www.newsquawk.com/headlines/appaloosa-13-f"
+    },
+    {
+      "fund": "Appaloosa Management",
+      "ticker": "AMD",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "notes": "Reduced AMD position",
+      "source_url": "https://www.newsquawk.com/headlines/appaloosa-13-f"
+    },
+    {
+      "fund": "Appaloosa Management",
+      "ticker": "LHX",
+      "action": "exited",
+      "quarter": "Q2 2026",
+      "notes": "Exited L3Harris position (previously $68.34M in Q1 2026)",
+      "source_url": "https://www.newsquawk.com/headlines/appaloosa-13-f"
+    },
+    {
+      "fund": "Appaloosa Management",
+      "ticker": "RTX",
+      "action": "exited",
+      "quarter": "Q2 2026",
+      "notes": "Exited RTX position (previously $65.97M in Q1 2026)",
+      "source_url": "https://www.newsquawk.com/headlines/appaloosa-13-f"
+    },
+    {
+      "fund": "Appaloosa Management",
+      "ticker": "BA",
+      "action": "new position",
+      "quarter": "Q2 2026",
+      "notes": "New stake in Boeing",
+      "source_url": "https://www.newsquawk.com/headlines/appaloosa-13-f"
+    },
+    {
+      "fund": "Bridgewater Associates",
+      "ticker": "NVDA",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 773590000,
+      "pct_of_portfolio": 3.17,
+      "shares_held": 3866195,
+      "change_pct": -18,
+      "notes": "Trimmed -826,808 shares (~-18%); still 3rd-largest single-stock position",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    {
+      "fund": "Bridgewater Associates",
+      "ticker": "AVGO",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 497850000,
+      "pct_of_portfolio": 2.04,
+      "shares_held": 1317923,
+      "change_pct": -28,
+      "notes": "Trimmed -517,457 shares (-28%)",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    {
+      "fund": "Bridgewater Associates",
+      "ticker": "AMD",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 312900000,
+      "pct_of_portfolio": 1.28,
+      "shares_held": 538632,
+      "change_pct": -58,
+      "notes": "Trimmed -754,135 shares (-58%); large reduction",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    {
+      "fund": "Bridgewater Associates",
+      "ticker": "MSFT",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 265550000,
+      "pct_of_portfolio": 1.09,
+      "shares_held": 711896,
+      "change_pct": -34,
+      "notes": "Trimmed -373,083 shares (-34%)",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    {
+      "fund": "Bridgewater Associates",
+      "ticker": "GOOGL",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 472510000,
+      "pct_of_portfolio": 1.94,
+      "shares_held": 1322176,
+      "change_pct": -34,
+      "notes": "Trimmed -675,498 shares (-34%)",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    {
+      "fund": "Bridgewater Associates",
+      "ticker": "MU",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 134670000,
+      "pct_of_portfolio": 0.55,
+      "shares_held": 116666,
+      "change_pct": -92,
+      "notes": "Trimmed -1,359,038 shares (-92%); near-full exit",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    {
+      "fund": "Bridgewater Associates",
+      "ticker": "VST",
+      "action": "added",
+      "quarter": "Q2 2026",
+      "size_usd": 119240000,
+      "pct_of_portfolio": 0.49,
+      "shares_held": 751695,
+      "change_pct": 116,
+      "notes": "Added +403,181 shares (+116%)",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    {
+      "fund": "Bridgewater Associates",
+      "ticker": "LLY",
+      "action": "added",
+      "quarter": "Q2 2026",
+      "size_usd": 104380000,
+      "pct_of_portfolio": 0.43,
+      "shares_held": 87023,
+      "change_pct": 23,
+      "notes": "Added +16,211 shares (+23%)",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    {
+      "fund": "Bridgewater Associates",
+      "ticker": "MRVL",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 53970000,
+      "pct_of_portfolio": 0.22,
+      "shares_held": 181176,
+      "change_pct": -91,
+      "notes": "Trimmed -1,767,771 shares (-91%); near-full exit",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    {
+      "fund": "Bridgewater Associates",
+      "ticker": "TER",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 47720000,
+      "pct_of_portfolio": 0.20,
+      "shares_held": 98627,
+      "change_pct": -71,
+      "notes": "Teradyne trimmed -240,319 shares (-71%)",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    {
+      "fund": "Bridgewater Associates",
+      "ticker": "NRG",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 40600000,
+      "pct_of_portfolio": 0.17,
+      "shares_held": 277935,
+      "change_pct": -53,
+      "notes": "Trimmed -310,567 shares (-53%)",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    {
+      "fund": "Bridgewater Associates",
+      "ticker": "ZBRA",
+      "action": "added",
+      "quarter": "Q2 2026",
+      "size_usd": 39840000,
+      "pct_of_portfolio": 0.16,
+      "shares_held": 151328,
+      "change_pct": 948,
+      "notes": "Massive add: +136,885 shares (+948%)",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    {
+      "fund": "Bridgewater Associates",
+      "ticker": "MP",
+      "action": "added",
+      "quarter": "Q2 2026",
+      "size_usd": 25000000,
+      "pct_of_portfolio": 0.10,
+      "shares_held": 446310,
+      "change_pct": 313,
+      "notes": "MP Materials added +338,256 shares (+313%)",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    {
+      "fund": "Bridgewater Associates",
+      "ticker": "NOW",
+      "action": "new position",
+      "quarter": "Q2 2026",
+      "size_usd": 63080000,
+      "pct_of_portfolio": 0.26,
+      "shares_held": 635381,
+      "notes": "New position in ServiceNow, 635,381 shares",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    {
+      "fund": "Bridgewater Associates",
+      "ticker": "V",
+      "action": "added",
+      "quarter": "Q2 2026",
+      "size_usd": 27970000,
+      "pct_of_portfolio": 0.11,
+      "shares_held": 81537,
+      "change_pct": 224,
+      "notes": "Added +56,365 shares (+224%)",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    {
+      "fund": "Viking Global Investors",
+      "ticker": "TSM",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 1510000000,
+      "pct_of_portfolio": 4.31,
+      "shares_held": 3168097,
+      "change_pct": -29,
+      "notes": "Trimmed -1,297,030 shares (-29%)",
+      "source_url": "https://last10k.com/sec-filings/1103804/0001103804-26-000006.htm"
+    },
+    {
+      "fund": "Viking Global Investors",
+      "ticker": "V",
+      "action": "added",
+      "quarter": "Q2 2026",
+      "size_usd": 2190000000,
+      "pct_of_portfolio": 6.25,
+      "shares_held": 6393604,
+      "change_pct": 1,
+      "notes": "Visa is top holding; slight add (+65,419 shares)",
+      "source_url": "https://last10k.com/sec-filings/1103804/0001103804-26-000006.htm"
+    },
+    {
+      "fund": "Viking Global Investors",
+      "ticker": "SNOW",
+      "action": "new position",
+      "quarter": "Q2 2026",
+      "size_usd": 244360000,
+      "pct_of_portfolio": 0.70,
+      "shares_held": 960138,
+      "notes": "New position in Snowflake, 960,138 shares, $244.36M",
+      "source_url": "https://last10k.com/sec-filings/1103804/0001103804-26-000006.htm"
+    },
+    {
+      "fund": "Viking Global Investors",
+      "ticker": "GOOGL",
+      "action": "exited",
+      "quarter": "Q2 2026",
+      "size_usd": 0,
+      "shares_sold": 2395865,
+      "notes": "Full exit of Alphabet Class A (-2,395,865 shares, ~$688.95M)",
+      "source_url": "https://last10k.com/sec-filings/1103804/0001103804-26-000006.htm"
+    },
+    {
+      "fund": "Viking Global Investors",
+      "ticker": "MSFT",
+      "action": "trimmed",
+      "quarter": "Q2 2026",
+      "size_usd": 544090000,
+      "pct_of_portfolio": 1.55,
+      "shares_held": 1458618,
+      "change_pct": -37,
+      "notes": "Trimmed -850,828 shares (-37%)",
+      "source_url": "https://last10k.com/sec-filings/1103804/0001103804-26-000006.htm"
+    },
+    {
+      "fund": "Viking Global Investors",
+      "ticker": "BA",
+      "action": "added",
+      "quarter": "Q2 2026",
+      "size_usd": 708900000,
+      "pct_of_portfolio": 2.02,
+      "shares_held": 3274825,
+      "change_pct": 2,
+      "notes": "Added +78,784 shares to Boeing",
+      "source_url": "https://last10k.com/sec-filings/1103804/0001103804-26-000006.htm"
+    },
+    {
+      "fund": "Optiver Holding BV",
+      "ticker": "NVDA",
+      "action": "added",
+      "quarter": "Q2 2026",
+      "size_usd": 473059781,
+      "shares_held": 2364235,
+      "change_pct": 3404,
+      "notes": "Massive add: +2,364,235 shares (+3404%)",
+      "source_url": "https://www.quiverquant.com/news/Fund+Update%3A+Optiver+Holding+B.V.+Just+Disclosed+New+Holdings"
+    },
+    {
+      "fund": "Optiver Holding BV",
+      "ticker": "AMD",
+      "action": "exited",
+      "quarter": "Q2 2026",
+      "shares_sold": 326280,
+      "notes": "Full exit of AMD (-326,280 shares, -100%, ~$189.5M)",
+      "source_url": "https://www.quiverquant.com/news/Fund+Update%3A+Optiver+Holding+B.V.+Just+Disclosed+New+Holdings"
+    },
+    {
+      "fund": "Optiver Holding BV",
+      "ticker": "MSFT",
+      "action": "added",
+      "quarter": "Q2 2026",
+      "size_usd": 151595701,
+      "shares_held": 406401,
+      "change_pct": 640,
+      "notes": "Added +406,401 shares (+640%)",
+      "source_url": "https://www.quiverquant.com/news/Fund+Update%3A+Optiver+Holding+B.V.+Just+Disclosed+New+Holdings"
+    }
+  ],
+  "by_ticker": {
+    "NVDA": {
+      "ticker": "NVDA",
+      "net_signal": "mixed",
+      "notable_holders": [
+        "Tiger Global (trimmed -7%, $2.24B)",
+        "Coatue (trimmed -4%, $1.21B)",
+        "Bridgewater (trimmed -18%, $773.6M)",
+        "Optiver (massive add +3404%, $473M)"
+      ],
+      "evidence": "Three major funds (Tiger Global, Coatue, Bridgewater) trimmed NVDA while Optiver dramatically added; Reuters confirms aggregate semi holders 48% net buyers vs 34.5% sellers.",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    "AMD": {
+      "ticker": "AMD",
+      "net_signal": "mixed",
+      "notable_holders": [
+        "Tiger Global (new position, $391.96M)",
+        "Coatue (new position, $55.76M)",
+        "Bridgewater (trimmed -58%)",
+        "Appaloosa (trimmed)",
+        "Optiver (exited)"
+      ],
+      "evidence": "Tiger Global and Coatue both initiated new AMD positions in Q2 while Bridgewater cut ~58% and Optiver exited; early-filer data shows aggregate AMD shares held +15%.",
+      "source_url": "https://www.danielscrivner.com/chase-coleman-trades-and-holdings-q2-2026/"
+    },
+    "AVGO": {
+      "ticker": "AVGO",
+      "net_signal": "accumulating",
+      "notable_holders": [
+        "Coatue (added +6%, $2.21B)",
+        "Tiger Global (trimmed -51%, $662.6M)",
+        "Appaloosa (new position)",
+        "Bridgewater (trimmed -28%, $497.9M)"
+      ],
+      "evidence": "Coatue added and Appaloosa initiated a new stake; Tiger Global and Bridgewater trimmed; Reuters highlights Broadcom as an AI-themed stock that 36% of filers were net buyers of.",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    "TSM": {
+      "ticker": "TSM",
+      "net_signal": "distributing",
+      "notable_holders": [
+        "Tiger Global (trimmed -12%, $2.33B -- top holding)",
+        "Coatue (trimmed -4%, $4.26B -- top holding)",
+        "Bridgewater (no data on TSM, not in top positions from source)",
+        "Appaloosa (added, ~10.2% of portfolio)",
+        "Viking Global (trimmed -29%, $1.51B)"
+      ],
+      "evidence": "Tiger Global, Coatue, and Viking all trimmed TSM; Reuters confirms Tiger reduced TSM; Appaloosa was a notable buyer.",
+      "source_url": "https://www.danielscrivner.com/chase-coleman-trades-and-holdings-q2-2026/"
+    },
+    "MU": {
+      "ticker": "MU",
+      "net_signal": "mixed",
+      "notable_holders": [
+        "Coatue (added +1794%, $3.63B -- now top 3 holding)",
+        "Appaloosa (trimmed -41%, ~975K shares remaining, ~$1.1B)",
+        "Bridgewater (trimmed -92%, near exit)"
+      ],
+      "evidence": "Coatue made a massive addition (1,794%) while Appaloosa sold 41% and Bridgewater nearly exited; early filers show Micron as one of the most-added stocks (SanDisk, which is memory-adjacent, was top-added overall).",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    "MRVL": {
+      "ticker": "MRVL",
+      "net_signal": "distributing",
+      "notable_holders": [
+        "Bridgewater (trimmed -91%, $53.97M remaining)"
+      ],
+      "evidence": "Bridgewater trimmed Marvell by 91%, a near-full exit.",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    "ETN": {
+      "ticker": "ETN",
+      "net_signal": "accumulating",
+      "notable_holders": [
+        "Coatue (added +5%, $2.12B)"
+      ],
+      "evidence": "Coatue added to Eaton Corp, a large position at 4.35% of portfolio; energy infrastructure thesis.",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    "VST": {
+      "ticker": "VST",
+      "net_signal": "accumulating",
+      "notable_holders": [
+        "Bridgewater (added +116%, $119.24M)",
+        "Appaloosa (held as of Q1 2026 at $304M, Q2 change unknown)"
+      ],
+      "evidence": "Bridgewater doubled its Vistra position; Appaloosa had a large position in Q1.",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    "GOOGL": {
+      "ticker": "GOOGL",
+      "net_signal": "mixed",
+      "notable_holders": [
+        "Tiger Global (trimmed -45%, 5.8M shares, $2.07B)",
+        "Coatue (added +13%, $1.74B)",
+        "Bridgewater (trimmed -34%, $472.5M)",
+        "Viking Global (exited, sold 2.4M shares)"
+      ],
+      "evidence": "Tiger Global and Bridgewater both trimmed Alphabet significantly; Viking fully exited; but Coatue added. Reuters confirms Tiger cut GOOGL by 45.4%.",
+      "source_url": "https://economictimes.indiatimes.com/markets/us-stocks/news/institutional-investors-reveal-cautious-approach-to-tech-favorites-in-us-quarterly-13f-filings/articleshow/133256229.cms"
+    },
+    "MSFT": {
+      "ticker": "MSFT",
+      "net_signal": "distributing",
+      "notable_holders": [
+        "Tiger Global (trimmed -9%, $845.6M)",
+        "Coatue (added +18%, $1.1B)",
+        "Bridgewater (trimmed -34%, $265.6M)",
+        "Viking Global (trimmed -37%, $544.1M)",
+        "Optiver (added +640%)"
+      ],
+      "evidence": "Reuters confirms Tiger cut MSFT; Bridgewater and Viking also reduced; Coatue and Optiver added. Net signals mixed-to-distributing among major hedge funds.",
+      "source_url": "https://economictimes.indiatimes.com/markets/us-stocks/news/institutional-investors-reveal-cautious-approach-to-tech-favorites-in-us-quarterly-13f-filings/articleshow/133256229.cms"
+    },
+    "V": {
+      "ticker": "V",
+      "net_signal": "mixed",
+      "notable_holders": [
+        "Tiger Global (new position, $274.02M)",
+        "Coatue (exited, sold 718,753 shares)",
+        "Viking Global (added slightly, $2.19B top holding)",
+        "Bridgewater (added +224%, $27.97M)"
+      ],
+      "evidence": "Tiger Global initiated a new Visa position; Coatue exited; Viking and Bridgewater both added.",
+      "source_url": "https://www.danielscrivner.com/chase-coleman-trades-and-holdings-q2-2026/"
+    },
+    "ISRG": {
+      "ticker": "ISRG",
+      "net_signal": "mixed",
+      "notable_holders": [
+        "Coatue (trimmed -7%, $315.64M)"
+      ],
+      "evidence": "Coatue trimmed Intuitive Surgical slightly.",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    "LLY": {
+      "ticker": "LLY",
+      "net_signal": "accumulating",
+      "notable_holders": [
+        "Bridgewater (added +23%, $104.38M)"
+      ],
+      "evidence": "Bridgewater added to Eli Lilly position.",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    "TER": {
+      "ticker": "TER",
+      "net_signal": "distributing",
+      "notable_holders": [
+        "Bridgewater (trimmed -71%, $47.72M remaining)"
+      ],
+      "evidence": "Bridgewater cut Teradyne position by 71%.",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    "ZBRA": {
+      "ticker": "ZBRA",
+      "net_signal": "accumulating",
+      "notable_holders": [
+        "Bridgewater (added +948%, $39.84M)"
+      ],
+      "evidence": "Bridgewater massively added to Zebra Technologies in Q2.",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    "NRG": {
+      "ticker": "NRG",
+      "net_signal": "distributing",
+      "notable_holders": [
+        "Bridgewater (trimmed -53%, $40.6M remaining)"
+      ],
+      "evidence": "Bridgewater trimmed NRG Energy significantly.",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    "NOW": {
+      "ticker": "NOW",
+      "net_signal": "accumulating",
+      "notable_holders": [
+        "Bridgewater (new position, $63.08M, 635,381 shares)"
+      ],
+      "evidence": "Bridgewater initiated a new position in ServiceNow.",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    "SNOW": {
+      "ticker": "SNOW",
+      "net_signal": "accumulating",
+      "notable_holders": [
+        "Viking Global (new position, $244.36M, 960,138 shares)"
+      ],
+      "evidence": "Viking Global initiated a new Snowflake position worth $244M.",
+      "source_url": "https://last10k.com/sec-filings/1103804/0001103804-26-000006.htm"
+    },
+    "LHX": {
+      "ticker": "LHX",
+      "net_signal": "distributing",
+      "notable_holders": [
+        "Appaloosa (exited, previously $68.34M)"
+      ],
+      "evidence": "Appaloosa exited its L3Harris position fully in Q2.",
+      "source_url": "https://www.newsquawk.com/headlines/appaloosa-13-f"
+    },
+    "RTX": {
+      "ticker": "RTX",
+      "net_signal": "distributing",
+      "notable_holders": [
+        "Appaloosa (exited, previously $65.97M)"
+      ],
+      "evidence": "Appaloosa exited its RTX position fully in Q2.",
+      "source_url": "https://www.newsquawk.com/headlines/appaloosa-13-f"
+    },
+    "BA": {
+      "ticker": "BA",
+      "net_signal": "accumulating",
+      "notable_holders": [
+        "Appaloosa (new position)",
+        "Viking Global (added +2%, $708.9M)"
+      ],
+      "evidence": "Appaloosa initiated a new Boeing stake; Viking also slightly added to its existing position.",
+      "source_url": "https://www.newsquawk.com/headlines/appaloosa-13-f"
+    },
+    "MP": {
+      "ticker": "MP",
+      "net_signal": "accumulating",
+      "notable_holders": [
+        "Bridgewater (added +313%, $25M)"
+      ],
+      "evidence": "Bridgewater added significantly to MP Materials position.",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    "ENPH": {
+      "ticker": "ENPH",
+      "net_signal": "distributing",
+      "notable_holders": [
+        "Coatue (trimmed -6%, $76.66M)"
+      ],
+      "evidence": "Coatue trimmed Enphase Energy slightly.",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    "PYPL": {
+      "ticker": "PYPL",
+      "net_signal": "no data",
+      "notable_holders": [
+        "Coatue (no change, $53.7M)"
+      ],
+      "evidence": "Coatue held PayPal flat with no change in Q2.",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    "ARM": {
+      "ticker": "ARM",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found in sources reviewed.",
+      "source_url": null
+    },
+    "CEG": {
+      "ticker": "CEG",
+      "net_signal": "no data",
+      "notable_holders": [
+        "Coatue (no change, $1.15B, 4,632,475 shares)"
+      ],
+      "evidence": "Coatue held Constellation Energy flat with no change in Q2.",
+      "source_url": "https://last10k.com/sec-filings/1135730/0000919574-26-005478.htm"
+    },
+    "GEV": {
+      "ticker": "GEV",
+      "net_signal": "distributing",
+      "notable_holders": [
+        "Bridgewater (trimmed -72%, $144.24M remaining)"
+      ],
+      "evidence": "Bridgewater trimmed GE Vernova by 72%.",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    "PLTR": {
+      "ticker": "PLTR",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level 13F data found for Palantir in sources reviewed.",
+      "source_url": null
+    },
+    "LMT": {
+      "ticker": "LMT",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "LDOS": {
+      "ticker": "LDOS",
+      "net_signal": "accumulating",
+      "notable_holders": [
+        "Bridgewater (massive add, +11966% per last10k summary -- noted as one of 'Biggest Buys')"
+      ],
+      "evidence": "Bridgewater's last10k summary identifies LDOS (Leidos) as one of its biggest percentage buys in Q2 2026.",
+      "source_url": "https://last10k.com/sec-filings/1350694/0001350694-26-000003.htm"
+    },
+    "PWR": {
+      "ticker": "PWR",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "TLN": {
+      "ticker": "TLN",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "KTOS": {
+      "ticker": "KTOS",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "AVAV": {
+      "ticker": "AVAV",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "RKLB": {
+      "ticker": "RKLB",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "ASTS": {
+      "ticker": "ASTS",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "LUNR": {
+      "ticker": "LUNR",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "IRDM": {
+      "ticker": "IRDM",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "HEI": {
+      "ticker": "HEI",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "ABBV": {
+      "ticker": "ABBV",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "ROK": {
+      "ticker": "ROK",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "SYM": {
+      "ticker": "SYM",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "FANUY": {
+      "ticker": "FANUY",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "CRWD": {
+      "ticker": "CRWD",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "PANW": {
+      "ticker": "PANW",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "ZS": {
+      "ticker": "ZS",
+      "net_signal": "distributing",
+      "notable_holders": [
+        "Tiger Global (exited, ~$221.63M)"
+      ],
+      "evidence": "Tiger Global fully exited Zscaler position worth ~$221.63M.",
+      "source_url": "https://www.danielscrivner.com/chase-coleman-trades-and-holdings-q2-2026/"
+    },
+    "S": {
+      "ticker": "S",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "FTNT": {
+      "ticker": "FTNT",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "OKTA": {
+      "ticker": "OKTA",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "NET": {
+      "ticker": "NET",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "NVO": {
+      "ticker": "NVO",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "VRTX": {
+      "ticker": "VRTX",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "RXRX": {
+      "ticker": "RXRX",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "SDGR": {
+      "ticker": "SDGR",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "TEM": {
+      "ticker": "TEM",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "ILMN": {
+      "ticker": "ILMN",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "TSLA": {
+      "ticker": "TSLA",
+      "net_signal": "distributing",
+      "notable_holders": [
+        "Coatue (slight add, $25.22M)",
+        "Viking Global (trimmed -78%, $230.41M remaining)"
+      ],
+      "evidence": "Viking Global cut Tesla by 78% (sold ~1.95M shares); Citadel and Millennium both held TSLA per overlap analysis.",
+      "source_url": "https://last10k.com/sec-filings/1103804/0001103804-26-000006.htm"
+    },
+    "FLNC": {
+      "ticker": "FLNC",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "ALB": {
+      "ticker": "ALB",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "FSLR": {
+      "ticker": "FSLR",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "EOSE": {
+      "ticker": "EOSE",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "MA": {
+      "ticker": "MA",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "COIN": {
+      "ticker": "COIN",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "HOOD": {
+      "ticker": "HOOD",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "XYZ": {
+      "ticker": "XYZ",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "AFRM": {
+      "ticker": "AFRM",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "CRCL": {
+      "ticker": "CRCL",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "CRM": {
+      "ticker": "CRM",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "DDOG": {
+      "ticker": "DDOG",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "Reuters notes 28.2% of institutional filers were net sellers of 20 major software companies including Datadog, vs 26.3% net buyers -- borderline signal.",
+      "source_url": "https://economictimes.indiatimes.com/markets/us-stocks/news/institutional-investors-reveal-cautious-approach-to-tech-favorites-in-us-quarterly-13f-filings/articleshow/133256229.cms"
+    },
+    "MDB": {
+      "ticker": "MDB",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found.",
+      "source_url": null
+    },
+    "AI": {
+      "ticker": "AI",
+      "net_signal": "no data",
+      "notable_holders": [],
+      "evidence": "No specific fund-level data found (C3.ai).",
+      "source_url": null
+    }
+  },
+  "aggregate_signals": {
+    "source": "Reuters analysis of 6,371 institutional filers, Q2 2026 13F data",
+    "source_url": "https://economictimes.indiatimes.com/markets/us-stocks/news/institutional-investors-reveal-cautious-approach-to-tech-favorites-in-us-quarterly-13f-filings/articleshow/133256229.cms",
+    "semis_net_buyers_pct": 48,
+    "semis_net_sellers_pct": 34.5,
+    "mag7_net_trimmed_pct": 44,
+    "mag7_net_added_pct": 42,
+    "software_20_net_sellers_pct": 28.2,
+    "software_20_net_buyers_pct": 26.3,
+    "energy_net_sellers_pct": 40.3,
+    "energy_net_buyers_pct": 28,
+    "ai_themed_net_buyers_pct": 36,
+    "data_centers_balanced": true,
+    "key_theme": "Semiconductors net-accumulated; Mag7 nearly balanced with slight selling lean; software slightly net-sold; energy significantly distributed"
+  }
+}

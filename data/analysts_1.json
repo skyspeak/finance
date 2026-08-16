@@ -1,0 +1,462 @@
+{
+  "NVDA": {
+    "consensus": "Strong Buy",
+    "num_analysts": 61,
+    "pt_mean": 302.83,
+    "pt_high": 500.0,
+    "pt_low": 180.0,
+    "recent_actions": [
+      {"firm": "UBS", "action": "reiterate", "to": "$280", "date": "2026-08-14"},
+      {"firm": "Goldman Sachs", "action": "reiterate", "to": "$285", "date": "2026-08-12"},
+      {"firm": "Wells Fargo", "action": "reiterate", "to": "$315", "date": "2026-08-12"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/nvda/forecast/"
+  },
+  "AMD": {
+    "consensus": "Strong Buy",
+    "num_analysts": 52,
+    "pt_mean": 612.84,
+    "pt_high": 1250.0,
+    "pt_low": 365.0,
+    "recent_actions": [
+      {"firm": "Wells Fargo", "action": "PT raise", "to": "$700", "date": "2026-08-06"},
+      {"firm": "Jefferies", "action": "PT raise", "to": "$650", "date": "2026-08-06"},
+      {"firm": "J.P. Morgan", "action": "PT raise", "to": "$550", "date": "2026-08-06"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/amd/forecast/"
+  },
+  "AVGO": {
+    "consensus": "Strong Buy",
+    "num_analysts": 48,
+    "pt_mean": 527.88,
+    "pt_high": 675.0,
+    "pt_low": 215.88,
+    "recent_actions": [
+      {"firm": "J.P. Morgan", "action": "reiterate", "to": "$580", "date": "2026-07-28"},
+      {"firm": "Bernstein", "action": "reiterate", "to": "$550", "date": "2026-07-28"},
+      {"firm": "Morgan Stanley", "action": "reiterate", "to": "$502", "date": "2026-07-26"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/avgo/forecast/"
+  },
+  "TSM": {
+    "consensus": "Strong Buy",
+    "num_analysts": 19,
+    "pt_mean": 547.09,
+    "pt_high": 700.0,
+    "pt_low": 431.5,
+    "recent_actions": [
+      {"firm": "Bernstein", "action": "PT raise", "to": "$554", "date": "2026-08-11"},
+      {"firm": "Needham", "action": "PT raise", "to": "$530", "date": "2026-07-27"},
+      {"firm": "Barclays", "action": "PT raise", "to": "$650", "date": "2026-07-17"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/tsm/forecast/"
+  },
+  "MU": {
+    "consensus": "Strong Buy",
+    "num_analysts": 46,
+    "pt_mean": 1502.0,
+    "pt_high": 2200.0,
+    "pt_low": 361.0,
+    "recent_actions": [
+      {"firm": "Mizuho Securities", "action": "reiterate", "to": "$1,375", "date": "2026-08-10"},
+      {"firm": "Citi", "action": "PT cut", "to": "$1,150", "date": "2026-08-07"},
+      {"firm": "KeyBanc", "action": "PT raise", "to": "$1,750", "date": "2026-07-14"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/mu/forecast/"
+  },
+  "ARM": {
+    "consensus": "Buy",
+    "num_analysts": 40,
+    "pt_mean": 286.79,
+    "pt_high": 500.0,
+    "pt_low": 125.0,
+    "recent_actions": [
+      {"firm": "New Street", "action": "upgrade", "to": "Buy / $260", "date": "2026-07-30"},
+      {"firm": "Goldman Sachs", "action": "reiterate", "to": "Hold / $150", "date": "2026-07-30"},
+      {"firm": "Evercore ISI", "action": "reiterate", "to": "$326", "date": "2026-07-30"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/arm/forecast/"
+  },
+  "MRVL": {
+    "consensus": "Strong Buy",
+    "num_analysts": 43,
+    "pt_mean": 256.91,
+    "pt_high": 400.0,
+    "pt_low": 126.0,
+    "recent_actions": [
+      {"firm": "Wells Fargo", "action": "reiterate", "to": "$240", "date": "2026-08-11"},
+      {"firm": "Erste Group", "action": "downgrade", "to": "Hold", "date": "2026-07-15"},
+      {"firm": "KeyBanc", "action": "PT raise", "to": "$400", "date": "2026-07-14"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/mrvl/forecast/"
+  },
+  "VST": {
+    "consensus": "Strong Buy",
+    "num_analysts": 20,
+    "pt_mean": 221.58,
+    "pt_high": 313.0,
+    "pt_low": 106.0,
+    "recent_actions": [
+      {"firm": "Goldman Sachs", "action": "PT cut", "to": "$206", "date": "2026-08-12"},
+      {"firm": "Wolfe Research", "action": "reiterate", "to": "$232", "date": "2026-08-10"},
+      {"firm": "Scotiabank", "action": "reiterate", "to": "$298", "date": "2026-08-10"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/vst/forecast/"
+  },
+  "CEG": {
+    "consensus": "Buy",
+    "num_analysts": 23,
+    "pt_mean": 349.96,
+    "pt_high": 441.0,
+    "pt_low": 290.0,
+    "recent_actions": [
+      {"firm": "Mizuho Securities", "action": "reiterate", "to": "Hold / $290", "date": "2026-08-12"},
+      {"firm": "Argus Research", "action": "PT cut", "to": "$325", "date": "2026-08-11"},
+      {"firm": "Barclays", "action": "reiterate", "to": "$324", "date": "2026-08-10"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/ceg/forecast/"
+  },
+  "GEV": {
+    "consensus": "Buy",
+    "num_analysts": 38,
+    "pt_mean": 1238.0,
+    "pt_high": 1450.0,
+    "pt_low": 940.0,
+    "recent_actions": [
+      {"firm": "Citi", "action": "reiterate", "to": "Hold", "date": "2026-08-10"},
+      {"firm": "Argus Research", "action": "reiterate", "to": "$1,300", "date": "2026-08-05"},
+      {"firm": "Jefferies", "action": "reiterate", "to": "$1,210", "date": "2026-07-31"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/gev/forecast/"
+  },
+  "ETN": {
+    "consensus": "Buy",
+    "num_analysts": 27,
+    "pt_mean": 471.98,
+    "pt_high": 534.0,
+    "pt_low": 333.0,
+    "recent_actions": [
+      {"firm": "Bernstein", "action": "PT raise", "to": "$534", "date": "2026-08-11"},
+      {"firm": "Citi", "action": "reiterate", "to": "Buy", "date": "2026-08-11"},
+      {"firm": "BMO Capital", "action": "PT raise", "to": "$487", "date": "2026-08-03"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/etn/forecast/"
+  },
+  "PWR": {
+    "consensus": "Buy",
+    "num_analysts": 30,
+    "pt_mean": 770.04,
+    "pt_high": 976.0,
+    "pt_low": 410.0,
+    "recent_actions": [
+      {"firm": "Bernstein", "action": "reiterate", "to": "Hold / $748", "date": "2026-08-12"},
+      {"firm": "KeyBanc", "action": "upgrade", "to": "Buy / $807", "date": "2026-08-07"},
+      {"firm": "Argus Research", "action": "PT cut", "to": "$800", "date": "2026-08-05"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/pwr/forecast/"
+  },
+  "TLN": {
+    "consensus": "Buy",
+    "num_analysts": 17,
+    "pt_mean": 467.69,
+    "pt_high": 595.0,
+    "pt_low": 307.0,
+    "recent_actions": [
+      {"firm": "Goldman Sachs", "action": "PT raise", "to": "$509", "date": "2026-08-10"},
+      {"firm": "Raymond James", "action": "PT cut", "to": "$449", "date": "2026-08-07"},
+      {"firm": "Wells Fargo", "action": "PT raise", "to": "$501", "date": "2026-08-06"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/tln/forecast/"
+  },
+  "NRG": {
+    "consensus": "Buy",
+    "num_analysts": 17,
+    "pt_mean": 194.18,
+    "pt_high": 267.0,
+    "pt_low": 104.0,
+    "recent_actions": [
+      {"firm": "Jefferies", "action": "reiterate", "to": "$179", "date": "2026-08-06"},
+      {"firm": "BMO Capital", "action": "reiterate", "to": "Hold / $214", "date": "2026-08-06"},
+      {"firm": "Evercore ISI", "action": "PT cut", "to": "$195", "date": "2026-08-05"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/nrg/forecast/"
+  },
+  "PLTR": {
+    "consensus": "Buy",
+    "num_analysts": 32,
+    "pt_mean": 189.9,
+    "pt_high": 255.0,
+    "pt_low": 80.0,
+    "recent_actions": [
+      {"firm": "Phillip Securities", "action": "PT raise", "to": "$215", "date": "2026-08-11"},
+      {"firm": "Argus Research", "action": "reiterate", "to": "$190", "date": "2026-08-05"},
+      {"firm": "Mizuho Securities", "action": "PT raise", "to": "$215", "date": "2026-08-04"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/pltr/forecast/"
+  },
+  "LMT": {
+    "consensus": "Hold",
+    "num_analysts": 21,
+    "pt_mean": 629.53,
+    "pt_high": 756.0,
+    "pt_low": 503.0,
+    "recent_actions": [
+      {"firm": "J.P. Morgan", "action": "PT raise", "to": "$620", "date": "2026-07-29"},
+      {"firm": "TD Cowen", "action": "PT raise", "to": "$600", "date": "2026-07-27"},
+      {"firm": "Goldman Sachs", "action": "PT raise", "to": "Sell / $503", "date": "2026-07-27"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/lmt/forecast/"
+  },
+  "RTX": {
+    "consensus": "Buy",
+    "num_analysts": 23,
+    "pt_mean": 232.27,
+    "pt_high": 265.0,
+    "pt_low": 183.98,
+    "recent_actions": [
+      {"firm": "Bank of America Securities", "action": "reiterate", "to": "Buy", "date": "2026-08-11"},
+      {"firm": "Bernstein", "action": "PT raise", "to": "Hold / $232", "date": "2026-08-03"},
+      {"firm": "Argus Research", "action": "PT raise", "to": "$245", "date": "2026-07-30"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/rtx/forecast/"
+  },
+  "LDOS": {
+    "consensus": "Buy",
+    "num_analysts": 17,
+    "pt_mean": 152.13,
+    "pt_high": 225.0,
+    "pt_low": 120.0,
+    "recent_actions": [
+      {"firm": "Goldman Sachs", "action": "PT cut", "to": "Hold / $132", "date": "2026-08-12"},
+      {"firm": "Citi", "action": "PT raise", "to": "$161", "date": "2026-08-11"},
+      {"firm": "Jefferies", "action": "PT raise", "to": "Hold / $145", "date": "2026-08-09"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/ldos/forecast/"
+  },
+  "KTOS": {
+    "consensus": "Strong Buy",
+    "num_analysts": 21,
+    "pt_mean": 105.62,
+    "pt_high": 150.0,
+    "pt_low": 60.0,
+    "recent_actions": [],
+    "source_url": "https://stockanalysis.com/stocks/ktos/forecast/"
+  },
+  "AVAV": {
+    "consensus": "Buy",
+    "num_analysts": 20,
+    "pt_mean": 225.77,
+    "pt_high": 326.0,
+    "pt_low": 148.57,
+    "recent_actions": [
+      {"firm": "Piper Sandler", "action": "reiterate", "to": "$235", "date": "2026-08-14"},
+      {"firm": "Clear Street", "action": "reiterate", "to": "$247", "date": "2026-08-11"},
+      {"firm": "Raymond James", "action": "upgrade", "to": "Buy / $210", "date": "2026-07-16"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/avav/forecast/"
+  },
+  "LHX": {
+    "consensus": "Buy",
+    "num_analysts": 17,
+    "pt_mean": 343.27,
+    "pt_high": 393.0,
+    "pt_low": 285.0,
+    "recent_actions": [
+      {"firm": "UBS", "action": "PT cut", "to": "Hold / $298", "date": "2026-08-03"},
+      {"firm": "Susquehanna", "action": "PT cut", "to": "$350", "date": "2026-07-31"},
+      {"firm": "Bernstein", "action": "reiterate", "to": "$405", "date": "2026-07-17"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/lhx/forecast/"
+  },
+  "RKLB": {
+    "consensus": "Buy",
+    "num_analysts": 18,
+    "pt_mean": 112.94,
+    "pt_high": 150.0,
+    "pt_low": 64.0,
+    "recent_actions": [
+      {"firm": "Needham", "action": "reiterate", "to": "$120", "date": "2026-08-11"},
+      {"firm": "Cantor Fitzgerald", "action": "PT raise", "to": "$122", "date": "2026-08-11"},
+      {"firm": "Stifel Nicolaus", "action": "reiterate", "to": "$132", "date": "2026-08-11"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/rklb/forecast/"
+  },
+  "ASTS": {
+    "consensus": "Hold",
+    "num_analysts": 13,
+    "pt_mean": 79.66,
+    "pt_high": 108.0,
+    "pt_low": 42.5,
+    "recent_actions": [
+      {"firm": "UBS", "action": "PT cut", "to": "Hold / $78", "date": "2026-08-11"},
+      {"firm": "Cantor Fitzgerald", "action": "PT raise", "to": "$90", "date": "2026-08-11"},
+      {"firm": "Piper Sandler", "action": "PT cut", "to": "$98", "date": "2026-08-11"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/asts/forecast/"
+  },
+  "LUNR": {
+    "consensus": "Strong Buy",
+    "num_analysts": 9,
+    "pt_mean": 29.5,
+    "pt_high": 43.0,
+    "pt_low": 11.0,
+    "recent_actions": [
+      {"firm": "Cantor Fitzgerald", "action": "PT cut", "to": "$32", "date": "2026-08-14"},
+      {"firm": "Stifel Nicolaus", "action": "PT cut", "to": "$26", "date": "2026-08-14"},
+      {"firm": "Roth MKM", "action": "PT cut", "to": "$30", "date": "2026-08-13"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/lunr/forecast/"
+  },
+  "IRDM": {
+    "consensus": "Buy",
+    "num_analysts": 8,
+    "pt_mean": 42.0,
+    "pt_high": 54.0,
+    "pt_low": 36.0,
+    "recent_actions": [
+      {"firm": "Morgan Stanley", "action": "reiterate", "to": "Hold / $54", "date": "2026-07-30"},
+      {"firm": "Clear Street", "action": "PT raise", "to": "Hold / $54", "date": "2026-07-23"},
+      {"firm": "Oppenheimer", "action": "downgrade", "to": "Hold", "date": "2026-06-29"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/irdm/forecast/"
+  },
+  "BA": {
+    "consensus": "Buy",
+    "num_analysts": 28,
+    "pt_mean": 274.85,
+    "pt_high": 305.0,
+    "pt_low": 246.0,
+    "recent_actions": [
+      {"firm": "Goldman Sachs", "action": "reiterate", "to": "$277", "date": "2026-08-12"},
+      {"firm": "Jefferies", "action": "reiterate", "to": "$295", "date": "2026-08-11"},
+      {"firm": "Argus Research", "action": "upgrade", "to": "Buy / $265", "date": "2026-08-11"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/ba/forecast/"
+  },
+  "HEI": {
+    "consensus": "Buy",
+    "num_analysts": 23,
+    "pt_mean": 386.05,
+    "pt_high": 471.0,
+    "pt_low": 290.0,
+    "recent_actions": [
+      {"firm": "Citi", "action": "reiterate", "to": "$410", "date": "2026-07-01"},
+      {"firm": "RBC Capital", "action": "reiterate", "to": "$390", "date": "2026-06-02"},
+      {"firm": "UBS", "action": "PT raise", "to": "Hold / $390", "date": "2026-06-01"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/hei/forecast/"
+  },
+  "ISRG": {
+    "consensus": "Buy",
+    "num_analysts": 33,
+    "pt_mean": 477.25,
+    "pt_high": 685.0,
+    "pt_low": 324.0,
+    "recent_actions": [
+      {"firm": "Citi", "action": "reiterate", "to": "$500", "date": "2026-08-13"},
+      {"firm": "Bernstein", "action": "reiterate", "to": "$685", "date": "2026-08-12"},
+      {"firm": "Oppenheimer", "action": "upgrade", "to": "Buy / $500", "date": "2026-08-12"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/isrg/forecast/"
+  },
+  "ABBV": {
+    "consensus": "Buy",
+    "num_analysts": 31,
+    "pt_mean": 276.24,
+    "pt_high": 328.0,
+    "pt_low": 200.0,
+    "recent_actions": [
+      {"firm": "Wolfe Research", "action": "upgrade", "to": "Buy / $300", "date": "2026-08-13"},
+      {"firm": "Barclays", "action": "reiterate", "to": "$300", "date": "2026-08-12"},
+      {"firm": "Evercore ISI", "action": "PT raise", "to": "$260", "date": "2026-08-10"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/abbv/forecast/"
+  },
+  "TER": {
+    "consensus": "Buy",
+    "num_analysts": 17,
+    "pt_mean": 449.8,
+    "pt_high": 550.0,
+    "pt_low": 350.0,
+    "recent_actions": [
+      {"firm": "J.P. Morgan", "action": "PT raise", "to": "$465", "date": "2026-07-30"},
+      {"firm": "Robert W. Baird", "action": "PT cut", "to": "$420", "date": "2026-07-30"},
+      {"firm": "Evercore ISI", "action": "PT raise", "to": "$420", "date": "2026-07-30"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/ter/forecast/"
+  },
+  "ROK": {
+    "consensus": "Buy",
+    "num_analysts": 28,
+    "pt_mean": 477.67,
+    "pt_high": 550.0,
+    "pt_low": 282.0,
+    "recent_actions": [
+      {"firm": "Bernstein", "action": "PT raise", "to": "Hold / $514", "date": "2026-08-14"},
+      {"firm": "J.P. Morgan", "action": "reiterate", "to": "Hold / $426", "date": "2026-08-07"},
+      {"firm": "Robert W. Baird", "action": "PT cut", "to": "$514", "date": "2026-08-05"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/rok/forecast/"
+  },
+  "SYM": {
+    "consensus": "Buy",
+    "num_analysts": 18,
+    "pt_mean": 64.32,
+    "pt_high": 85.0,
+    "pt_low": 42.0,
+    "recent_actions": [
+      {"firm": "D.A. Davidson", "action": "reiterate", "to": "$70", "date": "2026-08-11"},
+      {"firm": "Barclays", "action": "reiterate", "to": "Sell / $44", "date": "2026-08-07"},
+      {"firm": "Craig-Hallum", "action": "PT cut", "to": "$65", "date": "2026-08-06"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/sym/forecast/"
+  },
+  "ZBRA": {
+    "consensus": "Buy",
+    "num_analysts": 17,
+    "pt_mean": 399.0,
+    "pt_high": 455.0,
+    "pt_low": 292.02,
+    "recent_actions": [
+      {"firm": "UBS", "action": "reiterate", "to": "$435", "date": "2026-08-13"},
+      {"firm": "Robert W. Baird", "action": "PT raise", "to": "$420", "date": "2026-08-05"},
+      {"firm": "Needham", "action": "PT raise", "to": "$410", "date": "2026-08-05"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/zbra/forecast/"
+  },
+  "FANUY": {
+    "consensus": "Hold",
+    "num_analysts": null,
+    "pt_mean": 23.33,
+    "pt_high": 26.33,
+    "pt_low": 20.33,
+    "recent_actions": [],
+    "source_url": "https://www.investing.com/equities/fanuc-corporation"
+  },
+  "CRWD": {
+    "consensus": "Buy",
+    "num_analysts": 53,
+    "pt_mean": 197.1,
+    "pt_high": 256.0,
+    "pt_low": 103.25,
+    "recent_actions": [
+      {"firm": "Oppenheimer", "action": "PT raise", "to": "$250", "date": "2026-08-14"},
+      {"firm": "RBC Capital", "action": "PT raise", "to": "$256", "date": "2026-08-14"},
+      {"firm": "Bank of America Securities", "action": "PT raise", "to": "Hold / $230", "date": "2026-07-24"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/crwd/forecast/"
+  },
+  "PANW": {
+    "consensus": "Buy",
+    "num_analysts": 55,
+    "pt_mean": 345.09,
+    "pt_high": 433.0,
+    "pt_low": 203.0,
+    "recent_actions": [
+      {"firm": "TD Cowen", "action": "PT raise", "to": "$360", "date": "2026-08-06"},
+      {"firm": "Barclays", "action": "PT raise", "to": "$370", "date": "2026-08-05"},
+      {"firm": "Oppenheimer", "action": "PT raise", "to": "$400", "date": "2026-08-04"}
+    ],
+    "source_url": "https://stockanalysis.com/stocks/panw/forecast/"
+  }
+}

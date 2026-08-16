@@ -1,0 +1,2214 @@
+{
+  "NVDA": {
+    "ticker": "NVDA",
+    "cik": "1045810",
+    "company_name": "NVIDIA CORP",
+    "n_form4": 23,
+    "notable": [
+      {
+        "insider": "NORA JOHNSON SUZANNE M",
+        "role": "Director",
+        "date": "2026-08-12",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1045810&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "COXE TENCH",
+        "role": "Director",
+        "date": "2026-08-07",
+        "note": "Non-open-market tx (codes: G)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1045810&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "COXE TENCH",
+        "role": "Director",
+        "date": "2026-07-06",
+        "note": "Non-open-market tx (codes: G)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1045810&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "heavy selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1045810&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_no_dollar_amounts_in_top3_filings"
+  },
+  "AMD": {
+    "ticker": "AMD",
+    "cik": "2488",
+    "company_name": "ADVANCED MICRO DEVICES INC",
+    "n_form4": 17,
+    "notable": [
+      {
+        "insider": "Hahn Ava",
+        "role": "SVP, GC &amp; Corporate Secretary",
+        "date": "2026-08-13",
+        "note": "Sold 143 sh (~$0.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2488&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Hahn Ava",
+        "role": "SVP, GC &amp; Corporate Secretary",
+        "date": "2026-08-11",
+        "note": "Non-open-market tx (codes: F,M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2488&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Hu Jean X.",
+        "role": "EVP, CFO and Treasurer",
+        "date": "2026-08-11",
+        "note": "Non-open-market tx (codes: F,M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2488&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2488&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "AVGO": {
+    "ticker": "AVGO",
+    "cik": "1730168",
+    "company_name": "Broadcom Inc.",
+    "n_form4": 10,
+    "notable": [
+      {
+        "insider": "DELLY GAYLA J",
+        "role": "Director",
+        "date": "2026-07-14",
+        "note": "Non-open-market tx (codes: G)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1730168&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Brazeal Mark David",
+        "role": "Chief Legal &amp; Corp Affairs Ofc",
+        "date": "2026-07-14",
+        "note": "Sold 25,000 sh (~$10.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1730168&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "DELLY GAYLA J",
+        "role": "Director",
+        "date": "2026-07-10",
+        "note": "Sold 1,890 sh (~$0.7M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1730168&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1730168&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "TSM": {
+    "ticker": "TSM",
+    "cik": "1046179",
+    "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+    "n_form4": 109,
+    "notable": [
+      {
+        "insider": "Yeap Choh Fei",
+        "role": "SVP",
+        "date": "2026-08-10",
+        "note": "Bought 57 sh (~$0.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1046179&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Zhang Kevin Xiaoqiang",
+        "role": "SVP and Deputy Co-COO",
+        "date": "2026-08-10",
+        "note": "Bought 63 sh (~$0.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1046179&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Yuan Lipen",
+        "role": "VP",
+        "date": "2026-08-10",
+        "note": "Bought 42 sh (~$0.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1046179&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "quiet",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1046179&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "MU": {
+    "ticker": "MU",
+    "cik": "723125",
+    "company_name": "MICRON TECHNOLOGY INC",
+    "n_form4": 13,
+    "notable": [
+      {
+        "insider": "MEHROTRA SANJAY",
+        "role": "Director, President and CEO",
+        "date": "2026-07-28",
+        "note": "Sold 8,715 sh (~$8.3M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=723125&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "MEHROTRA SANJAY",
+        "role": "Director, President and CEO",
+        "date": "2026-07-28",
+        "note": "Sold 31,285 sh (~$29.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=723125&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "ALLEN SCOTT R.",
+        "role": "CVP, Chief Accounting Officer",
+        "date": "2026-07-27",
+        "note": "Sold 879 sh (~$0.9M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=723125&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=723125&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "ARM": {
+    "ticker": "ARM",
+    "cik": "1973239",
+    "company_name": "ARM HOLDINGS PLC /UK",
+    "n_form4": 24,
+    "notable": [
+      {
+        "insider": "Sine Jeffrey",
+        "role": "Director",
+        "date": "2026-08-11",
+        "note": "Non-open-market tx (codes: G)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1973239&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Bartels Laura Kathleen",
+        "role": "Chief Accounting Officer",
+        "date": "2026-06-04",
+        "note": "Sold 11,306 sh (~$4.4M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1973239&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Abbey William",
+        "role": "Chief Commercial Officer",
+        "date": "2026-06-03",
+        "note": "Sold 6,566 sh (~$2.6M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1973239&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1973239&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "MRVL": {
+    "ticker": "MRVL",
+    "cik": "1835632",
+    "company_name": "Marvell Technology, Inc.",
+    "n_form4": 30,
+    "notable": [
+      {
+        "insider": "Koopmans Chris",
+        "role": "President and COO",
+        "date": "2026-08-03",
+        "note": "Sold 10,000 sh (~$1.8M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1835632&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Bharathi Sandeep",
+        "role": "President, Data Center Group",
+        "date": "2026-07-16",
+        "note": "Sold 9,013 sh (~$1.8M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1835632&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Casper Mark",
+        "role": "EVP &amp; Chief Legal Officer",
+        "date": "2026-07-16",
+        "note": "Non-open-market tx (codes: F,M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1835632&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1835632&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "VST": {
+    "ticker": "VST",
+    "cik": "1692819",
+    "company_name": "Vistra Corp.",
+    "n_form4": 16,
+    "notable": [
+      {
+        "insider": "SULT JOHN R",
+        "role": "Director",
+        "date": "2026-06-23",
+        "note": "Sold 6,500 sh (~$1.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1692819&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Acosta Arcilia",
+        "role": "Director",
+        "date": "2026-06-23",
+        "note": "Sold 15,000 sh (~$2.5M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1692819&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "HELM SCOTT B",
+        "role": "Director",
+        "date": "2026-06-18",
+        "note": "Sold 25,000 sh (~$4.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1692819&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1692819&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "CEG": {
+    "ticker": "CEG",
+    "cik": "1868275",
+    "company_name": "Constellation Energy Corp",
+    "n_form4": 3,
+    "notable": [
+      {
+        "insider": "CRANDALL ROGER W",
+        "role": "Director",
+        "date": "2026-08-13",
+        "note": "Bought 1,500 sh (~$0.4M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1868275&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "CRANDALL ROGER W",
+        "role": "Director",
+        "date": "2026-08-06",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1868275&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Harrington Charles L.",
+        "role": "Director",
+        "date": "2026-07-01",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1868275&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "quiet",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1868275&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "GEV": {
+    "ticker": "GEV",
+    "cik": "1996810",
+    "company_name": "GE Vernova Inc.",
+    "n_form4": 18,
+    "notable": [
+      {
+        "insider": "Abate Victor",
+        "role": "Chief Executive Officer, Wind",
+        "date": "2026-06-03",
+        "note": "Sold 4,819 sh (~$4.6M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1996810&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "ANGEL STEPHEN F",
+        "role": "Director",
+        "date": "2026-05-22",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1996810&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Rucker Kim K.W.",
+        "role": "Director",
+        "date": "2026-05-22",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1996810&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1996810&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "ETN": {
+    "ticker": "ETN",
+    "cik": "1551182",
+    "company_name": "Eaton Corp plc",
+    "n_form4": 5,
+    "notable": [
+      {
+        "insider": "Johnson Gerald",
+        "role": "Director",
+        "date": "2026-08-14",
+        "note": "Bought 200 sh (~$0.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1551182&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Monesmith Heath B.",
+        "role": "See Remarks below.",
+        "date": "2026-08-13",
+        "note": "Sold 18,036 sh (~$8.3M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1551182&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Yelton Michael",
+        "role": "See Remarks below.",
+        "date": "2026-08-07",
+        "note": "Non-open-market tx (codes: F,M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1551182&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1551182&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "PWR": {
+    "ticker": "PWR",
+    "cik": "1050915",
+    "company_name": "QUANTA SERVICES, INC.",
+    "n_form4": 18,
+    "notable": [
+      {
+        "insider": "BAXTER WARNER L",
+        "role": "Director",
+        "date": "2026-06-03",
+        "note": "Non-open-market tx (codes: M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1050915&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Beneby Doyle N",
+        "role": "Director",
+        "date": "2026-06-03",
+        "note": "Non-open-market tx (codes: M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1050915&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "FRIED BERNARD",
+        "role": "Director",
+        "date": "2026-06-03",
+        "note": "Non-open-market tx (codes: M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1050915&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "heavy selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1050915&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_no_dollar_amounts_in_top3_filings"
+  },
+  "TLN": {
+    "ticker": "TLN",
+    "cik": "1622536",
+    "company_name": "Talen Energy Corp",
+    "n_form4": 19,
+    "notable": [
+      {
+        "insider": "Nutt Terry L",
+        "role": "President",
+        "date": "2026-07-15",
+        "note": "Non-open-market tx (codes: F,M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1622536&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "ABBAS GIZMAN I",
+        "role": "Director",
+        "date": "2026-06-17",
+        "note": "Sold 2,600 sh (~$1.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1622536&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "McFarland Mark Allen",
+        "role": "Director, Chief Executive Officer",
+        "date": "2026-06-08",
+        "note": "Non-open-market tx (codes: J)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1622536&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1622536&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "NRG": {
+    "ticker": "NRG",
+    "cik": "1013871",
+    "company_name": "NRG ENERGY, INC.",
+    "n_form4": 29,
+    "notable": [
+      {
+        "insider": "Donohue Elisabeth B",
+        "role": "Director",
+        "date": "2026-08-05",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1013871&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Cox Heather",
+        "role": "Director",
+        "date": "2026-08-05",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1013871&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Carrillo Antonio",
+        "role": "Director",
+        "date": "2026-08-05",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1013871&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "heavy selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1013871&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_no_dollar_amounts_in_top3_filings"
+  },
+  "PLTR": {
+    "ticker": "PLTR",
+    "cik": "1321655",
+    "company_name": "Palantir Technologies Inc.",
+    "n_form4": 20,
+    "notable": [
+      {
+        "insider": "Sankar Shyam",
+        "role": "See Remarks",
+        "date": "2026-08-12",
+        "note": "Non-open-market tx (codes: G)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1321655&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Sankar Shyam",
+        "role": "See Remarks",
+        "date": "2026-08-10",
+        "note": "Sold 35,000 sh (~$5.4M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1321655&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Stat Lauren Elaina Friedman",
+        "role": "Director",
+        "date": "2026-08-07",
+        "note": "Sold 3,032 sh (~$0.5M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1321655&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1321655&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "LMT": {
+    "ticker": "LMT",
+    "cik": "936468",
+    "company_name": "LOCKHEED MARTIN CORP",
+    "n_form4": 5,
+    "notable": [
+      {
+        "insider": "Lightfoot Robert M JR",
+        "role": "President Space",
+        "date": "2026-08-13",
+        "note": "Sold 2,606 sh (~$0.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=936468&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "St John Frank A",
+        "role": "Chief Operating Officer",
+        "date": "2026-08-04",
+        "note": "Non-open-market tx (codes: I)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=936468&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Donovan John",
+        "role": "Director",
+        "date": "2026-07-02",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=936468&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=936468&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "RTX": {
+    "ticker": "RTX",
+    "cik": "101829",
+    "company_name": "RTX Corp",
+    "n_form4": 4,
+    "notable": [
+      {
+        "insider": "Brunk Troy D",
+        "role": "President, Collins Aerospace",
+        "date": "2026-07-28",
+        "note": "Sold 8,557 sh (~$1.8M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=101829&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Atkinson Tracy A",
+        "role": "Director",
+        "date": "2026-07-28",
+        "note": "Sold 2,295 sh (~$0.5M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=101829&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "DaSilva Kevin G",
+        "role": "Senior VP and Treasurer",
+        "date": "2026-07-28",
+        "note": "Sold 7,010 sh (~$1.5M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=101829&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=101829&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "LDOS": {
+    "ticker": "LDOS",
+    "cik": "1336920",
+    "company_name": "Leidos Holdings, Inc.",
+    "n_form4": 10,
+    "notable": [
+      {
+        "insider": "Geer Noel B",
+        "role": "Director",
+        "date": "2026-08-13",
+        "note": "Sold 10,000 sh (~$1.4M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1336920&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Porter Elizabeth A",
+        "role": "Sector President",
+        "date": "2026-08-06",
+        "note": "Non-open-market tx (codes: F)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1336920&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Stevens Roy E",
+        "role": "Sector President",
+        "date": "2026-08-06",
+        "note": "Non-open-market tx (codes: F)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1336920&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1336920&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "KTOS": {
+    "ticker": "KTOS",
+    "cik": "1069258",
+    "company_name": "KRATOS DEFENSE & SECURITY SOLUTIONS, INC.",
+    "n_form4": 22,
+    "notable": [
+      {
+        "insider": "DEMARCO ERIC M",
+        "role": "Director, President &amp; CEO",
+        "date": "2026-08-14",
+        "note": "Sold 300,000 sh (~$19.3M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1069258&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Carter David M",
+        "role": "President, DRSS Division",
+        "date": "2026-08-07",
+        "note": "Sold 4,000 sh (~$0.2M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1069258&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Lund Deanna H",
+        "role": "Director, EVP &amp; CFO",
+        "date": "2026-08-05",
+        "note": "Sold 5,000 sh (~$0.2M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1069258&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1069258&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "AVAV": {
+    "ticker": "AVAV",
+    "cik": "1368622",
+    "company_name": "AeroVironment Inc",
+    "n_form4": 35,
+    "notable": [
+      {
+        "insider": "Shackley Brian Charles",
+        "role": "SVP, Chief Accounting Officer",
+        "date": "2026-08-14",
+        "note": "Sold 205 sh (~$0.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1368622&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Shackley Brian Charles",
+        "role": "SVP, Chief Accounting Officer",
+        "date": "2026-07-16",
+        "note": "Sold 300 sh (~$0.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1368622&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Shackley Brian Charles",
+        "role": "SVP, Chief Accounting Officer",
+        "date": "2026-07-16",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1368622&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "quiet",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1368622&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "LHX": {
+    "ticker": "LHX",
+    "cik": "202058",
+    "company_name": "L3HARRIS TECHNOLOGIES, INC. /DE/",
+    "n_form4": 9,
+    "notable": [
+      {
+        "insider": "SHARP KENNETH P",
+        "role": "SVP, Chief Financial Officer",
+        "date": "2026-08-03",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=202058&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Rakita Melanie",
+        "role": "Vice President &amp; CHRO",
+        "date": "2026-08-03",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=202058&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "MEHTA SAMIR",
+        "role": "President, S&amp;MS and C&amp;SD",
+        "date": "2026-08-03",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=202058&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=202058&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_no_dollar_amounts_in_top3_filings"
+  },
+  "RKLB": {
+    "ticker": "RKLB",
+    "cik": "1819994",
+    "company_name": "Rocket Lab Corp",
+    "n_form4": 22,
+    "notable": [
+      {
+        "insider": "Beck Peter",
+        "role": "Director, CEO",
+        "date": "2026-07-08",
+        "note": "Sold 3,275,779 sh (~$286.4M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1819994&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Kampani Arjun",
+        "role": "SVP &amp; General Counsel",
+        "date": "2026-06-18",
+        "note": "Sold 88,000 sh (~$9.5M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1819994&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Slusky Alexander R",
+        "role": "Director",
+        "date": "2026-06-05",
+        "note": "Sold 40,000 sh (~$4.9M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1819994&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "heavy selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1819994&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "ASTS": {
+    "ticker": "ASTS",
+    "cik": "1780312",
+    "company_name": "AST SpaceMobile, Inc.",
+    "n_form4": 20,
+    "notable": [
+      {
+        "insider": "Wisniewski Scott",
+        "role": "President",
+        "date": "2026-07-02",
+        "note": "Non-open-market tx (codes: F)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1780312&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Avellan Abel Antonio",
+        "role": "Director, Chief Executive Officer, 10% Owner",
+        "date": "2026-06-23",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1780312&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Cisneros Adriana",
+        "role": "Director",
+        "date": "2026-06-16",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1780312&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "heavy selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1780312&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "LUNR": {
+    "ticker": "LUNR",
+    "cik": "1844452",
+    "company_name": "Intuitive Machines, Inc.",
+    "n_form4": 15,
+    "notable": [
+      {
+        "insider": "Ghaffarian Kamal Seyed",
+        "role": "Director, 10% Owner",
+        "date": "2026-08-12",
+        "note": "Sold 267,448 sh (~$4.3M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1844452&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Ghaffarian Kamal Seyed",
+        "role": "Director, 10% Owner",
+        "date": "2026-07-29",
+        "note": "Sold 47,303 sh (~$0.6M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1844452&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "ADVENT INTERNATIONAL, L.P.",
+        "role": "10% Owner",
+        "date": "2026-07-29",
+        "note": "Sold 11,495,514 sh (~$147.6M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1844452&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "heavy selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1844452&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "IRDM": {
+    "ticker": "IRDM",
+    "cik": "1418819",
+    "company_name": "Iridium Communications Inc.",
+    "n_form4": 18,
+    "notable": [
+      {
+        "insider": "Thoma Donald Lee",
+        "role": "EVP, Aireon",
+        "date": "2026-07-13",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1418819&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "YEANEY JACQUELINE E",
+        "role": "Director",
+        "date": "2026-07-02",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1418819&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Shivanandan Monique S.",
+        "role": "Director",
+        "date": "2026-07-02",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1418819&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "heavy selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1418819&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_no_dollar_amounts_in_top3_filings"
+  },
+  "BA": {
+    "ticker": "BA",
+    "cik": "12927",
+    "company_name": "BOEING CO",
+    "n_form4": 13,
+    "notable": [
+      {
+        "insider": "Ortberg Robert Kelly",
+        "role": "Director, President &amp; CEO",
+        "date": "2026-08-12",
+        "note": "Non-open-market tx (codes: F)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=12927&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "TILDEN BRADLEY D",
+        "role": "Director",
+        "date": "2026-07-06",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=12927&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Richardson John M",
+        "role": "Director",
+        "date": "2026-07-06",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=12927&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "heavy selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=12927&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "HEI": {
+    "ticker": "HEI",
+    "cik": "46619",
+    "company_name": "HEICO CORP",
+    "n_form4": 8,
+    "notable": [
+      {
+        "insider": "MENDELSON VICTOR H",
+        "role": "Director, Co-COB and Co-CEO",
+        "date": "2026-07-01",
+        "note": "Non-open-market tx (codes: G)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=46619&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Rowen Bradley K",
+        "role": "Chief Accounting Officer",
+        "date": "2026-06-11",
+        "note": "Sold 1,326 sh (~$0.3M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=46619&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "SCHRIESHEIM ALAN",
+        "role": "Director",
+        "date": "2026-06-02",
+        "note": "Non-open-market tx (codes: G)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=46619&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=46619&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "ISRG": {
+    "ticker": "ISRG",
+    "cik": "1035267",
+    "company_name": "INTUITIVE SURGICAL INC",
+    "n_form4": 13,
+    "notable": [
+      {
+        "insider": "GUTHART GARY S",
+        "role": "Director",
+        "date": "2026-08-12",
+        "note": "Sold 10,000 sh (~$4.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1035267&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Ladd Amy L",
+        "role": "Director",
+        "date": "2026-08-11",
+        "note": "Sold 472 sh (~$0.2M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1035267&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "LOEB GARY",
+        "role": "EVP &amp; Chief Legal and Complian",
+        "date": "2026-08-10",
+        "note": "Sold 400 sh (~$0.2M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1035267&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1035267&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "ABBV": {
+    "ticker": "ABBV",
+    "cik": "1551152",
+    "company_name": "AbbVie Inc.",
+    "n_form4": 2,
+    "notable": [
+      {
+        "insider": "RAPP EDWARD J",
+        "role": "Director",
+        "date": "2026-07-02",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1551152&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Quaggin Susan E",
+        "role": "Director",
+        "date": "2026-07-02",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1551152&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1551152&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_no_dollar_amounts_in_top3_filings"
+  },
+  "TER": {
+    "ticker": "TER",
+    "cik": "97210",
+    "company_name": "TERADYNE, INC",
+    "n_form4": 18,
+    "notable": [
+      {
+        "insider": "JOHNSON MERCEDES",
+        "role": "Director",
+        "date": "2026-08-04",
+        "note": "Sold 166 sh (~$0.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=97210&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Smith Gregory Stephen",
+        "role": "Director, President and CEO",
+        "date": "2026-07-16",
+        "note": "Sold 4,000 sh (~$1.4M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=97210&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "MATZ MARILYN",
+        "role": "Director",
+        "date": "2026-07-16",
+        "note": "Sold 1,200 sh (~$0.4M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=97210&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=97210&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "ROK": {
+    "ticker": "ROK",
+    "cik": "1024478",
+    "company_name": "ROCKWELL AUTOMATION, INC",
+    "n_form4": 5,
+    "notable": [
+      {
+        "insider": "Riesterer Terry L.",
+        "role": "Vice President and Controller",
+        "date": "2026-07-17",
+        "note": "Sold 281 sh (~$0.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1024478&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Gipson William P",
+        "role": "Director",
+        "date": "2026-07-01",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1024478&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Fordenwalt Matthew W.",
+        "role": "SVP Lifecycle Services",
+        "date": "2026-06-04",
+        "note": "Sold 377 sh (~$0.2M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1024478&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1024478&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "SYM": {
+    "ticker": "SYM",
+    "cik": "1837240",
+    "company_name": "Symbotic Inc.",
+    "n_form4": 19,
+    "notable": [
+      {
+        "insider": "PAGLIUCA STEPHEN G",
+        "role": "Director",
+        "date": "2026-08-14",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1837240&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "KANE CHARLES",
+        "role": "Director",
+        "date": "2026-08-05",
+        "note": "Sold 2,000 sh (~$0.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1837240&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "KRASNOW TODD",
+        "role": "Director",
+        "date": "2026-08-05",
+        "note": "Sold 2,000 sh (~$0.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1837240&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1837240&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "ZBRA": {
+    "ticker": "ZBRA",
+    "cik": "877212",
+    "company_name": "ZEBRA TECHNOLOGIES CORP",
+    "n_form4": 19,
+    "notable": [
+      {
+        "insider": "Connly Linda",
+        "role": "Director",
+        "date": "2026-08-11",
+        "note": "Sold 500 sh (~$0.2M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=877212&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Cho Michael",
+        "role": "Chief Strategy Officer",
+        "date": "2026-08-11",
+        "note": "Sold 3,500 sh (~$1.3M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=877212&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Luff Loizides Melissa",
+        "role": "Chief People Officer",
+        "date": "2026-08-05",
+        "note": "Non-open-market tx (codes: F)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=877212&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=877212&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "CRWD": {
+    "ticker": "CRWD",
+    "cik": "1535527",
+    "company_name": "CrowdStrike Holdings, Inc.",
+    "n_form4": 74,
+    "notable": [
+      {
+        "insider": "Kurtz George",
+        "role": "Director, PRESIDENT AND CEO",
+        "date": "2026-08-14",
+        "note": "Sold 20,000 sh (~$4.5M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1535527&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Kurtz George",
+        "role": "Director, PRESIDENT AND CEO",
+        "date": "2026-08-12",
+        "note": "Sold 20,000 sh (~$4.5M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1535527&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Kurtz George",
+        "role": "Director, PRESIDENT AND CEO",
+        "date": "2026-08-10",
+        "note": "Sold 20,000 sh (~$4.2M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1535527&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1535527&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "PANW": {
+    "ticker": "PANW",
+    "cik": "1327567",
+    "company_name": "Palo Alto Networks Inc",
+    "n_form4": 15,
+    "notable": [
+      {
+        "insider": "Paul Josh D.",
+        "role": "Chief Accounting Officer",
+        "date": "2026-08-04",
+        "note": "Non-open-market tx (codes: F)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1327567&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Thorning-Schmidt Helle",
+        "role": "Director",
+        "date": "2026-07-08",
+        "note": "Sold 700 sh (~$0.2M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1327567&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Arora Nikesh",
+        "role": "Director, Chief Executive Officer",
+        "date": "2026-07-02",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1327567&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1327567&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "ZS": {
+    "ticker": "ZS",
+    "cik": "1713683",
+    "company_name": "Zscaler, Inc.",
+    "n_form4": 10,
+    "notable": [
+      {
+        "insider": "RUBIN KEVIN",
+        "role": "Chief Financial Officer",
+        "date": "2026-07-28",
+        "note": "Sold 503 sh (~$0.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1713683&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Schlossman Robert",
+        "role": "Chief Legal Officer",
+        "date": "2026-07-07",
+        "note": "Sold 122 sh (~$0.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1713683&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "RUBIN KEVIN",
+        "role": "Chief Financial Officer",
+        "date": "2026-06-26",
+        "note": "Sold 3,000 sh (~$0.4M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1713683&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1713683&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "S": {
+    "ticker": "S",
+    "cik": "1583708",
+    "company_name": "SentinelOne, Inc.",
+    "n_form4": 22,
+    "notable": [
+      {
+        "insider": "Pinczuk Ana G.",
+        "role": "Director, President Product &amp; Technology",
+        "date": "2026-08-07",
+        "note": "Sold 6,230 sh (~$0.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1583708&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "PADGETT BARRY L.",
+        "role": "President and COO",
+        "date": "2026-08-07",
+        "note": "Sold 9,778 sh (~$0.2M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1583708&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Conder Keenan Michael",
+        "role": "Chief Legal Officer &amp; Sec'y",
+        "date": "2026-08-07",
+        "note": "Sold 26,374 sh (~$0.5M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1583708&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1583708&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "FTNT": {
+    "ticker": "FTNT",
+    "cik": "1262039",
+    "company_name": "Fortinet, Inc.",
+    "n_form4": 24,
+    "notable": [
+      {
+        "insider": "STAVRIDIS JAMES G.",
+        "role": "Director",
+        "date": "2026-08-13",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1262039&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Sim Judith",
+        "role": "Director",
+        "date": "2026-08-13",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1262039&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "GOLDMAN KENNETH A",
+        "role": "Director",
+        "date": "2026-08-13",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1262039&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "heavy selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1262039&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_no_dollar_amounts_in_top3_filings"
+  },
+  "OKTA": {
+    "ticker": "OKTA",
+    "cik": "1660134",
+    "company_name": "Okta, Inc.",
+    "n_form4": 22,
+    "notable": [
+      {
+        "insider": "McKinnon Todd",
+        "role": "Director, Chief Executive Officer",
+        "date": "2026-07-10",
+        "note": "Sold 68,936 sh (~$10.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1660134&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Schwartz Larissa",
+        "role": "See Remarks",
+        "date": "2026-06-24",
+        "note": "Sold 2,463 sh (~$0.3M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1660134&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Kelleher Eric Robert",
+        "role": "See Remarks",
+        "date": "2026-06-23",
+        "note": "Sold 3,977 sh (~$0.5M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1660134&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1660134&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "NET": {
+    "ticker": "NET",
+    "cik": "1477333",
+    "company_name": "Cloudflare, Inc.",
+    "n_form4": 38,
+    "notable": [
+      {
+        "insider": "Graham-Cumming John",
+        "role": "Director",
+        "date": "2026-08-11",
+        "note": "Sold 2,520 sh (~$0.8M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1477333&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "SEIFERT THOMAS J",
+        "role": "Chief Financial Officer",
+        "date": "2026-08-06",
+        "note": "Sold 55,000 sh (~$16.5M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1477333&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Ledbetter Carl",
+        "role": "Director",
+        "date": "2026-08-06",
+        "note": "Sold 5,000 sh (~$1.4M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1477333&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1477333&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "LLY": {
+    "ticker": "LLY",
+    "cik": "59478",
+    "company_name": "ELI LILLY & Co",
+    "n_form4": 16,
+    "notable": [
+      {
+        "insider": "Zakrowski Donald A",
+        "role": "SVP, Finance, &amp; CAO",
+        "date": "2026-08-11",
+        "note": "Sold 2,000 sh (~$2.4M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=59478&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Hakim Anat",
+        "role": "EVP, GC &amp; Secretary",
+        "date": "2026-08-10",
+        "note": "Sold 5,000 sh (~$6.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=59478&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Seymour Melissa",
+        "role": "EVP, Global Quality",
+        "date": "2026-08-03",
+        "note": "Non-open-market tx (codes: F,M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=59478&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=59478&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "VRTX": {
+    "ticker": "VRTX",
+    "cik": "875320",
+    "company_name": "VERTEX PHARMACEUTICALS INC / MA",
+    "n_form4": 15,
+    "notable": [
+      {
+        "insider": "Tatsis Ourania",
+        "role": "EVP, Chief Reg. &amp; Quality Off.",
+        "date": "2026-07-23",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=875320&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Sachdev Amit",
+        "role": "EVP Chief Patient &amp; Ext Af Off",
+        "date": "2026-07-23",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=875320&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "SACHS BRUCE I",
+        "role": "Director",
+        "date": "2026-07-17",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=875320&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "heavy selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=875320&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_no_dollar_amounts_in_top3_filings"
+  },
+  "RXRX": {
+    "ticker": "RXRX",
+    "cik": "1601830",
+    "company_name": "RECURSION PHARMACEUTICALS, INC.",
+    "n_form4": 21,
+    "notable": [
+      {
+        "insider": "Borgeson Blake",
+        "role": "Director",
+        "date": "2026-08-06",
+        "note": "Sold 30,000 sh (~$0.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1601830&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Borgeson Blake",
+        "role": "Director",
+        "date": "2026-07-09",
+        "note": "Sold 40,000 sh (~$0.2M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1601830&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Dar Zavain",
+        "role": "Director",
+        "date": "2026-07-02",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1601830&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1601830&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "SDGR": {
+    "ticker": "SDGR",
+    "cik": "1490978",
+    "company_name": "Schrodinger, Inc.",
+    "n_form4": 11,
+    "notable": [
+      {
+        "insider": "Jain Rachit",
+        "role": "EVP &amp; CFO",
+        "date": "2026-07-17",
+        "note": "Sold 875 sh (~$0.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1490978&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Friesner Richard",
+        "role": "Director",
+        "date": "2026-06-29",
+        "note": "Non-open-market tx (codes: G)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1490978&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "OBEROI ARUN",
+        "role": "Director",
+        "date": "2026-06-23",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1490978&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "quiet",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1490978&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "TEM": {
+    "ticker": "TEM",
+    "cik": "1717115",
+    "company_name": "Tempus AI, Inc.",
+    "n_form4": 28,
+    "notable": [
+      {
+        "insider": "Fukushima Ryan",
+        "role": "CEO, Data",
+        "date": "2026-08-14",
+        "note": "Non-open-market tx (codes: G)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1717115&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Fukushima Ryan",
+        "role": "CEO, Data",
+        "date": "2026-08-11",
+        "note": "Sold 20,000 sh (~$1.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1717115&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Epstein David R",
+        "role": "Director",
+        "date": "2026-08-05",
+        "note": "Sold 370 sh (~$0.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1717115&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1717115&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "ILMN": {
+    "ticker": "ILMN",
+    "cik": "1110803",
+    "company_name": "ILLUMINA, INC.",
+    "n_form4": 21,
+    "notable": [
+      {
+        "insider": "Sullivan Michael C",
+        "role": "Chief Commercial Officer",
+        "date": "2026-08-07",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1110803&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Meister Keith A.",
+        "role": "Director",
+        "date": "2026-08-06",
+        "note": "Sold 741,127 sh (~$148.2M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1110803&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Davies Scott M",
+        "role": "Chief Legal Officer",
+        "date": "2026-08-03",
+        "note": "Sold 615 sh (~$0.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1110803&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "heavy selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1110803&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "TSLA": {
+    "ticker": "TSLA",
+    "cik": "1318605",
+    "company_name": "Tesla, Inc.",
+    "n_form4": 2,
+    "notable": [
+      {
+        "insider": "Musk Elon",
+        "role": "Director, CEO, 10% Owner",
+        "date": "2026-06-17",
+        "note": "Non-open-market tx (codes: F,M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1318605&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Taneja Vaibhav",
+        "role": "Chief Financial Officer",
+        "date": "2026-06-09",
+        "note": "Sold 2,606 sh (~$1.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1318605&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1318605&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "ENPH": {
+    "ticker": "ENPH",
+    "cik": "1463101",
+    "company_name": "Enphase Energy, Inc.",
+    "n_form4": 6,
+    "notable": [
+      {
+        "insider": "MORA RICHARD",
+        "role": "Director",
+        "date": "2026-08-14",
+        "note": "Sold 1,500 sh (~$0.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1463101&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "MORA RICHARD",
+        "role": "Director",
+        "date": "2026-07-31",
+        "note": "Sold 2,000 sh (~$0.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1463101&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Trivedi Shanker",
+        "role": "Director",
+        "date": "2026-06-15",
+        "note": "Bought 1,000 sh (~$0.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1463101&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1463101&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "FLNC": {
+    "ticker": "FLNC",
+    "cik": "1868941",
+    "company_name": "Fluence Energy, Inc.",
+    "n_form4": 8,
+    "notable": [
+      {
+        "insider": "Williams Peter Bennett",
+        "role": "SVP and CPSCO",
+        "date": "2026-07-21",
+        "note": "Non-open-market tx (codes: F,M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1868941&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "SPT Holding Sarl",
+        "role": "10% Owner",
+        "date": "2026-07-08",
+        "note": "Non-open-market tx (codes: J)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1868941&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Zahurancik John",
+        "role": "SVP &amp; CCSO",
+        "date": "2026-06-26",
+        "note": "Sold 31,974 sh (~$0.8M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1868941&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1868941&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "ALB": {
+    "ticker": "ALB",
+    "cik": "915913",
+    "company_name": "ALBEMARLE CORP",
+    "n_form4": 11,
+    "notable": [
+      {
+        "insider": "DESALLES BARTOLOMEO EDUARDO",
+        "role": "Director",
+        "date": "2026-07-23",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=915913&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "MINOR GLENDA J",
+        "role": "Director",
+        "date": "2026-07-06",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=915913&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Collins Michelle T",
+        "role": "Director",
+        "date": "2026-07-06",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=915913&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "heavy selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=915913&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_no_dollar_amounts_in_top3_filings"
+  },
+  "MP": {
+    "ticker": "MP",
+    "cik": "1801368",
+    "company_name": "MP Materials Corp. / DE",
+    "n_form4": 15,
+    "notable": [
+      {
+        "insider": "DUCKWORTH CONNIE K",
+        "role": "Director",
+        "date": "2026-06-30",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1801368&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "DUCKWORTH CONNIE K",
+        "role": "Director",
+        "date": "2026-06-15",
+        "note": "Non-open-market tx (codes: M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1801368&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "WEISENBURGER RANDALL J",
+        "role": "Director",
+        "date": "2026-06-15",
+        "note": "Non-open-market tx (codes: M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1801368&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "heavy selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1801368&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_no_dollar_amounts_in_top3_filings"
+  },
+  "FSLR": {
+    "ticker": "FSLR",
+    "cik": "1274494",
+    "company_name": "FIRST SOLAR, INC.",
+    "n_form4": 18,
+    "notable": [
+      {
+        "insider": "Dymbort Jason E.",
+        "role": "General Counsel and Secretary",
+        "date": "2026-08-12",
+        "note": "Sold 3,700 sh (~$0.9M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1274494&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Gloeckler Markus",
+        "role": "Chief Technology Officer",
+        "date": "2026-08-05",
+        "note": "Sold 4,254 sh (~$1.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1274494&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Koralewski Michael",
+        "role": "Chief Supply Chain Officer",
+        "date": "2026-08-05",
+        "note": "Sold 7,000 sh (~$1.6M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1274494&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1274494&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "EOSE": {
+    "ticker": "EOSE",
+    "cik": "1805077",
+    "company_name": "Eos Energy Enterprises, Inc.",
+    "n_form4": 46,
+    "notable": [
+      {
+        "insider": "Cerberus GP Manager LLC",
+        "role": "Director, 10% Owner",
+        "date": "2026-08-06",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1805077&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Mastrangelo Joe",
+        "role": "Director, Chief Executive Officer",
+        "date": "2026-08-06",
+        "note": "Non-open-market tx (codes: M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1805077&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "DIMITRIEF ALEXANDER",
+        "role": "Director",
+        "date": "2026-08-06",
+        "note": "Non-open-market tx (codes: M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1805077&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "heavy selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1805077&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "V": {
+    "ticker": "V",
+    "cik": "1403161",
+    "company_name": "VISA INC.",
+    "n_form4": 4,
+    "notable": [
+      {
+        "insider": "MAHON TULLIER KELLY",
+        "role": "VICE CHAIR, CHF PPL &amp; CORP AFF",
+        "date": "2026-07-31",
+        "note": "Sold 57,272 sh (~$20.9M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1403161&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "ROTTENBERG JULIE B",
+        "role": "GENERAL COUNSEL",
+        "date": "2026-07-06",
+        "note": "Sold 2,027 sh (~$0.7M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1403161&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "MCINERNEY RYAN",
+        "role": "Director, Chief Executive Officer",
+        "date": "2026-07-02",
+        "note": "Sold 10,490 sh (~$3.6M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1403161&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1403161&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "MA": {
+    "ticker": "MA",
+    "cik": "1141391",
+    "company_name": "Mastercard Inc",
+    "n_form4": 23,
+    "notable": [
+      {
+        "insider": "SACHIN J. MEHRA",
+        "role": "Chief Business Officer",
+        "date": "2026-08-06",
+        "note": "Sold 3,000 sh (~$1.7M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1141391&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Miebach Michael",
+        "role": "Director, President &amp; CEO",
+        "date": "2026-08-06",
+        "note": "Sold 15,372 sh (~$8.8M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1141391&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Dosis Dimitrios",
+        "role": "Chief Commercial Pmts Officer",
+        "date": "2026-08-05",
+        "note": "Non-open-market tx (codes: A)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1141391&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1141391&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "COIN": {
+    "ticker": "COIN",
+    "cik": "1679788",
+    "company_name": "Coinbase Global, Inc.",
+    "n_form4": 22,
+    "notable": [
+      {
+        "insider": "WILSON FREDERICK R",
+        "role": "Director",
+        "date": "2026-08-05",
+        "note": "Sold 35,068 sh (~$5.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1679788&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Grewal Paul",
+        "role": "Chief Legal Officer",
+        "date": "2026-07-31",
+        "note": "Non-open-market transaction (grant/exercise/award)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1679788&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "WILSON FREDERICK R",
+        "role": "Director",
+        "date": "2026-07-06",
+        "note": "Sold 10,000 sh (~$1.6M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1679788&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1679788&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "HOOD": {
+    "ticker": "HOOD",
+    "cik": "1783879",
+    "company_name": "Robinhood Markets, Inc.",
+    "n_form4": 54,
+    "notable": [
+      {
+        "insider": "Robinhood Markets, Inc.",
+        "role": "10% Owner",
+        "date": "2026-08-13",
+        "note": "Sold 12,695 sh (~$0.4M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1783879&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Robinhood Markets, Inc.",
+        "role": "10% Owner",
+        "date": "2026-08-11",
+        "note": "Sold 18,365 sh (~$0.5M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1783879&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Robinhood Markets, Inc.",
+        "role": "10% Owner",
+        "date": "2026-08-07",
+        "note": "Sold 17,421 sh (~$0.5M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1783879&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1783879&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "XYZ": {
+    "ticker": "XYZ",
+    "cik": "1512673",
+    "company_name": "Block, Inc.",
+    "n_form4": 43,
+    "notable": [
+      {
+        "insider": "Eisen Anthony Mathew",
+        "role": "Director",
+        "date": "2026-08-14",
+        "note": "Sold 18,000 sh (~$1.4M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1512673&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Eisen Anthony Mathew",
+        "role": "Director",
+        "date": "2026-08-11",
+        "note": "Sold 18,000 sh (~$1.4M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1512673&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Ahuja Amrita",
+        "role": "CFO &amp; COO",
+        "date": "2026-08-07",
+        "note": "Sold 8,971 sh (~$0.8M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1512673&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1512673&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "PYPL": {
+    "ticker": "PYPL",
+    "cik": "1633917",
+    "company_name": "PayPal Holdings, Inc.",
+    "n_form4": 28,
+    "notable": [
+      {
+        "insider": "Natali Chris",
+        "role": "SVP, Chief Accounting Officer",
+        "date": "2026-07-30",
+        "note": "Sold 1,337 sh (~$0.1M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1633917&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Keller Frank",
+        "role": "Pres., Checkout Sol. &amp; PayPal",
+        "date": "2026-07-30",
+        "note": "Sold 732 sh (~$0.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1633917&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Webster Aaron",
+        "role": "EVP, Global Chief Risk Officer",
+        "date": "2026-07-16",
+        "note": "Non-open-market tx (codes: F,M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1633917&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1633917&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "AFRM": {
+    "ticker": "AFRM",
+    "cik": "1820953",
+    "company_name": "Affirm Holdings, Inc.",
+    "n_form4": 18,
+    "notable": [
+      {
+        "insider": "Watson Noel Bertram",
+        "role": "Director",
+        "date": "2026-08-14",
+        "note": "Sold 2,000 sh (~$0.2M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1820953&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Adkins Katherine",
+        "role": "Chief Legal Officer",
+        "date": "2026-08-04",
+        "note": "Non-open-market tx (codes: F,M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1820953&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Michalek Libor",
+        "role": "Director, President",
+        "date": "2026-08-04",
+        "note": "Non-open-market tx (codes: F,M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1820953&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1820953&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "CRCL": {
+    "ticker": "CRCL",
+    "cik": "1876042",
+    "company_name": "Circle Internet Group, Inc.",
+    "n_form4": 50,
+    "notable": [
+      {
+        "insider": "Fox-Geen Jeremy",
+        "role": "Chief Financial Officer",
+        "date": "2026-08-14",
+        "note": "Sold 8,476 sh (~$0.6M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1876042&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Chandhok Nikhil",
+        "role": "Chief Product &amp; Tech. Officer",
+        "date": "2026-08-12",
+        "note": "Sold 26,666 sh (~$1.8M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1876042&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Ostling Danita K",
+        "role": "Director",
+        "date": "2026-08-07",
+        "note": "Sold 20,000 sh (~$1.2M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1876042&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1876042&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "MSFT": {
+    "ticker": "MSFT",
+    "cik": "789019",
+    "company_name": "MICROSOFT CORP",
+    "n_form4": 34,
+    "notable": [
+      {
+        "insider": "Althoff Judson",
+        "role": "CEO Microsoft Commercial",
+        "date": "2026-08-06",
+        "note": "Sold 10,000 sh (~$4.9M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=789019&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Numoto Takeshi",
+        "role": "EVP, Chief Marketing Officer",
+        "date": "2026-08-05",
+        "note": "Sold 4,810 sh (~$2.4M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=789019&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Coleman Amy",
+        "role": "EVP, Chief Human Resources Off",
+        "date": "2026-07-15",
+        "note": "Non-open-market tx (codes: F)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=789019&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=789019&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "GOOGL": {
+    "ticker": "GOOGL",
+    "cik": "1652044",
+    "company_name": "Alphabet Inc.",
+    "n_form4": 53,
+    "notable": [
+      {
+        "insider": "Sergey Brin",
+        "role": "Director, 10% Owner",
+        "date": "2026-08-11",
+        "note": "Non-open-market tx (codes: C,G)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1652044&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Hennessy John L.",
+        "role": "Director",
+        "date": "2026-08-06",
+        "note": "Non-open-market tx (codes: G)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1652044&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "ARNOLD FRANCES",
+        "role": "Director",
+        "date": "2026-07-30",
+        "note": "Sold 82 sh (~$0.0M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1652044&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "quiet",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1652044&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "CRM": {
+    "ticker": "CRM",
+    "cik": "1108524",
+    "company_name": "Salesforce, Inc.",
+    "n_form4": 20,
+    "notable": [
+      {
+        "insider": "Tallapragada Srinivas",
+        "role": "Chief Eng/Cust Success Officer",
+        "date": "2026-07-23",
+        "note": "Non-open-market tx (codes: F,M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1108524&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Harris Parker",
+        "role": "Director, Co-Founder and CTO, Slack",
+        "date": "2026-07-23",
+        "note": "Non-open-market tx (codes: F,M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1108524&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Tallapragada Srinivas",
+        "role": "Chief Eng/Cust Success Officer",
+        "date": "2026-06-23",
+        "note": "Non-open-market tx (codes: F,M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1108524&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "heavy selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1108524&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "NOW": {
+    "ticker": "NOW",
+    "cik": "1373715",
+    "company_name": "ServiceNow, Inc.",
+    "n_form4": 24,
+    "notable": [
+      {
+        "insider": "Fipps Paul",
+        "role": "President, Global Customer Ops",
+        "date": "2026-08-11",
+        "note": "Non-open-market tx (codes: F,M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1373715&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Mastantuono Gina",
+        "role": "President and CFO",
+        "date": "2026-08-11",
+        "note": "Non-open-market tx (codes: F,M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1373715&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Zavery Amit",
+        "role": "President, CPO and COO",
+        "date": "2026-08-11",
+        "note": "Non-open-market tx (codes: F,M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1373715&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "heavy selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1373715&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "SNOW": {
+    "ticker": "SNOW",
+    "cik": "1640147",
+    "company_name": "Snowflake Inc.",
+    "n_form4": 54,
+    "notable": [
+      {
+        "insider": "Dageville Benoit",
+        "role": "Director",
+        "date": "2026-08-14",
+        "note": "Sold 50,000 sh (~$16.8M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1640147&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Kleinerman Christian",
+        "role": "EVP, Product Management",
+        "date": "2026-08-11",
+        "note": "Sold 30,000 sh (~$9.8M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1640147&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Speiser Michael L",
+        "role": "Director",
+        "date": "2026-08-11",
+        "note": "Sold 50,741 sh (~$16.4M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1640147&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1640147&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "DDOG": {
+    "ticker": "DDOG",
+    "cik": "1561550",
+    "company_name": "Datadog, Inc.",
+    "n_form4": 50,
+    "notable": [
+      {
+        "insider": "Le-Quoc Alexis",
+        "role": "Director, Chief Technology Officer",
+        "date": "2026-08-12",
+        "note": "Sold 53,912 sh (~$13.7M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1561550&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Agarwal Amit",
+        "role": "Director",
+        "date": "2026-08-10",
+        "note": "Sold 20,000 sh (~$4.7M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1561550&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Pomel Olivier",
+        "role": "Director, Chief Executive Officer",
+        "date": "2026-08-07",
+        "note": "Sold 127,141 sh (~$36.5M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1561550&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "heavy selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1561550&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "MDB": {
+    "ticker": "MDB",
+    "cik": "1441816",
+    "company_name": "MongoDB, Inc.",
+    "n_form4": 21,
+    "notable": [
+      {
+        "insider": "MERRIMAN DWIGHT A",
+        "role": "Director",
+        "date": "2026-07-16",
+        "note": "Sold 16,000 sh (~$5.2M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1441816&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "BERRY MICHAEL J",
+        "role": "Chief Financial Officer",
+        "date": "2026-07-10",
+        "note": "Non-open-market tx (codes: G)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1441816&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "BERRY MICHAEL J",
+        "role": "Chief Financial Officer",
+        "date": "2026-07-06",
+        "note": "Non-open-market tx (codes: F)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1441816&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1441816&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "AI": {
+    "ticker": "AI",
+    "cik": "1577526",
+    "company_name": "C3.ai, Inc.",
+    "n_form4": 13,
+    "notable": [
+      {
+        "insider": "SIEBEL THOMAS M",
+        "role": "Director, CEO and Chairman of the Board, 10% Owner",
+        "date": "2026-08-13",
+        "note": "Sold 453,314 sh (~$4.8M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1577526&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "Lath Hitesh",
+        "role": "CHIEF FINANCIAL OFFICER",
+        "date": "2026-08-06",
+        "note": "Sold 20,000 sh (~$0.2M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1577526&type=4&dateb=&owner=include&count=40"
+      },
+      {
+        "insider": "SIEBEL THOMAS M",
+        "role": "Director, CEO and Chairman of the Board, 10% Owner",
+        "date": "2026-08-04",
+        "note": "Sold 139,500 sh (~$1.3M)",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1577526&type=4&dateb=&owner=include&count=40"
+      }
+    ],
+    "signal": "moderate selling",
+    "filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1577526&type=4&dateb=&owner=include&count=40",
+    "method": "submissions_api_form4_xml_dollar_amounts_extracted"
+  },
+  "NVO": {
+    "ticker": "NVO",
+    "cik": null,
+    "n_form4": 0,
+    "notable": [],
+    "signal": "quiet",
+    "filings_url": null,
+    "method": "skipped_foreign_filer_no_edgar_insider_data"
+  },
+  "FANUY": {
+    "ticker": "FANUY",
+    "cik": null,
+    "n_form4": 0,
+    "notable": [],
+    "signal": "quiet",
+    "filings_url": null,
+    "method": "skipped_foreign_filer_no_edgar_insider_data"
+  }
+}

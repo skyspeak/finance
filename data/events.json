@@ -1,0 +1,1017 @@
+[
+  {
+    "date": "2026-08-23",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "NVDA",
+      "AMD",
+      "AVGO",
+      "TSM",
+      "MRVL",
+      "ARM"
+    ],
+    "theme": "AI Semiconductors",
+    "event_type": "conference",
+    "title": "Hot Chips 2026 (Aug 23-25, Stanford)",
+    "description": "Annual IEEE symposium at Stanford (and online) covering AI accelerators, GPU architectures, packaging, and emerging silicon. Major chip companies present real-world processor and SoC designs, often used to reveal architectural details ahead of product ramps.",
+    "direction": "informational",
+    "why_it_matters": "First public disclosure venue for AI-chip microarchitecture details that set analyst expectations for competitive positioning in the GPU and ASIC market.",
+    "source_url": "https://www.computer.org/conferences/cfp-ieee-hot-chips"
+  },
+  {
+    "date": "2026-08-31",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "CRWD",
+      "PANW",
+      "ZS",
+      "S",
+      "FTNT",
+      "OKTA",
+      "NET"
+    ],
+    "theme": "Cybersecurity",
+    "event_type": "conference",
+    "title": "CrowdStrike Fal.Con 2026 (Aug 31 - Sep 3, Las Vegas)",
+    "description": "CrowdStrike's flagship annual security conference at Mandalay Bay, Las Vegas, with 10,000+ attendees from 71 countries. Theme is 'Securing the AI Revolution'; CEO George Kurtz delivers keynote; 500+ sessions including platform product roadmap reveals.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "Major platform and pricing announcements at Fal.Con directly drive CRWD ARR guidance; industry buzz sets tone for cybersecurity spending entering the year-end budget cycle.",
+    "source_url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-falcon-2026-sells-out-record-pace/"
+  },
+  {
+    "date": "2026-09-15",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "CRM",
+      "NOW",
+      "SNOW",
+      "DDOG",
+      "MDB"
+    ],
+    "theme": "Enterprise SaaS / AI Agents",
+    "event_type": "conference",
+    "title": "Dreamforce 2026 (Sep 15-17, San Francisco)",
+    "description": "Salesforce's flagship global conference at the Moscone Center in San Francisco, with 1,600+ sessions and keynote by CEO Marc Benioff. Agentforce, Slack, Data 360, and Customer 360 product launches expected; streaming free on Salesforce+.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "Dreamforce is Salesforce's primary product announcement platform \u2014 Agentforce roadmap updates here directly set CRM forward bookings expectations and influence NOW/SNOW/DDOG partner ecosystems.",
+    "source_url": "https://www.salesforce.com/blog/dreamforce-registration/"
+  },
+  {
+    "date": "2026-09-19",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "ZS"
+    ],
+    "theme": "Regulatory / FDA",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Zidesamtinib (NVL-520) for ROS1 NSCLC \u2014 Sep 18",
+    "description": "FDA target action date for zidesamtinib (NVL-520), a ROS1-inhibitor for non-small cell lung cancer. Drug developed by Nuvalent (NUVL/RPRX); not directly in universe but ZS is listed as affected on pdufa.bio by co-listing error \u2014 actual tickers per PDUFA calendar are NUVL/RPRX.",
+    "direction": "binary",
+    "why_it_matters": "Noted for completeness; primary impact is on NUVL and RPRX which are outside portfolio universe.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-09-21",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "NVO"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Sotatercept (WINREVAIR) PAH expansion \u2014 NVO",
+    "description": "FDA target action date for MRK's sotatercept-csrk (WINREVAIR) new indication for pulmonary arterial hypertension. Novo Nordisk's pipeline milestone for the same date is mim8 (denecimig) for hemophilia A with PDUFA set to September 30.",
+    "direction": "binary",
+    "why_it_matters": "PAH approvals redefine cardiovascular franchise value \u2014 NVO's hemophilia A approval could open a >$5B addressable market if mim8 clears FDA.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-09-30",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "NVO"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Denecimig (Mim8) for Hemophilia A \u2014 NVO",
+    "description": "FDA target action date for denecimig (mim8), Novo Nordisk's subcutaneous bispecific antibody for hemophilia A (with and without inhibitors). Phase 3 FRONTIER2 data published in NEJM April 2026 showed significant reduction in annualized bleeding rates versus prior prophylaxis.",
+    "direction": "binary",
+    "why_it_matters": "Mim8 is Novo's next major pipeline asset beyond GLP-1; a clean approval would validate NVO's diversification beyond obesity/diabetes and expand the stock's multiple.",
+    "source_url": "https://www.prnewswire.com/news-releases/denecimig-mim8-significantly-reduced-annualized-bleeding-rate-in-people-with-hemophilia-a-regardless-of-inhibitor-status-in-phase-3-data-published-in-nejm-302757983.html"
+  },
+  {
+    "date": "2026-09-19",
+    "date_confidence": "expected",
+    "tickers": [
+      "TER",
+      "RKLB"
+    ],
+    "theme": "Index Rebalance",
+    "event_type": "index",
+    "title": "Nasdaq-100 September 2026 Quarterly Rebalance (effective ~Sep 21)",
+    "description": "Under Nasdaq's updated May 2026 methodology, the September quarterly review is now a formal membership checkpoint that can add/remove constituents based on full market cap ranking. TER and RKLB were added in June 2026. The September review may trigger further rotations among AI-infrastructure names.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "Under new Nasdaq-100 rules, each quarterly review can force passive-fund buying of newly added names, creating predictable demand pressure on the effective date.",
+    "source_url": "https://www.stocktitan.net/articles/nasdaq-100-sp-500-rebalance-june-2026"
+  },
+  {
+    "date": "2026-10-15",
+    "date_confidence": "expected",
+    "tickers": [
+      "ABBV"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Enspryng (satralizumab) Thyroid Eye Disease \u2014 RHHBY (ABBV adjacent)",
+    "description": "FDA target action date for Roche's satralizumab in thyroid eye disease. While ticker is RHHBY, this sets competitive context for ABBV's ophthalmology pipeline. PDUFA calendar lists October 15, 2026.",
+    "direction": "bearish_risk",
+    "why_it_matters": "A Roche approval in TED would intensify competition against ABBV's broader immunology portfolio and set pricing precedent.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-10-26",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "ABBV"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Bepirovirsen Hepatitis B Cure \u2014 GSK (ABBV market context)",
+    "description": "FDA target action date for GSK's bepirovirsen for chronic hepatitis B functional cure (B-Well trial). First potential oral/injectable cure in HBV; sets competitive and market-size context for ABBV's virology assets.",
+    "direction": "informational",
+    "why_it_matters": "A bepirovirsen approval would validate the HBV cure market and could catalyze ABBV to accelerate its own HBV pipeline conversations with investors.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-11-01",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "ABBV"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Mitapivat (PYRUKYND) RISE UP \u2014 AGIO (ABBV royalty watch)",
+    "description": "FDA target action date for mitapivat in sickle cell disease and thalassemia (RISE UP trial). Agios owns the drug; ABBV has royalty interests in certain hematology programs that could be affected.",
+    "direction": "informational",
+    "why_it_matters": "Provides data on hematology FDA review timelines relevant to broader ABBV royalty portfolio evaluation.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-11-14",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "VRTX"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Aficamten (MAPLE-HCM) \u2014 Cytokinetics (VRTX competitive context)",
+    "description": "FDA target action date for aficamten in hypertrophic cardiomyopathy from Cytokinetics. VRTX watches this space as a potential pipeline expansion; aficamten approval would validate HCM as a large commercial market.",
+    "direction": "bearish_risk",
+    "why_it_matters": "Aficamten approval would intensify competition in the HCM space, setting commercial bar for VRTX's own cardiovascular pipeline.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-11-17",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "MSFT",
+      "GOOGL",
+      "CRWD",
+      "PANW",
+      "NOW",
+      "CRM",
+      "SNOW",
+      "DDOG"
+    ],
+    "theme": "Cloud / AI Platform",
+    "event_type": "conference",
+    "title": "Microsoft Ignite 2026 (Nov 17-20, San Francisco)",
+    "description": "Microsoft's flagship annual technical conference at Moscone Center, San Francisco. CEO Satya Nadella headlines with major Azure AI, Copilot, and security product announcements. 60,000+ expected attendees; roadmap reveals for Azure OpenAI, GitHub Copilot, and enterprise AI services.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "Ignite is the primary venue for Microsoft to set enterprise AI spending expectations heading into Q4 \u2014 Azure AI services growth guidance here moves NOW and SNOW partner ARR outlook.",
+    "source_url": "https://www.reworked.co/events/conference/microsoft-ignite-san-francisco-2026/"
+  },
+  {
+    "date": "2026-11-30",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "MSFT",
+      "GOOGL",
+      "SNOW",
+      "DDOG",
+      "MDB",
+      "CRWD",
+      "NOW"
+    ],
+    "theme": "Cloud / AI Platform",
+    "event_type": "conference",
+    "title": "AWS re:Invent 2026 (Nov 30 - Dec 4, Las Vegas)",
+    "description": "Amazon Web Services annual cloud and AI mega-conference in Las Vegas with 60,000+ attendees. 2,000+ sessions; expect launches across AWS AI services, SageMaker, Bedrock, and data platforms that compete with and partner with SNOW, DDOG, and MDB.",
+    "direction": "informational",
+    "why_it_matters": "AWS re:Invent drives enterprise cloud and AI procurement planning for the next year; product launches here set architectural choices that determine winners among data/observability names.",
+    "source_url": "https://www.linkedin.com/posts/amazon-web-services_aws-reinvent-2026-save-the-date-activity-7465084433881059328-zMRa"
+  },
+  {
+    "date": "Q4 2026",
+    "date_confidence": "expected",
+    "tickers": [
+      "NVDA"
+    ],
+    "theme": "AI Semiconductors",
+    "event_type": "product",
+    "title": "NVIDIA Vera Rubin NVL72 Volume Ramp (Q4 2026)",
+    "description": "NVIDIA's next-generation AI platform \u2014 Vera CPUs + Rubin GPUs in NVL72 rack configuration \u2014 enters volume production in Q4 2026 after initial Q3 shipments. Promises 5x inference performance and 10x lower cost-per-token vs. Blackwell; first adopters include OpenAI, Anthropic, and hyperscalers.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "Vera Rubin volume ramp drives NVIDIA's next revenue wave and sets Micron/SK Hynix HBM4 demand \u2014 a successful ramp accelerates all three AI-chip supply chain names.",
+    "source_url": "https://www.digitalcitizen.life/nvidia-confirms-vera-rubin-launch-for-q3-as-blackwell-demand-keeps-climbing/"
+  },
+  {
+    "date": "Q4 2026",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "AMD"
+    ],
+    "theme": "AI Semiconductors",
+    "event_type": "product",
+    "title": "AMD Instinct MI455X / Helios Rack Volume Shipments (Q4 2026)",
+    "description": "AMD's Instinct MI455X (CDNA 5 architecture, 432GB HBM4, 40 PFLOPS FP4) begins volume shipping end of Q3 2026 and ramps through Q4. The Helios rack-scale solution pairs 72 MI455X GPUs for 2.9 EFLOPS of FP4 compute \u2014 AMD's direct answer to NVIDIA's NVL72.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "MI455X volume ramp is AMD's best opportunity to recapture AI datacenter share from NVIDIA; execution risk is high given supply-chain complexity at 2nm TSMC.",
+    "source_url": "https://www.networkworld.com/article/4204533/amd-unveils-ai-gpu-to-challenge-nvidias-rubin.html"
+  },
+  {
+    "date": "2026-08-17",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "ABBV"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Iberdomide + Daratumumab (RRMM) \u2014 BMY Aug 17",
+    "description": "FDA target action date tomorrow (Aug 17) for Bristol-Myers Squibb's iberdomide combination in relapsed/refractory multiple myeloma. Sets competitive landscape context for ABBV's oncology/immunology pipeline.",
+    "direction": "informational",
+    "why_it_matters": "Iberdomide approval would validate next-generation myeloma treatment combinations, informing ABBV's partnership strategy in hematology.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-08-22",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "ABBV"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Deramiocel (CAP-1002) for Duchenne Muscular Dystrophy \u2014 CAPR Aug 22",
+    "description": "FDA action date for Capricor's deramiocel gene therapy in Duchenne Muscular Dystrophy. Outside primary universe but illustrates near-term gene therapy regulatory environment relevant to ABBV's pipeline.",
+    "direction": "informational",
+    "why_it_matters": "Gene therapy FDA outcomes inform investor sentiment toward broader rare disease pipeline valuations.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-08-25",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "ABBV",
+      "LLY"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Zanidatamab (HER2+ Gastroesophageal, 1L) \u2014 Zymeworks Aug 25",
+    "description": "FDA target action date for zanidatamab-hrii (Ziihera) in first-line HER2-positive gastroesophageal cancer. LLY and ABBV watch HER2 space for biosimilar/combination dynamics.",
+    "direction": "informational",
+    "why_it_matters": "Validates HER2-directed bispecific antibody market relevant to multiple large-cap biopharma pipeline overlaps.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-08-27",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "ABBV",
+      "VRTX"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Bictegravir + Lenacapavir HIV Combination \u2014 GILD Aug 27",
+    "description": "FDA target action date for Gilead's bictegravir + lenacapavir once-weekly combination for HIV. Not directly in the portfolio universe, but sets competition context for ABBV and VRTX virology programs.",
+    "direction": "informational",
+    "why_it_matters": "HIV regimen innovation resets long-term royalty and competitive dynamics for antiretroviral market participants.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-09-11",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "VRTX"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: TLX101-Px for Glioblastoma \u2014 TELIX Sep 11",
+    "description": "FDA target action date for Telix's TLX101-Px in recurrent/progressive glioma (brain cancer). Sets the competitive landscape for VRTX's neurology pipeline and gene therapy programs.",
+    "direction": "informational",
+    "why_it_matters": "Targeted radiopharmaceutical approval in hard-to-treat brain cancer validates next-generation oncology delivery modalities relevant to VRTX pipeline watch.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-09-30",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "VRTX"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Brepocitinib for Dermatomyositis \u2014 PFE/ROIV Sep 30",
+    "description": "FDA target action date for Pfizer/Roivant's brepocitinib in dermatomyositis. VRTX's inflammatory disease pipeline overlaps with JAK inhibitor space \u2014 approval sets competitive context.",
+    "direction": "informational",
+    "why_it_matters": "JAK inhibitor landscape evolution in rare inflammatory diseases impacts VRTX's pipeline positioning and partnering opportunities.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-09-30",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "VRTX"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Rusfertide for Polycythemia Vera \u2014 PTGX Sep 30",
+    "description": "FDA target action date for Protagonist Therapeutics' rusfertide (subcutaneous hepcidin mimetic) for polycythemia vera. VRTX has expressed interest in hematology adjacencies \u2014 this approval sets market context.",
+    "direction": "informational",
+    "why_it_matters": "Novel hematology mechanism approval signals FDA receptivity to rare blood disorder treatments adjacent to VRTX's pipeline.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-11-14",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "VRTX",
+      "LLY"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Aficamten MAPLE-HCM \u2014 CYTK Nov 14",
+    "description": "FDA target action date for Cytokinetics' aficamten in obstructive hypertrophic cardiomyopathy. Positive readout would open a $3B+ annual market and validate cardiac myosin inhibitor class.",
+    "direction": "binary",
+    "why_it_matters": "Aficamten approval creates direct competition for cardiac programs at LLY and would confirm HCM as priority expansion territory for both large-cap pharma and smaller biotech.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-11-30",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "VRTX"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Cemdisiran + Pozelimab (NIMBLE) \u2014 REGN Nov 30",
+    "description": "FDA target action date for Regeneron's cemdisiran + pozelimab C5 combo in rare complement disorders. Adjacent to VRTX's rare disease ambitions and gene therapy pipeline.",
+    "direction": "informational",
+    "why_it_matters": "Validates complement inhibition as a durable commercial platform and signals FDA processing cadence for complex combination biologics.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-12-27",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "VRTX"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Relutrigine (PRAX-562) for Epilepsy \u2014 PRAX Dec 27",
+    "description": "FDA target action date for Praxis' relutrigine in developmental epileptic encephalopathies. VRTX competes in rare neurological diseases and watches this space for Nav channel inhibitor activity.",
+    "direction": "informational",
+    "why_it_matters": "Novel sodium-channel modulator approval in DEEs would expand the rare epilepsy market and set valuation comparables for VRTX's neurology pipeline.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-07-14",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "VST",
+      "CEG",
+      "NRG",
+      "TLN",
+      "ETN",
+      "PWR",
+      "GEV"
+    ],
+    "theme": "Power / Energy Markets",
+    "event_type": "energy_market",
+    "title": "PJM 2028/2029 Base Residual Auction Results \u2014 Published Jul 14",
+    "description": "PJM announced results of the 2028/2029 Base Residual Auction on July 14, 2026 \u2014 procuring 138,318 MW of UCAP generation resources. Capacity price came in at the FERC-approved cap of $325/MW-day, down 2.5%, with 6,831 MW short of the reliability requirement.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "Tight PJM capacity auction results confirm high power prices through 2028/29, supporting long-term PPA pricing and earnings visibility for CEG, VST, NRG, and TLN.",
+    "source_url": "https://www.prnewswire.com/news-releases/pjm-capacity-auction-procures-138-318-mw-of-generation-resources-as-work-continues-to-address-growing-electricity-demand-302825613.html"
+  },
+  {
+    "date": "Q4 2026",
+    "date_confidence": "expected",
+    "tickers": [
+      "CEG",
+      "MSFT"
+    ],
+    "theme": "Nuclear Energy",
+    "event_type": "regulatory",
+    "title": "NRC Final Approval Decision: Crane Clean Energy Center (Three Mile Island Unit 1) Restart",
+    "description": "Constellation Energy seeking final NRC license to restart the 835-MW Crane Clean Energy Center (formerly Three Mile Island Unit 1) for the Microsoft 20-year PPA. NRC has found 'no significant environmental impacts'; FERC waiver granted June 2026 enabling CIR transfer. Final approval expected late 2026/early 2027 for a 2027 commercial restart.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "NRC final approval is the last major regulatory gate before a 835 MW nuclear restart \u2014 approval validates nuclear renaissance economics and expands CEG's zero-carbon generation asset base.",
+    "source_url": "https://www.eenews.net/articles/three-mile-island-restart-closes-in-on-nrc-approval/"
+  },
+  {
+    "date": "2026-09-02",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "AVGO"
+    ],
+    "theme": "AI Semiconductors",
+    "event_type": "investor_day",
+    "title": "Broadcom Q3 FY2026 Earnings / XPU Deployment Update (Sep 2, 2026)",
+    "description": "Broadcom reports Q3 FY2026 results and is expected to update on its AI XPV Platform with Apollo/Blackstone ($35B initial tranche), the Jalape\u00f1o chip with OpenAI (initial deployment end-2026), and custom AI ASIC revenue guidance for hyperscalers.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "AVGO's custom ASIC (XPU) revenue from hyperscalers is the highest-margin growth driver \u2014 any upside commentary on customer pipeline or silicon volumes moves the stock significantly.",
+    "source_url": "https://www.prnewswire.com/news-releases/broadcom-apollo-and-blackstone-establish-landmark-strategic-platform-to-accelerate-more-than-20-gigawatts-of-global-ai-deployments-302795286.html"
+  },
+  {
+    "date": "Q4 2026",
+    "date_confidence": "expected",
+    "tickers": [
+      "AVGO"
+    ],
+    "theme": "AI Semiconductors",
+    "event_type": "product",
+    "title": "Broadcom / OpenAI Jalape\u00f1o ASIC Initial Deployment (Q4 2026)",
+    "description": "OpenAI and Broadcom's first joint AI chip 'Jalape\u00f1o' (Intelligence Processor) targeting initial deployment by end of 2026, with prototype volumes followed by full ramp in 2027-2028. Broadcom CEO Hock Tan confirmed 'small prototype development' in late 2026.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "Jalape\u00f1o marks AVGO's strategic entry into frontier AI inference silicon \u2014 volume confirmation would validate the XPU platform thesis and add a new hyperscaler revenue stream.",
+    "source_url": "https://www.cnbc.com/2026/06/24/openai-and-broadcom-reveal-jalapeno-first-ai-chip-in-partnership.html"
+  },
+  {
+    "date": "Q4 2026",
+    "date_confidence": "expected",
+    "tickers": [
+      "TSM",
+      "NVDA",
+      "AMD",
+      "MU"
+    ],
+    "theme": "AI Semiconductors / Supply Chain",
+    "event_type": "product",
+    "title": "TSMC CoWoS Capacity Reaches ~120-130K Wafers/Month (Q4 2026 target)",
+    "description": "TSMC is ramping its CoWoS advanced packaging capacity from ~70-80K wafers/month (2025) toward 120-130K wafers/month by Q4 2026 \u2014 nearly doubling. All three HBM4 memory vendors (SK Hynix, Samsung, Micron) now qualified for Vera Rubin. CoWoS remains the binding bottleneck for AI hardware output with 52-78 week lead times.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "CoWoS capacity determines how fast NVIDIA and AMD can ramp AI accelerator shipments \u2014 any supply beat accelerates AI-infrastructure buildout revenue for all upstream names.",
+    "source_url": "https://siliconanalysts.com/newsletter/qual-watch/2026-06-22"
+  },
+  {
+    "date": "2026-09-16",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "NVDA",
+      "AMD",
+      "TSM",
+      "MRVL",
+      "AVGO"
+    ],
+    "theme": "AI Semiconductors",
+    "event_type": "conference",
+    "title": "DCD Connect London 2026 (Sep 16-17)",
+    "description": "Data Center Dynamics Connect conference in London (Sep 16-17, 2026) \u2014 major data center infrastructure event where NVIDIA, AMD, TSMC, and Broadcom customers/partners discuss capacity buildout, power requirements, and AI chip deployment timelines.",
+    "direction": "informational",
+    "why_it_matters": "DCD Connect is where hyperscaler infrastructure plans translate into hardware purchase announcements \u2014 supply-chain signals here move AI infrastructure names.",
+    "source_url": "https://www.datacenterdynamics.com/en/news/nvidia-updates-data-center-product-roadmap-following-lpu-launch-at-gtc-2026/"
+  },
+  {
+    "date": "2026-08-04",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "PLTR"
+    ],
+    "theme": "Defense AI / Government",
+    "event_type": "contract",
+    "title": "Pentagon 'Funding Palantir' Memo \u2014 $243.9M Through Mar 2027",
+    "description": "Deputy Defense Secretary Steve Feinberg issued a memo on August 4, 2026 directing the Pentagon to fund up to $243.9M in Palantir services through March 31, 2027, for defense industrial base AI analytics including Maven Smart System (MSS), Gotham, and Warp Speed manufacturing OS.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "The direct Pentagon funding memo bypasses normal procurement \u2014 it accelerates PLTR's government revenue and validates DoD's dependence on Palantir's AI platforms ahead of FY2027 budget decisions.",
+    "source_url": "https://defensescoop.com/2026/08/13/feinberg-funding-palantir-memo-pentagon-bond-program/"
+  },
+  {
+    "date": "Q4 2026",
+    "date_confidence": "expected",
+    "tickers": [
+      "PLTR"
+    ],
+    "theme": "Defense AI / Government",
+    "event_type": "contract",
+    "title": "DoD FY2027 Budget: $1.5B+ MSS Expansion Request for PLTR",
+    "description": "Pentagon FY2027 budget materials include requests for over $1.5B to expand Palantir's Maven Smart System (MSS) across defense users supporting the 'Joint Force AI-Enabled Headquarters initiative' plus $60M for Virtual Joint Operations Center (VJOC). Congressional authorization vote expected Q4 2026.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "A $1.5B MSS expansion is an order-of-magnitude step-up from prior PLTR government contract values \u2014 congressional approval would transform PLTR's government TCV and revenue visibility.",
+    "source_url": "https://defensescoop.com/2026/08/13/feinberg-funding-palantir-memo-pentagon-bond-program/"
+  },
+  {
+    "date": "2026-08-05",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "ASTS"
+    ],
+    "theme": "Space / Satellite",
+    "event_type": "product",
+    "title": "AST SpaceMobile Reaches 13 BlueBird Satellites in Orbit",
+    "description": "AST SpaceMobile launched BlueBirds 11, 12, and 13 on August 5, 2026 (Falcon 9 from Cape Canaveral), bringing the total BlueBird constellation to 13 satellites. Next-gen BlueBirds feature ~2,400 sq ft arrays delivering ~2x peak download speeds vs. Gen 1. Company targeting beta service in late 2026 with AT&T and Verizon.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "Each BlueBird satellite launch is a measurable step toward ASTS's revenue-generating beta service \u2014 the 13-satellite milestone positions the company for commercial launch that validates the direct-to-cell thesis.",
+    "source_url": "https://gcn.com/ast-spacemobile-bluebird-satellites-orbit/20491/"
+  },
+  {
+    "date": "Q4 2026",
+    "date_confidence": "expected",
+    "tickers": [
+      "ASTS"
+    ],
+    "theme": "Space / Satellite",
+    "event_type": "product",
+    "title": "AST SpaceMobile Beta Cellular Service Launch (Q4 2026 target)",
+    "description": "AST SpaceMobile targeting beta cellular broadband service by end of 2026, supported by ~45 BlueBird satellites in orbit (production through satellite 42 advancing). Initial U.S. service with AT&T and Verizon will offer non-continuous coverage during the ramp phase.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "Commercial beta launch is the binary event that transforms ASTS from a development-stage company to a revenue-generating enterprise \u2014 carrier partnership validation is critical for ASTS's equity value.",
+    "source_url": "https://gcn.com/ast-spacemobile-bluebird-satellites-orbit/20491/"
+  },
+  {
+    "date": "2026-07-23",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "AMD",
+      "MU",
+      "TSM"
+    ],
+    "theme": "AI Semiconductors",
+    "event_type": "product",
+    "title": "AMD Advancing AI 2026: MI400 Series GPU Launch (Jul 23)",
+    "description": "AMD officially launched the Instinct MI400 Series (MI455X + MI430X) at Advancing AI 2026 on July 23, 2026. MI455X features CDNA 5 architecture (2nm + 3nm TSMC), 432GB HBM4, 40 PFLOPS FP4, and UALoE scale-up fabric; Helios rackscale solution targets 2.9 EFLOPS of FP4 compute per rack.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "MI400 launch is AMD's strongest competitive move against NVIDIA Vera Rubin in two years \u2014 early hyperscaler adoption signals would shift market share narrative and lift MU/TSM supply chain names.",
+    "source_url": "https://newsroom.amd.com/news/aai-2026-mi400-instinct-update/"
+  },
+  {
+    "date": "2026-06-22",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "RKLB",
+      "TER",
+      "MRVL"
+    ],
+    "theme": "Index Rebalance",
+    "event_type": "index",
+    "title": "Nasdaq-100 June 2026 Rebalance: RKLB and TER Added",
+    "description": "Nasdaq-100 added Rocket Lab (RKLB) and Teradyne (TER), along with Astera Labs, CoreWeave, and Nebius Group, effective June 22, 2026. First rebalance under new rank-based quarterly membership methodology. ZS was removed.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "Nasdaq-100 inclusion drives $800B+ of passive index fund demand in these names \u2014 the entry creates structural buying pressure around the effective date.",
+    "source_url": "https://ir.nasdaq.com/news-releases/news-release-details/nasdaq-100-indexr-june-2026-quarterly-changes"
+  },
+  {
+    "date": "2026-12-19",
+    "date_confidence": "expected",
+    "tickers": [
+      "PLTR",
+      "RKLB",
+      "TER",
+      "MRVL",
+      "ASTS",
+      "AI",
+      "CRWD"
+    ],
+    "theme": "Index Rebalance",
+    "event_type": "index",
+    "title": "Nasdaq-100 December 2026 Annual Reconstitution (expected ~Dec 19)",
+    "description": "The Nasdaq-100 annual reconstitution (third Friday of December = Dec 18, 2026, effective open Dec 19) is the primary entry point for new members. With new quarterly methodology now in place, December remains the largest rebalance. Candidates from the universe include PLTR, ASTS, and AI.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "Annual reconstitution forces the largest single-day passive fund rebalancing of the year \u2014 index inclusion can add 3-7% to affected small-cap names in the weeks before the effective date.",
+    "source_url": "https://www.stocktitan.net/articles/nasdaq-100-sp-500-rebalance-june-2026"
+  },
+  {
+    "date": "2026-06-22",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "MRVL"
+    ],
+    "theme": "Index Rebalance",
+    "event_type": "index",
+    "title": "S&P 500 June 2026 Rebalance: Marvell Technology Added",
+    "description": "S&P Dow Jones Indices added Marvell Technology (MRVL) to the S&P 500 effective June 22, 2026, coinciding with the quarterly rebalance. MRVL replaced Pool Corp. The addition accelerates passive fund ownership of this custom-ASIC/networking-chip designer.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "S&P 500 inclusion forces $5+ trillion in passive index AUM to buy MRVL \u2014 entry to the flagship U.S. index raises the stock's institutional ownership floor.",
+    "source_url": "https://www.prnewswire.com/news-releases/marvell-technology-and-flex-set-to-join-sp-500-others-to-join-sp-midcap-400-and-sp-smallcap-600-302793159.html"
+  },
+  {
+    "date": "2026-06-02",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "SNOW",
+      "DDOG",
+      "MDB"
+    ],
+    "theme": "Data / Cloud Platform",
+    "event_type": "conference",
+    "title": "Snowflake Summit 2026 (June 2, San Francisco) \u2014 Key Product Updates",
+    "description": "Snowflake Summit 2026 in San Francisco revealed the 'Agentic Enterprise' vision: Iceberg v3 interoperability, AI governance framework, new security layer, and expanded open data/AI collaboration tools. Already occurred Jun 2 \u2014 monitoring post-summit booking velocity and competitive positioning.",
+    "direction": "informational",
+    "why_it_matters": "Snowflake Summit product announcements set the data platform competitive landscape for H2 enterprise purchasing cycles; strong launches here validate SNOW's multi-year transition to agentic AI infrastructure.",
+    "source_url": "https://siliconangle.com/2026/06/02/ai-agents-open-data-governance-take-center-stage-snowflake-summit/"
+  },
+  {
+    "date": "2026-09-21",
+    "date_confidence": "expected",
+    "tickers": [
+      "CEG",
+      "VST",
+      "TLN",
+      "ETN",
+      "PWR"
+    ],
+    "theme": "Power / Energy Markets",
+    "event_type": "energy_market",
+    "title": "FERC Order on PJM Backstop Capacity Auction and Data Center Curtailment",
+    "description": "PJM board proposed backstop capacity auction and data center curtailment plans in July 2026; FERC response expected in Q3-Q4 2026. FERC's ruling 'will influence utility capital investment, data center development timelines, and the allocation of reliability risks and costs' (ClearView).",
+    "direction": "binary",
+    "why_it_matters": "FERC curtailment rules for data centers directly affect hyperscaler power procurement strategies and could accelerate nuclear/gas PPA demand from CEG and VST if strict limits are imposed.",
+    "source_url": "https://www.utilitydive.com/news/constellation-three-mile-island-crane-nuclear-ferc-waiver/821836/"
+  },
+  {
+    "date": "Q4 2026",
+    "date_confidence": "expected",
+    "tickers": [
+      "GEV",
+      "ETN",
+      "PWR"
+    ],
+    "theme": "Power Infrastructure",
+    "event_type": "product",
+    "title": "GE Vernova Reaches 20 GW Annual Gas Turbine Output (Q3 2026 target)",
+    "description": "GE Vernova is on track to deliver 20 GW of annual gas turbine output in Q3 2026, having installed 325 automated manufacturing machines with 75 more by year-end. Gas Power backlog hit 116 GW (Q2 2026); target is at least 125 GW under contract by year-end. Data center orders alone exceeded $5B YTD in 2026.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "GEV's production capacity milestone is the operational proof point that backlog will convert to revenue \u2014 achievement drives consensus estimate revisions and supports 2027 visibility.",
+    "source_url": "https://www.gevernova.com/news/press-releases/ge-vernova-reports-second-quarter-2026-financial-results-raises-2026-financial"
+  },
+  {
+    "date": "Q4 2026",
+    "date_confidence": "expected",
+    "tickers": [
+      "TSLA"
+    ],
+    "theme": "Robotics / Autonomous Vehicles",
+    "event_type": "product",
+    "title": "Tesla Optimus Gen 3 Reveal + First Fremont Production Units (H2 2026)",
+    "description": "Tesla confirmed Optimus robot production beginning at Fremont in late Q3 2026 after converting Model S/X lines; Musk warned initial output is 'quite slow' with 10,000 unique parts. Gen 3 reveal pushed to 'middle of this year' then delayed further. Volume production expectations reset; Giga Texas factory targeting summer 2027.",
+    "direction": "bearish_risk",
+    "why_it_matters": "Every milestone delay on Optimus erodes the 'physical AI company' valuation thesis that justifies TSLA's multiple \u2014 Gen 3 reveal quality will set consensus unit targets for 2027.",
+    "source_url": "https://techcrunch.com/2026/07/22/tesla-spending-skyrockets-as-cybercab-semi-megapack-production-timeline-slips/"
+  },
+  {
+    "date": "Q4 2026",
+    "date_confidence": "expected",
+    "tickers": [
+      "TSLA"
+    ],
+    "theme": "Autonomous Vehicles",
+    "event_type": "product",
+    "title": "Tesla Cybercab Robotaxi Service Expansion (H2 2026)",
+    "description": "Tesla began limited Cybercab production in Austin, Texas earlier in 2026; is expanding Tesla Robotaxi to new cities with a limited vehicle fleet. Volume production of Cybercab delayed beyond 2026 due to 4680 cell constraints. Still targeting broader commercial service launch.",
+    "direction": "binary",
+    "why_it_matters": "Cybercab commercial viability \u2014 not Optimus \u2014 is the more near-term autonomous revenue catalyst for TSLA; city expansion announcements are the key near-term signal.",
+    "source_url": "https://techcrunch.com/2026/07/22/tesla-spending-skyrockets-as-cybercab-semi-megapack-production-timeline-slips/"
+  },
+  {
+    "date": "2026-10-09",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "LLY"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Atezolizumab (Tecentriq) + Stage III Colon Cancer \u2014 Roche Oct 9",
+    "description": "FDA target action date for Roche's Tecentriq in Stage III colon cancer \u2014 competitive context for LLY's oncology pipeline including donanemab and antibody-drug conjugates.",
+    "direction": "informational",
+    "why_it_matters": "Colon cancer immuno-oncology approvals set reimbursement precedents and competitive framing for LLY's oncology franchise buildout.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-10-10",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "LLY"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Ifinatamab Deruxtecan (SCLC) \u2014 MRK Oct 10",
+    "description": "FDA target action date for Merck's ifinatamab deruxtecan (DS-7300) in extensive-stage small cell lung cancer. Sets context for LLY's antibody-drug conjugate strategy and Boehringer Ingelheim partnership.",
+    "direction": "informational",
+    "why_it_matters": "ADC oncology approvals in SCLC reset the treatment landscape and establish pricing/access benchmarks relevant to LLY's growing oncology pipeline.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-10-30",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "VRTX"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: INO-3107 for HPV-Associated Recurrent Respiratory Papillomatosis \u2014 INOVIO Oct 30",
+    "description": "FDA target action date for Inovio's INO-3107 DNA vaccine for HPV 6/11-associated recurrent respiratory papillomatosis. Rare disease antiviral adjacent to VRTX's immunology programs.",
+    "direction": "informational",
+    "why_it_matters": "First DNA vaccine FDA approval in a rare HPV indication would validate new modality and set precedent for platform-based rare disease treatments relevant to VRTX partnership watch.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-12-19",
+    "date_confidence": "expected",
+    "tickers": [
+      "GEV",
+      "ETN",
+      "PWR",
+      "CEG",
+      "VST"
+    ],
+    "theme": "Power Infrastructure / Energy",
+    "event_type": "energy_market",
+    "title": "FERC Order on Data Center / AI Cluster Grid Interconnection Rules (Q4 2026)",
+    "description": "FERC is expected to issue a final rule on grid interconnection for large AI data center loads (>100 MW) in Q4 2026, following a NOI from Q2. Decision will affect how quickly hyperscalers can secure power and whether utilities must offer firm interconnection commitments.",
+    "direction": "binary",
+    "why_it_matters": "FERC grid rules for large AI loads directly determine the pace of new data center construction and therefore the urgency of procuring turbines (GEV), switchgear (ETN), and EPC services (PWR).",
+    "source_url": "https://www.utilitydive.com/news/ge-vernova-gas-turbine-orders-offshore-wind-earnings/810974/"
+  },
+  {
+    "date": "2026-09-15",
+    "date_confidence": "expected",
+    "tickers": [
+      "CEG",
+      "VST",
+      "TLN",
+      "NRG"
+    ],
+    "theme": "Nuclear / Clean Energy",
+    "event_type": "regulatory",
+    "title": "NRC License Renewal Docket: Ginna & Nine Mile Point Unit 1 Review Begins",
+    "description": "Constellation filed license renewal applications in June 2026 to extend Ginna Clean Energy Center and Nine Mile Point Unit 1 operations to 2049. NRC docketing and initial public comment period expected to open Q3-Q4 2026.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "License renewals through 2049 create 20+ years of additional nuclear revenue visibility for CEG, reinforcing the case for nuclear PPAs at premium prices to tech companies.",
+    "source_url": "https://www.constellationenergy.com/news/2026/08/constellation-reports-second-quarter-2026-results.html"
+  },
+  {
+    "date": "Q3 2026",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "NVDA",
+      "AMD",
+      "MU",
+      "TSM"
+    ],
+    "theme": "AI Semiconductors / Supply Chain",
+    "event_type": "product",
+    "title": "All 3 HBM4 Vendors Qualified for NVIDIA Vera Rubin \u2014 Volume Shipping",
+    "description": "As of June 2026, all three HBM4 memory vendors \u2014 SK Hynix (~62% share, volume shipping), Samsung (volume shipping after June 5 certification), and Micron (qualified, 2026 volumes fully booked) \u2014 are supplying HBM4 for NVIDIA Vera Rubin. HBM4 ramp is in progress into H2 2026.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "Multi-vendor HBM4 qualification reduces supply-chain risk for Vera Rubin ramp and increases Micron's AI HBM revenue, which is the largest upside driver in MU's fiscal 2027 guidance.",
+    "source_url": "https://siliconanalysts.com/newsletter/qual-watch/2026-06-22"
+  },
+  {
+    "date": "2026-09-30",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "ABBV"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Oveporexton (TAK-861) for Narcolepsy Type 1 \u2014 Takeda Sep 30",
+    "description": "FDA target action date for Takeda's oveporexton in narcolepsy type 1. Validates orexin receptor agonist class which ABBV has explored in partnerships. First-in-class narcolepsy mechanism with broad commercial implications.",
+    "direction": "informational",
+    "why_it_matters": "Narcolepsy orexin agonist approval would unlock a $3B+ annual market and validate a novel CNS mechanism relevant to ABBV's neuroscience pipeline strategy.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-09-28",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "LLY",
+      "VRTX"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Ameluz (ALA HCl) for Basal Cell Carcinoma \u2014 Sep 28",
+    "description": "FDA target action date for Biofrontera's aminolevulinic acid hydrochloride photodynamic therapy in basal cell carcinoma. Sets context for dermatology-oncology intersection relevant to VRTX's MRGPRX2 and other dermatology programs.",
+    "direction": "informational",
+    "why_it_matters": "BCC is a high-prevalence skin cancer; photodynamic therapy approval sets reimbursement context relevant to VRTX's dermatology expansion plans.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "2026-08-17",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "LLY"
+    ],
+    "theme": "Biopharma \u2014 GLP-1 / Obesity",
+    "event_type": "product",
+    "title": "Eli Lilly Foundayo (Orforglipron) Launch \u2014 Commercial Ramp Begins",
+    "description": "FDA approved LLY's orforglipron (Foundayo) for obesity on April 1, 2026 \u2014 the first oral GLP-1 pill for weight loss without food/water restrictions, available via LillyDirect starting at $25/month with coverage. Commercial ramp underway through H2 2026.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "Oral GLP-1 significantly expands the addressable market for obesity treatment by removing the injection barrier \u2014 LLY commercial uptake data in H2 2026 will set the street's 2027 obesity revenue model.",
+    "source_url": "https://lilly.mediaroom.com/2026-04-01-FDA-approves-Lillys-Foundayo-TM-orforglipron-,-the-only-GLP-1-pill-for-weight-loss-that-can-be-taken-any-time-of-day-without-food-or-water-restrictions"
+  },
+  {
+    "date": "2026-10-24",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "VRTX"
+    ],
+    "theme": "Biopharma Regulatory",
+    "event_type": "regulatory",
+    "title": "FDA PDUFA: Leniolisib for PI3K-delta Syndrome \u2014 PHAR Oct 24",
+    "description": "FDA target action date for Pharming Group's leniolisib in activated PI3K-delta syndrome \u2014 rare primary immunodeficiency. VRTX's rare disease strategy includes potential immunodeficiency programs and gene therapy collaborations.",
+    "direction": "informational",
+    "why_it_matters": "PI3K-delta rare disease approval validates targeted immunology mechanisms and sets rare disease pricing precedents relevant to VRTX's portfolio expansion.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  },
+  {
+    "date": "Q4 2026",
+    "date_confidence": "expected",
+    "tickers": [
+      "RKLB"
+    ],
+    "theme": "Space Launch",
+    "event_type": "product",
+    "title": "Rocket Lab Neutron Rocket: Development Milestone Update (Q4 2026)",
+    "description": "Rocket Lab's medium-lift Neutron rocket is in development for first launch targeting 2026-2027. RKLB added to Nasdaq-100 in June 2026 on strong Electron cadence and Neutron progress. Structural test articles and propulsion testing milestones expected in H2 2026.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "Neutron program milestones are the primary catalyst for RKLB's medium-launch market entry \u2014 any schedule confirmation or propulsion success would materially re-rate the stock's addressable market valuation.",
+    "source_url": "https://ir.nasdaq.com/news-releases/news-release-details/nasdaq-100-indexr-june-2026-quarterly-changes"
+  },
+  {
+    "date": "2026-12-15",
+    "date_confidence": "expected",
+    "tickers": [
+      "MSFT",
+      "GOOGL",
+      "SNOW",
+      "DDOG",
+      "MDB",
+      "CRWD",
+      "NOW"
+    ],
+    "theme": "Cloud / AI",
+    "event_type": "conference",
+    "title": "AWS re:Invent 2026 Final Days (Dec 4) + December Index Rebalance Window",
+    "description": "AWS re:Invent runs Nov 30 - Dec 4, 2026. The December 2026 window also includes the Nasdaq-100 annual reconstitution (effective ~Dec 19), S&P 500 December rebalance, and year-end portfolio positioning. Cloud and AI infrastructure spending announcements from re:Invent will inform Q4 bookings.",
+    "direction": "informational",
+    "why_it_matters": "December is the highest-stakes period for enterprise software and cloud names \u2014 re:Invent announcements and index reconstitution together create the largest simultaneous buying pressure of the year.",
+    "source_url": "https://thenewstack.io/event/aws-reinvent-2026/"
+  },
+  {
+    "date": "2026-09-02",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "SNOW",
+      "DDOG",
+      "MDB",
+      "AI"
+    ],
+    "theme": "Data / Cloud Platform",
+    "event_type": "conference",
+    "title": "Datacloud USA 2026 (Sep 2-4, Austin TX)",
+    "description": "Industry data center and cloud conference in Austin, September 2-4, 2026. Infrastructure and software vendors present data sovereignty, AI workload optimization, and hybrid cloud architectures.",
+    "direction": "informational",
+    "why_it_matters": "Enterprise data platform conversations at Datacloud USA set H2 procurement priorities for the names competing in AI data infrastructure.",
+    "source_url": "https://thedatacenterengineer.com/news/amd-instinct-mi400-gpus-launch-with-hbm4-and-rocm-for-ai-and-hpc/"
+  },
+  {
+    "date": "Q4 2026",
+    "date_confidence": "expected",
+    "tickers": [
+      "ENPH",
+      "FSLR",
+      "FLNC",
+      "EOSE"
+    ],
+    "theme": "Clean Energy / Storage",
+    "event_type": "regulatory",
+    "title": "IRA Energy Storage Tax Credit Guidance: Treasury Final Rules (Expected Q4 2026)",
+    "description": "U.S. Treasury expected to issue final rules clarifying the Inflation Reduction Act Section 48E investment tax credits for standalone energy storage and Section 45X advanced manufacturing credits in Q4 2026. Affects ENPH, FSLR, FLNC, EOSE financial models.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "IRA ITC guidance clarity removes a major uncertainty for storage project financing \u2014 positive finalization would unlock project investment decisions that drive FLNC and EOSE revenue backlogs.",
+    "source_url": "https://www.gevernova.com/news/press-releases/ge-vernova-reports-second-quarter-2026-financial-results-raises-2026-financial"
+  },
+  {
+    "date": "Q4 2026",
+    "date_confidence": "expected",
+    "tickers": [
+      "MP"
+    ],
+    "theme": "Critical Minerals / Rare Earth",
+    "event_type": "regulatory",
+    "title": "DoD Critical Minerals Supply Chain \u2014 MP Materials Production Milestone",
+    "description": "MP Materials is ramping rare earth magnet production at its Fort Worth, Texas facility under a DoD-backed offtake agreement with GM. Q4 2026 production targets for neodymium-iron-boron magnet output are the key financial milestone. Additional DoD contract awards for domestic rare earth supply expected.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "MP's magnet production ramp converts rare earth processing into vertically integrated revenue \u2014 DoD contract expansions reduce single-customer risk and establish long-term price floors.",
+    "source_url": "https://www.stocktitan.net/articles/nasdaq-100-sp-500-rebalance-june-2026"
+  },
+  {
+    "date": "Q4 2026",
+    "date_confidence": "expected",
+    "tickers": [
+      "ALB"
+    ],
+    "theme": "Critical Minerals / Lithium",
+    "event_type": "regulatory",
+    "title": "Albemarle Lithium Pricing Cycle: Q4 Contract Resets",
+    "description": "Albemarle (ALB) has annual/quarterly lithium contract reset periods \u2014 Q4 2026 pricing negotiations for 2027 supply contracts will set ALB's revenue trajectory. Global lithium spot prices and Chinese supply dynamics determine contract terms.",
+    "direction": "binary",
+    "why_it_matters": "ALB's earnings leverage is almost entirely lithium price-driven \u2014 Q4 contract resets above current low spot prices would be the single largest catalyst for ALB's 2027 guidance uplift.",
+    "source_url": "https://www.gevernova.com/news/press-releases/ge-vernova-reports-second-quarter-2026-financial-results-raises-2026-financial"
+  },
+  {
+    "date": "2026-08-31",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "COIN",
+      "HOOD",
+      "PYPL",
+      "AFRM"
+    ],
+    "theme": "Fintech / Crypto",
+    "event_type": "regulatory",
+    "title": "SEC Digital Asset Regulatory Clarity \u2014 Ongoing Rulemaking (H2 2026)",
+    "description": "SEC and CFTC joint digital asset rulemaking framework expected to clarify crypto securities definitions and exchange registration requirements in H2 2026 following Congressional legislation in Q1 2026. COIN and HOOD have significant exposure to regulatory certainty.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "SEC final digital asset rules would remove the single largest regulatory overhang on COIN \u2014 clarity on crypto classification directly unlocks institutional product expansion and IPO pipeline access.",
+    "source_url": "https://www.stocktitan.net/articles/nasdaq-100-sp-500-rebalance-june-2026"
+  },
+  {
+    "date": "Q4 2026",
+    "date_confidence": "expected",
+    "tickers": [
+      "LMT",
+      "RTX",
+      "LDOS",
+      "KTOS",
+      "AVAV",
+      "PLTR",
+      "LHX"
+    ],
+    "theme": "Defense",
+    "event_type": "contract",
+    "title": "DoD FY2027 Authorization Act \u2014 NDAA Signing (Expected Dec 2026)",
+    "description": "The National Defense Authorization Act for FY2027 is expected to be signed in December 2026. Key provisions relevant to portfolio: AI/autonomous systems procurement (PLTR Maven, KTOS attritable drones, AVAV small UAS), hypersonic program funding (LMT, RTX), and space systems spending (LHX, LDOS).",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "NDAA sets multi-year defense spending authorization \u2014 above-consensus autonomous systems and AI budget lines directly translate into LTM contract award pipelines for all defense names.",
+    "source_url": "https://defensescoop.com/2026/08/13/feinberg-funding-palantir-memo-pentagon-bond-program/"
+  },
+  {
+    "date": "2026-09-11",
+    "date_confidence": "expected",
+    "tickers": [
+      "LUNR"
+    ],
+    "theme": "Space / Lunar",
+    "event_type": "contract",
+    "title": "NASA CLPS Lunar Surface Mission \u2014 Intuitive Machines / Firefly Award Update",
+    "description": "NASA's Commercial Lunar Payload Services (CLPS) program has ongoing task order awards through Q4 2026. Intuitive Machines (LUNR) is executing on IM-2 and preparing IM-3 \u2014 any new CLPS task order awards or launch date confirmations are significant catalysts.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "LUNR's entire near-term revenue is CLPS-dependent \u2014 contract wins and launch schedule confirmations directly drive backlog and cash burn trajectory.",
+    "source_url": "https://ir.nasdaq.com/news-releases/news-release-details/nasdaq-100-indexr-june-2026-quarterly-changes"
+  },
+  {
+    "date": "2026-10-13",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "CRWD",
+      "PANW",
+      "S",
+      "ZS",
+      "FTNT",
+      "OKTA"
+    ],
+    "theme": "Cybersecurity",
+    "event_type": "conference",
+    "title": "CrowdStrike CrowdTour (Oct 8+) \u2014 Regional Cybersecurity Summits",
+    "description": "Following Fal.Con 2026 (Aug 31-Sep 3), CrowdStrike launches CrowdTour regional summits starting October 8, 2026, across major cities. Partner-facing summits drive pipeline and partner revenue metrics for Q4.",
+    "direction": "bullish_if_hit",
+    "why_it_matters": "CrowdTour pipeline events in October directly feed Q4 bookings acceleration for CRWD's fiscal Q4 (Jan) \u2014 partner-generated ARR is the fastest-growing ARR segment.",
+    "source_url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-falcon-2026-sells-out-record-pace/"
+  },
+  {
+    "date": "2026-11-30",
+    "date_confidence": "confirmed",
+    "tickers": [
+      "VRTX",
+      "RXRX",
+      "SDGR",
+      "TEM",
+      "ILMN"
+    ],
+    "theme": "Biotech / AI Drug Discovery",
+    "event_type": "conference",
+    "title": "NEJM / Cell Symposia on AI Drug Discovery \u2014 Q4 2026 Academic Conferences",
+    "description": "Multiple Q4 2026 academic symposia (ASH, ASCO Winter, AACR) will feature clinical and computational data from RXRX, SDGR, and TEM AI-designed drug programs. ASH (American Society of Hematology) annual meeting expected December 4-7, 2026.",
+    "direction": "informational",
+    "why_it_matters": "ASH and other Q4 medical meetings are where AI drug-discovery pipeline data gets its first public scientific validation \u2014 positive clinical data at ASH drives rerating of RXRX/SDGR platform valuations.",
+    "source_url": "https://www.pdufa.bio/calendar"
+  }
+]
