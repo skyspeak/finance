@@ -1,10 +1,11 @@
 """CBOE delayed chains -> IV/RV edge, flow, and defined-risk trade tickets. Writes options.json"""
 import json, re, time, urllib.request, datetime as dt
 
+from dates import today
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
 D = json.load(open("data.json")); TECH = json.load(open("tech.json"))["tech"]; EN = json.load(open("enrich.json"))
 rows = {r["ticker"]: r for r in D["rows"]}
-TODAY = dt.date(2026, 8, 16)
+TODAY = today()
 
 # shortlist: all picks + all avoids + neutrals with the most extreme factor disagreement
 picks = [r["ticker"] for r in D["rows"] if r["rating"] == "PICK"]

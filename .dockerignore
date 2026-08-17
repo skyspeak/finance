@@ -1,0 +1,10 @@
+.git
+.vercel
+__pycache__
+*.pyc
+.DS_Store
+.env
+output
+docs
+legacy
+research

@@ -1,0 +1,758 @@
+{
+ "tickers": {
+  "ABBV": {
+   "ticker": "ABBV",
+   "sector": "Healthcare",
+   "industry": "Drug Manufacturers - General",
+   "country": "United States",
+   "employees": 57000,
+   "exchange": "NYSE",
+   "long_name": "AbbVie Inc."
+  },
+  "AFRM": {
+   "ticker": "AFRM",
+   "sector": "Financial Services",
+   "industry": "Credit Services",
+   "country": "United States",
+   "employees": 2206,
+   "exchange": "NasdaqGS",
+   "long_name": "Affirm Holdings, Inc."
+  },
+  "AI": {
+   "ticker": "AI",
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "country": "United States",
+   "employees": 764,
+   "exchange": "NYSE",
+   "long_name": "C3.ai, Inc."
+  },
+  "ALB": {
+   "ticker": "ALB",
+   "sector": "Basic Materials",
+   "industry": "Specialty Chemicals",
+   "country": "United States",
+   "employees": 7800,
+   "exchange": "NYSE",
+   "long_name": "Albemarle Corporation"
+  },
+  "AMD": {
+   "ticker": "AMD",
+   "sector": "Technology",
+   "industry": "Semiconductors",
+   "country": "United States",
+   "employees": 31000,
+   "exchange": "NasdaqGS",
+   "long_name": "Advanced Micro Devices, Inc."
+  },
+  "ARM": {
+   "ticker": "ARM",
+   "sector": "Technology",
+   "industry": "Semiconductors",
+   "country": "United Kingdom",
+   "employees": 9584,
+   "exchange": "NasdaqGS",
+   "long_name": "Arm Holdings plc"
+  },
+  "ASTS": {
+   "ticker": "ASTS",
+   "sector": "Technology",
+   "industry": "Communication Equipment",
+   "country": "United States",
+   "employees": 1126,
+   "exchange": "NasdaqGS",
+   "long_name": "AST SpaceMobile, Inc."
+  },
+  "AVAV": {
+   "ticker": "AVAV",
+   "sector": "Industrials",
+   "industry": "Aerospace & Defense",
+   "country": "United States",
+   "employees": 3991,
+   "exchange": "NasdaqGS",
+   "long_name": "AeroVironment, Inc."
+  },
+  "AVGO": {
+   "ticker": "AVGO",
+   "sector": "Technology",
+   "industry": "Semiconductors",
+   "country": "United States",
+   "employees": 33000,
+   "exchange": "NasdaqGS",
+   "long_name": "Broadcom Inc."
+  },
+  "BA": {
+   "ticker": "BA",
+   "sector": "Industrials",
+   "industry": "Aerospace & Defense",
+   "country": "United States",
+   "employees": 182000,
+   "exchange": "NYSE",
+   "long_name": "The Boeing Company"
+  },
+  "CEG": {
+   "ticker": "CEG",
+   "sector": "Utilities",
+   "industry": "Utilities - Independent Power Producers",
+   "country": "United States",
+   "employees": 15291,
+   "exchange": "NasdaqGS",
+   "long_name": "Constellation Energy Corporation"
+  },
+  "COIN": {
+   "ticker": "COIN",
+   "sector": "Financial Services",
+   "industry": "Financial Data & Stock Exchanges",
+   "country": "United States",
+   "employees": 4951,
+   "exchange": "NasdaqGS",
+   "long_name": "Coinbase Global, Inc."
+  },
+  "CRCL": {
+   "ticker": "CRCL",
+   "sector": "Financial Services",
+   "industry": "Capital Markets",
+   "country": "United States",
+   "employees": 1100,
+   "exchange": "NYSE",
+   "long_name": "Circle Internet Group"
+  },
+  "CRM": {
+   "ticker": "CRM",
+   "sector": "Technology",
+   "industry": "Software - Application",
+   "country": "United States",
+   "employees": 83334,
+   "exchange": "NYSE",
+   "long_name": "Salesforce, Inc."
+  },
+  "CRWD": {
+   "ticker": "CRWD",
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "country": "United States",
+   "employees": 11157,
+   "exchange": "NasdaqGS",
+   "long_name": "CrowdStrike Holdings, Inc."
+  },
+  "DDOG": {
+   "ticker": "DDOG",
+   "sector": "Technology",
+   "industry": "Software - Application",
+   "country": "United States",
+   "employees": 8100,
+   "exchange": "NasdaqGS",
+   "long_name": "Datadog, Inc."
+  },
+  "ENPH": {
+   "ticker": "ENPH",
+   "sector": "Technology",
+   "industry": "Solar",
+   "country": "United States",
+   "employees": 2872,
+   "exchange": "NasdaqGM",
+   "long_name": "Enphase Energy, Inc."
+  },
+  "EOSE": {
+   "ticker": "EOSE",
+   "sector": "Industrials",
+   "industry": "Electrical Equipment & Parts",
+   "country": "United States",
+   "employees": 787,
+   "exchange": "NasdaqCM",
+   "long_name": "Eos Energy Enterprises, Inc."
+  },
+  "ETN": {
+   "ticker": "ETN",
+   "sector": "Industrials",
+   "industry": "Specialty Industrial Machinery",
+   "country": "Ireland",
+   "employees": 97303,
+   "exchange": "NYSE",
+   "long_name": "Eaton Corporation, PLC"
+  },
+  "FANUY": {
+   "ticker": "FANUY",
+   "sector": "Industrials",
+   "industry": "Specialty Industrial Machinery",
+   "country": "Japan",
+   "employees": 10040,
+   "exchange": "OTC Markets OTCPK",
+   "long_name": "Fanuc Corporation"
+  },
+  "FLNC": {
+   "ticker": "FLNC",
+   "sector": "Utilities",
+   "industry": "Utilities - Renewable",
+   "country": "United States",
+   "employees": 1670,
+   "exchange": "NasdaqGS",
+   "long_name": "Fluence Energy, Inc."
+  },
+  "FSLR": {
+   "ticker": "FSLR",
+   "sector": "Technology",
+   "industry": "Solar",
+   "country": "United States",
+   "employees": 7900,
+   "exchange": "NasdaqGS",
+   "long_name": "First Solar, Inc."
+  },
+  "FTNT": {
+   "ticker": "FTNT",
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "country": "United States",
+   "employees": 15472,
+   "exchange": "NasdaqGS",
+   "long_name": "Fortinet, Inc."
+  },
+  "GEV": {
+   "ticker": "GEV",
+   "sector": "Industrials",
+   "industry": "Specialty Industrial Machinery",
+   "country": "United States",
+   "employees": 78000,
+   "exchange": "NYSE",
+   "long_name": "GE Vernova Inc."
+  },
+  "GOOGL": {
+   "ticker": "GOOGL",
+   "sector": "Communication Services",
+   "industry": "Internet Content & Information",
+   "country": "United States",
+   "employees": 198933,
+   "exchange": "NasdaqGS",
+   "long_name": "Alphabet Inc."
+  },
+  "HEI": {
+   "ticker": "HEI",
+   "sector": "Industrials",
+   "industry": "Aerospace & Defense",
+   "country": "United States",
+   "employees": 11100,
+   "exchange": "NYSE",
+   "long_name": "Heico Corporation"
+  },
+  "HOOD": {
+   "ticker": "HOOD",
+   "sector": "Financial Services",
+   "industry": "Capital Markets",
+   "country": "United States",
+   "employees": 2900,
+   "exchange": "NasdaqGS",
+   "long_name": "Robinhood Markets, Inc."
+  },
+  "ILMN": {
+   "ticker": "ILMN",
+   "sector": "Healthcare",
+   "industry": "Diagnostics & Research",
+   "country": "United States",
+   "employees": 8600,
+   "exchange": "NasdaqGS",
+   "long_name": "Illumina, Inc."
+  },
+  "IRDM": {
+   "ticker": "IRDM",
+   "sector": "Communication Services",
+   "industry": "Telecom Services",
+   "country": "United States",
+   "employees": 975,
+   "exchange": "NasdaqGS",
+   "long_name": "Iridium Communications Inc."
+  },
+  "ISRG": {
+   "ticker": "ISRG",
+   "sector": "Healthcare",
+   "industry": "Medical Instruments & Supplies",
+   "country": "United States",
+   "employees": 17021,
+   "exchange": "NasdaqGS",
+   "long_name": "Intuitive Surgical, Inc."
+  },
+  "KTOS": {
+   "ticker": "KTOS",
+   "sector": "Industrials",
+   "industry": "Aerospace & Defense",
+   "country": "United States",
+   "employees": 4300,
+   "exchange": "NasdaqGS",
+   "long_name": "Kratos Defense & Security Solutions, Inc."
+  },
+  "LDOS": {
+   "ticker": "LDOS",
+   "sector": "Technology",
+   "industry": "Information Technology Services",
+   "country": "United States",
+   "employees": 50000,
+   "exchange": "NYSE",
+   "long_name": "Leidos Holdings, Inc."
+  },
+  "LHX": {
+   "ticker": "LHX",
+   "sector": "Industrials",
+   "industry": "Aerospace & Defense",
+   "country": "United States",
+   "employees": 45000,
+   "exchange": "NYSE",
+   "long_name": "L3Harris Technologies, Inc."
+  },
+  "LLY": {
+   "ticker": "LLY",
+   "sector": "Healthcare",
+   "industry": "Drug Manufacturers - General",
+   "country": "United States",
+   "employees": 50000,
+   "exchange": "NYSE",
+   "long_name": "Eli Lilly and Company"
+  },
+  "LMT": {
+   "ticker": "LMT",
+   "sector": "Industrials",
+   "industry": "Aerospace & Defense",
+   "country": "United States",
+   "employees": 123000,
+   "exchange": "NYSE",
+   "long_name": "Lockheed Martin Corporation"
+  },
+  "LUNR": {
+   "ticker": "LUNR",
+   "sector": "Industrials",
+   "industry": "Aerospace & Defense",
+   "country": "United States",
+   "employees": 525,
+   "exchange": "NasdaqGM",
+   "long_name": "Intuitive Machines, Inc."
+  },
+  "MA": {
+   "ticker": "MA",
+   "sector": "Financial Services",
+   "industry": "Credit Services",
+   "country": "United States",
+   "employees": 39800,
+   "exchange": "NYSE",
+   "long_name": "Mastercard Incorporated"
+  },
+  "MDB": {
+   "ticker": "MDB",
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "country": "United States",
+   "employees": 5636,
+   "exchange": "NasdaqGM",
+   "long_name": "MongoDB, Inc."
+  },
+  "MP": {
+   "ticker": "MP",
+   "sector": "Basic Materials",
+   "industry": "Other Industrial Metals & Mining",
+   "country": "United States",
+   "employees": 998,
+   "exchange": "NYSE",
+   "long_name": "MP Materials Corp."
+  },
+  "MRVL": {
+   "ticker": "MRVL",
+   "sector": "Technology",
+   "industry": "Semiconductors",
+   "country": "United States",
+   "employees": 7480,
+   "exchange": "NasdaqGS",
+   "long_name": "Marvell Technology, Inc."
+  },
+  "MSFT": {
+   "ticker": "MSFT",
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "country": "United States",
+   "employees": 223000,
+   "exchange": "NasdaqGS",
+   "long_name": "Microsoft Corporation"
+  },
+  "MU": {
+   "ticker": "MU",
+   "sector": "Technology",
+   "industry": "Semiconductors",
+   "country": "United States",
+   "employees": 53000,
+   "exchange": "NasdaqGS",
+   "long_name": "Micron Technology, Inc."
+  },
+  "NET": {
+   "ticker": "NET",
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "country": "United States",
+   "employees": 5156,
+   "exchange": "NYSE",
+   "long_name": "Cloudflare, Inc."
+  },
+  "NOW": {
+   "ticker": "NOW",
+   "sector": "Technology",
+   "industry": "Software - Application",
+   "country": "United States",
+   "employees": 29187,
+   "exchange": "NYSE",
+   "long_name": "ServiceNow, Inc."
+  },
+  "NRG": {
+   "ticker": "NRG",
+   "sector": "Utilities",
+   "industry": "Utilities - Independent Power Producers",
+   "country": "United States",
+   "employees": 16702,
+   "exchange": "NYSE",
+   "long_name": "NRG Energy, Inc."
+  },
+  "NVDA": {
+   "ticker": "NVDA",
+   "sector": "Technology",
+   "industry": "Semiconductors",
+   "country": "United States",
+   "employees": 42000,
+   "exchange": "NasdaqGS",
+   "long_name": "NVIDIA Corporation"
+  },
+  "NVO": {
+   "ticker": "NVO",
+   "sector": "Healthcare",
+   "industry": "Drug Manufacturers - General",
+   "country": "Denmark",
+   "employees": 66700,
+   "exchange": "NYSE",
+   "long_name": "Novo Nordisk A/S"
+  },
+  "OKTA": {
+   "ticker": "OKTA",
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "country": "United States",
+   "employees": 6366,
+   "exchange": "NasdaqGS",
+   "long_name": "Okta, Inc."
+  },
+  "PANW": {
+   "ticker": "PANW",
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "country": "United States",
+   "employees": 21491,
+   "exchange": "NasdaqGS",
+   "long_name": "Palo Alto Networks, Inc."
+  },
+  "PLTR": {
+   "ticker": "PLTR",
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "country": "United States",
+   "employees": 4401,
+   "exchange": "NasdaqGS",
+   "long_name": "Palantir Technologies Inc."
+  },
+  "PWR": {
+   "ticker": "PWR",
+   "sector": "Industrials",
+   "industry": "Engineering & Construction",
+   "country": "United States",
+   "employees": 69500,
+   "exchange": "NYSE",
+   "long_name": "Quanta Services, Inc."
+  },
+  "PYPL": {
+   "ticker": "PYPL",
+   "sector": "Financial Services",
+   "industry": "Credit Services",
+   "country": "United States",
+   "employees": 23800,
+   "exchange": "NasdaqGS",
+   "long_name": "PayPal Holdings, Inc."
+  },
+  "RKLB": {
+   "ticker": "RKLB",
+   "sector": "Industrials",
+   "industry": "Aerospace & Defense",
+   "country": "United States",
+   "employees": 2600,
+   "exchange": "NasdaqGS",
+   "long_name": "Rocket Lab Corporation"
+  },
+  "ROK": {
+   "ticker": "ROK",
+   "sector": "Industrials",
+   "industry": "Specialty Industrial Machinery",
+   "country": "United States",
+   "employees": 26000,
+   "exchange": "NYSE",
+   "long_name": "Rockwell Automation, Inc."
+  },
+  "RTX": {
+   "ticker": "RTX",
+   "sector": "Industrials",
+   "industry": "Aerospace & Defense",
+   "country": "United States",
+   "employees": 180000,
+   "exchange": "NYSE",
+   "long_name": "RTX Corporation"
+  },
+  "RXRX": {
+   "ticker": "RXRX",
+   "sector": "Healthcare",
+   "industry": "Biotechnology",
+   "country": "United States",
+   "employees": 600,
+   "exchange": "NasdaqGS",
+   "long_name": "Recursion Pharmaceuticals, Inc."
+  },
+  "S": {
+   "ticker": "S",
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "country": "United States",
+   "employees": 3000,
+   "exchange": "NYSE",
+   "long_name": "SentinelOne, Inc."
+  },
+  "SDGR": {
+   "ticker": "SDGR",
+   "sector": "Healthcare",
+   "industry": "Health Information Services",
+   "country": "United States",
+   "employees": 850,
+   "exchange": "NasdaqGS",
+   "long_name": "Schr\u00f6dinger, Inc."
+  },
+  "SERV": {
+   "ticker": "SERV",
+   "sector": "Industrials",
+   "industry": "Integrated Freight & Logistics",
+   "country": "United States",
+   "employees": 370,
+   "exchange": "NasdaqCM",
+   "long_name": "Serve Robotics Inc."
+  },
+  "SNOW": {
+   "ticker": "SNOW",
+   "sector": "Technology",
+   "industry": "Software - Application",
+   "country": "United States",
+   "employees": 9250,
+   "exchange": "NYSE",
+   "long_name": "Snowflake Inc."
+  },
+  "SYM": {
+   "ticker": "SYM",
+   "sector": "Industrials",
+   "industry": "Specialty Industrial Machinery",
+   "country": "United States",
+   "employees": 2000,
+   "exchange": "NasdaqGM",
+   "long_name": "Symbotic Inc."
+  },
+  "TEM": {
+   "ticker": "TEM",
+   "sector": "Healthcare",
+   "industry": "Health Information Services",
+   "country": "United States",
+   "employees": 3800,
+   "exchange": "NasdaqGS",
+   "long_name": "Tempus AI, Inc."
+  },
+  "TER": {
+   "ticker": "TER",
+   "sector": "Technology",
+   "industry": "Semiconductor Equipment & Materials",
+   "country": "United States",
+   "employees": 6600,
+   "exchange": "NasdaqGS",
+   "long_name": "Teradyne, Inc."
+  },
+  "TLN": {
+   "ticker": "TLN",
+   "sector": "Utilities",
+   "industry": "Utilities - Independent Power Producers",
+   "country": "United States",
+   "employees": 1880,
+   "exchange": "NasdaqGS",
+   "long_name": "Talen Energy Corporation"
+  },
+  "TSLA": {
+   "ticker": "TSLA",
+   "sector": "Consumer Cyclical",
+   "industry": "Auto Manufacturers",
+   "country": "United States",
+   "employees": 134785,
+   "exchange": "NasdaqGS",
+   "long_name": "Tesla, Inc."
+  },
+  "TSM": {
+   "ticker": "TSM",
+   "sector": "Technology",
+   "industry": "Semiconductors",
+   "country": "Taiwan",
+   "employees": 76907,
+   "exchange": "NYSE",
+   "long_name": "Taiwan Semiconductor Manufacturing Company Limited"
+  },
+  "V": {
+   "ticker": "V",
+   "sector": "Financial Services",
+   "industry": "Credit Services",
+   "country": "United States",
+   "employees": 34100,
+   "exchange": "NYSE",
+   "long_name": "Visa Inc."
+  },
+  "VRTX": {
+   "ticker": "VRTX",
+   "sector": "Healthcare",
+   "industry": "Biotechnology",
+   "country": "United States",
+   "employees": 6400,
+   "exchange": "NasdaqGS",
+   "long_name": "Vertex Pharmaceuticals Incorporated"
+  },
+  "VST": {
+   "ticker": "VST",
+   "sector": "Utilities",
+   "industry": "Utilities - Independent Power Producers",
+   "country": "United States",
+   "employees": 6390,
+   "exchange": "NYSE",
+   "long_name": "Vistra Corp."
+  },
+  "XYZ": {
+   "ticker": "XYZ",
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "country": "United States",
+   "employees": 10205,
+   "exchange": "NYSE",
+   "long_name": "Block, Inc."
+  },
+  "ZBRA": {
+   "ticker": "ZBRA",
+   "sector": "Technology",
+   "industry": "Communication Equipment",
+   "country": "United States",
+   "employees": 10700,
+   "exchange": "NasdaqGS",
+   "long_name": "Zebra Technologies Corporation"
+  },
+  "ZS": {
+   "ticker": "ZS",
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "country": "United States",
+   "employees": 7923,
+   "exchange": "NasdaqGS",
+   "long_name": "Zscaler, Inc."
+  }
+ },
+ "cross_tab": {
+  "AI Compute & Semiconductors": {
+   "Technology": 7
+  },
+  "Power & Grid for AI Datacenters": {
+   "Utilities": 4,
+   "Industrials": 3
+  },
+  "Defense Tech & Autonomy": {
+   "Technology": 2,
+   "Industrials": 5
+  },
+  "Space & Satellite Economy": {
+   "Industrials": 4,
+   "Technology": 1,
+   "Communication Services": 1
+  },
+  "Robotics & Physical AI": {
+   "Healthcare": 1,
+   "Technology": 2,
+   "Industrials": 4
+  },
+  "Cybersecurity": {
+   "Technology": 7
+  },
+  "Biotech & AI Drug Discovery": {
+   "Healthcare": 8
+  },
+  "Energy Storage & Critical Minerals": {
+   "Consumer Cyclical": 1,
+   "Technology": 2,
+   "Utilities": 1,
+   "Basic Materials": 2,
+   "Industrials": 1
+  },
+  "Fintech & Payment Rails": {
+   "Financial Services": 7,
+   "Technology": 1
+  },
+  "Enterprise Software & AI Agents": {
+   "Technology": 7,
+   "Communication Services": 1
+  }
+ },
+ "purity": {
+  "AI Compute & Semiconductors": {
+   "dominant_sector": "Technology",
+   "share": 100,
+   "n_sectors": 1,
+   "total": 7
+  },
+  "Power & Grid for AI Datacenters": {
+   "dominant_sector": "Utilities",
+   "share": 57,
+   "n_sectors": 2,
+   "total": 7
+  },
+  "Defense Tech & Autonomy": {
+   "dominant_sector": "Industrials",
+   "share": 71,
+   "n_sectors": 2,
+   "total": 7
+  },
+  "Space & Satellite Economy": {
+   "dominant_sector": "Industrials",
+   "share": 67,
+   "n_sectors": 3,
+   "total": 6
+  },
+  "Robotics & Physical AI": {
+   "dominant_sector": "Industrials",
+   "share": 57,
+   "n_sectors": 3,
+   "total": 7
+  },
+  "Cybersecurity": {
+   "dominant_sector": "Technology",
+   "share": 100,
+   "n_sectors": 1,
+   "total": 7
+  },
+  "Biotech & AI Drug Discovery": {
+   "dominant_sector": "Healthcare",
+   "share": 100,
+   "n_sectors": 1,
+   "total": 8
+  },
+  "Energy Storage & Critical Minerals": {
+   "dominant_sector": "Technology",
+   "share": 29,
+   "n_sectors": 5,
+   "total": 7
+  },
+  "Fintech & Payment Rails": {
+   "dominant_sector": "Financial Services",
+   "share": 88,
+   "n_sectors": 2,
+   "total": 8
+  },
+  "Enterprise Software & AI Agents": {
+   "dominant_sector": "Technology",
+   "share": 88,
+   "n_sectors": 2,
+   "total": 8
+  }
+ }
+}

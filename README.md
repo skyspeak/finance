@@ -1,14 +1,14 @@
 # Ten Themes
 
-A weekly thematic equity + options research pipeline. Ten industry themes, 72 public tickers, 74 private-market competitors — scored into PICK / NEUTRAL / AVOID, sized into a model portfolio, and turned into defined-risk option trade tickets. Output is a dark dashboard page and an HTML email digest.
+A weekly thematic equity + options research pipeline. Ten industry themes, 72 public tickers, 74 private-market competitors — scored into PICK / NEUTRAL / AVOID, sized into a model portfolio, and turned into defined-risk option trade tickets.
 
-Everything here runs on **free, unauthenticated data sources**. No paid API keys. Python **standard library only** — no `pip install` required.
+**Stack:** Railway Postgres + a Monday cron worker run the pipeline. Vercel serves the public desk at [ten-themes.vercel.app](https://ten-themes.vercel.app) and the macro map at [/map](https://ten-themes.vercel.app/map). Fetch scripts stay Python stdlib (Yahoo / CBOE / Treasury / EDGAR, no API keys). The job itself needs `psycopg` (`pip install -r requirements.txt`).
 
 Data snapshot in `data/` is as of **2026-08-14** (market close), generated 2026-08-16.
 
 ---
 
-## Quick start
+## Quick start (local, no database)
 
 ```bash
 cd pipeline
@@ -18,7 +18,11 @@ python3 tech.py          # -> tech.json, hist.json
 python3 score.py         # -> data.json
 python3 options.py       # -> options.json
 python3 score2.py        # -> data2.json
+python3 macro.py         # -> macro.json
+python3 sectors.py       # -> sectors.json
+python3 factors.py       # -> factors.json
 python3 build_site2.py   # -> site2.html
+python3 build_map.py     # -> map.html
 python3 build_email2.py  # -> email2.html, email2_params.json
 ```
 
@@ -34,6 +38,45 @@ The scripts read and write JSON in their working directory. To reproduce against
 
 ---
 
+## Weekly on Railway (database + cron)
+
+Vercel cannot run this job (timeouts, no disk). Railway can: long-running Python, attached Postgres, cron that starts the container, runs `job.py`, exits.
+
+What the Monday job does:
+
+1. Carries the latest research JSON out of Postgres (analysts, events, IPOs, 13F, privates, insiders, activists, layers).
+2. Refetches prices, fundamentals, technicals, option chains, Treasury curve, and macro series.
+3. Re-scores, diffs ratings vs last week, writes a mechanical strategy note (does not reuse last week's prose).
+4. Builds factor betas, GICS cross-tabs, and the map-room HTML (value-chain layers come from `layers.json`).
+5. Stores the full snapshot + per-ticker ratings in Postgres.
+6. Publishes `public/index.html` and `public/map.html` to Vercel.
+
+It will **fail the deploy** if fewer than 60 prices come back or fewer than 8 option tickets clear the liquidity screen.
+
+### One-time setup
+
+1. Create a Railway project, attach **Postgres**, deploy this repo as a service (Dockerfile + `railway.toml`).
+2. Copy `.env.example` into Railway variables. `DATABASE_URL` is injected by the plugin. Add `VERCEL_TOKEN` (Vercel → Account → Tokens) so the job can publish. `VERCEL_PROJECT_ID` / `VERCEL_ORG_ID` are already filled for the live desk.
+3. Seed the committed snapshot so week-over-week diffs have a baseline:
+
+```bash
+railway run python3 job.py --seed
+```
+
+4. Confirm the cron: Monday `02:00` UTC (`railway.toml`). Trigger once by hand with `railway run python3 job.py`.
+
+Locally, with a Railway DATABASE_URL:
+
+```bash
+pip install -r requirements.txt
+python3 job.py --seed
+python3 job.py
+```
+
+Analyst coverage, events, and IPOs still need a human or agent pass when they go stale — the job carries them and dates that lag in the strategy note. 13F stays quarterly; private competitors monthly; secular theme scores quarterly.
+
+---
+
 ## Repo layout
 
 ```
@@ -45,8 +88,18 @@ pipeline/       The weekly pipeline. Run in the order above.
   score.py        Five-factor composite -> PICK / NEUTRAL / AVOID
   options.py      CBOE chains -> IV/RV, flow, implied moves, defined-risk trade tickets
   score2.py       Merges everything -> squeeze scores, watchlist, model portfolio, risk
-  build_site2.py  Generates the dashboard HTML
-  build_email2.py Generates the email HTML + Gmail params
+  macro.py        Treasury curve + Yahoo macro/sector/thematic series
+  sectors.py      Yahoo GICS sector/industry per ticker
+  factors.py      Univariate OLS factor betas, residual exposure, regimes
+  build_site2.py  Generates the dashboard HTML (reads strategy.md if present)
+  build_map.py    Generates the Macro & Market Map HTML
+  build_email2.py Generates the email HTML + Gmail params (reads intro.md if present)
+  strategy.py     Mechanical STRATEGY/INTRO from this week vs last week's ratings
+  dates.py        today() / ASOF=YYYY-MM-DD replay
+
+job.py          Railway entrypoint: fetch → score → Postgres → Vercel
+db.py           snapshots + ratings schema
+publish.py      Vercel REST deploy of public/
 
 research/       Scripts behind the research JSON that the pipeline consumes.
                 EDGAR Form 4 / SC 13D screening. These produce insiders.json
@@ -56,9 +109,22 @@ research/       Scripts behind the research JSON that the pipeline consumes.
 
 data/           Committed snapshot of every input and intermediate file.
 output/         Rendered dashboard.html and email.html from that snapshot.
+public/         Vercel publish root — index.html (desk) and email.html.
 legacy/         The v1 light-themed generators, superseded by build_site2/build_email2.
 docs/           METHODOLOGY.md, DATA_SOURCES.md, AGENT.md, CHANGELOG.md
 ```
+
+---
+
+## Publish the desk (Vercel)
+
+The public desk is [https://ten-themes.vercel.app](https://ten-themes.vercel.app). The map room is [https://ten-themes.vercel.app/map](https://ten-themes.vercel.app/map). The Railway job publishes both after each successful run. Manual publish:
+
+```bash
+npx vercel --prod
+```
+
+`/` is the desk, `/map` is the macro map, `/email` is the digest. The email CTA uses `PUBLIC_URL` or `pipeline/link.txt`.
 
 ---
 

@@ -5,4 +5,11 @@ link.txt
 email2_params.json
 site2.html
 email2.html
+strategy.md
+intro.md
 *.tmp
+.vercel
+.env
+/pipeline/*.json
+/pipeline/map.html
+

@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
-import json, html, datetime as dt
+import json, html, datetime as dt, os
+from pathlib import Path
+from dates import today
 D = json.load(open("data2.json"))
 rows, watch, port, EV, IPO = D["rows"], D["watch"], D["portfolio"], D["events"], D["ipos"]
-asof = D["asof"]; TODAY = dt.date(2026, 8, 16)
-LINK = open("link.txt").read().strip()
+asof = D["asof"]; TODAY = today()
+_lp = Path("link.txt")
+LINK = _lp.read_text().strip() if _lp.exists() else os.environ.get("PUBLIC_URL", "https://ten-themes.vercel.app")
 byT = {r["ticker"]: r for r in rows}
 picks = [r for r in rows if r["rating"] == "PICK"]; avoids = [r for r in rows if r["rating"] == "AVOID"]
 trades = [r for r in rows if r.get("trade")]
@@ -15,10 +18,12 @@ def sg(v, d=1):
     return f'<span style="color:{"#00c805" if v>0 else "#ff5000"};font-weight:600">{v:+.{d}f}%</span>'
 def n(v, d=2, p="", s=""): return "—" if v is None else f"{p}{v:,.{d}f}{s}"
 
-INTRO = """Thirteen picks, 82.9% invested, 17.1% cash. Book beta is 2.06 — twice the market, and 67% of invested capital
+_FALLBACK_INTRO = """Thirteen picks, 82.9% invested, 17.1% cash. Book beta is 2.06 — twice the market, and 67% of invested capital
 sits in three themes that correlate 0.65–0.68 with each other. That concentration is deliberate but it is one trade, not three.
 The edge remains in power: VST scores top-quartile while trading 27% lower on the year, and the options market prices a ±24.6% move
 into its next print. Seventeen defined-risk tickets are live below."""
+_ip = Path("intro.md")
+INTRO = _ip.read_text().strip() if _ip.exists() else _FALLBACK_INTRO
 
 TD = f"padding:10px 11px;border-bottom:1px solid #23272e"
 TH = f"padding:8px 11px;border-bottom:1px solid #3a4048;font:600 9.5px {M};letter-spacing:.09em;text-transform:uppercase;color:#7d8a9c;text-align:left"

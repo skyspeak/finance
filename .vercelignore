@@ -1,0 +1,16 @@
+data/
+pipeline/
+research/
+legacy/
+docs/
+output/
+*.py
+Dockerfile
+railway.toml
+requirements.txt
+__pycache__/
+.DS_Store
+*.tmp
+.git/
+.env
+

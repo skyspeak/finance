@@ -200,6 +200,31 @@ These are produced by research passes, not scripts. `score.py` and `score2.py` w
 ```
 `status`: `priced` | `pending` | `rumored`. `score2.py` scans `read_across` + `description` for ticker symbols to build the IPO→public-name linkage, so **name the affected tickers explicitly in that prose**.
 
+### `layers.json` — object
+Editorial value-chain taxonomy for the map room. Not fetched.
+
+```json
+{"public": [{"ticker": "NVDA", "theme": "AI Compute & Semiconductors",
+  "layer": "Accelerators & Custom Silicon", "layer_index": 3,
+  "also": ["Interconnect & Networking"], "note": "...",
+  "is_pure_play": false, "spans_stack": true}],
+ "private": [...],
+ "layer_gaps": [{"theme": "...", "observation": "..."}]}
+```
+
+---
+
+## 8. Macro series — Treasury + Yahoo
+
+```
+GET https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all?type=daily_treasury_yield_curve&field_tdr_date_value={year}&page&_format=csv
+GET https://query1.finance.yahoo.com/v8/finance/chart/{SYMBOL}?range=2y&interval=1d
+```
+
+`macro.py` pulls the par yield curve (2s10s lives here; `^TNX` on Yahoo is too sparse) and the same v8 chart endpoint used for prices, for VIX, DXY, WTI, gold, copper, TLT, HYG, LQD, BTC, SPX/NDX/RUT, GICS SPDRs, and thematic ETFs. `sectors.py` uses the crumb-gated quoteSummary `assetProfile` module. `factors.py` is local OLS on `hist.json` + `macro.json`.
+
+**Hard macro is absent.** CPI, payrolls, and ISM are not fetched. Everything on the map is market-priced and daily.
+
 ---
 
 ## Anti-fabrication rule

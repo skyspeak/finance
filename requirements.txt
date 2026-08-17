@@ -1,8 +1,3 @@
-# No third-party dependencies.
-#
-# The entire pipeline runs on the Python 3 standard library:
-#   json, urllib.request, http.cookiejar, datetime, statistics,
-#   math, re, csv, io, collections, html, time
-#
-# Requires Python 3.9+ (uses dict ordering, f-strings, math/statistics stdlib).
-# Charting in the dashboard is client-side ECharts loaded from CDN.
+# Fetch/score scripts remain stdlib-only.
+# The weekly job (job.py) needs a Postgres driver.
+psycopg[binary]>=3.2

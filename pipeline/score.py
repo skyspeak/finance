@@ -1,5 +1,6 @@
 import json, collections
 from universe import UNIVERSE
+from dates import today
 
 P  = json.load(open("prices.json"))
 A  = {**json.load(open("analysts_1.json")), **json.load(open("analysts_2.json"))}
@@ -100,8 +101,10 @@ for theme, tickers in UNIVERSE.items():
         "avoids":[r["ticker"] for r in tr if r["rating"]=="AVOID"]})
 themes.sort(key=lambda x:-x["score"])
 rows.sort(key=lambda x:-x["composite"])
+asofs = [P[t].get("asof") for t in P if P[t].get("asof")]
+asof = max(asofs) if asofs else today().isoformat()
 json.dump({"rows":rows,"themes":themes,"privates":PR,"activists":AC,
-           "hf_limits":HF.get("limitations"),"asof":"2026-08-14"}, open("data.json","w"), indent=1)
+           "hf_limits":HF.get("limitations"),"asof":asof}, open("data.json","w"), indent=1)
 
 print("themes ranked:"); [print(f"  {t['score']:.2f} {t['theme'][:38]:40s} picks={len(t['picks'])} avoid={len(t['avoids'])}") for t in themes]
 print("\ncounts:", collections.Counter(r["rating"] for r in rows))

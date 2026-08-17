@@ -1,11 +1,12 @@
 """v2 merge: enrich + technicals + short interest + options + events + IPOs -> data2.json"""
 import json, collections, datetime as dt
 
+from dates import today
 D = json.load(open("data.json")); EN = json.load(open("enrich.json"))
 TJ = json.load(open("tech.json")); TECH, CORR = TJ["tech"], TJ["theme_corr"]
 OPT = json.load(open("options.json")); EV = json.load(open("events.json")); IPO = json.load(open("ipos.json"))
 HIST = json.load(open("hist.json"))
-TODAY = dt.date(2026, 8, 16)
+TODAY = today()
 rows = D["rows"]
 
 ev_by_ticker = collections.defaultdict(list)

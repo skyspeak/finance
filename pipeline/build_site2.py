@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 import json, html, collections, datetime as dt
+from pathlib import Path
+from dates import today
 D = json.load(open("data2.json"))
 rows, themes, privates = D["rows"], D["themes"], D["privates"]
 watch, port, EV, IPO, OPT = D["watch"], D["portfolio"], D["events"], D["ipos"], D["options"]
-asof = D["asof"]; TODAY = dt.date(2026, 8, 16)
+asof = D["asof"]; TODAY = today()
 picks = [r for r in rows if r["rating"] == "PICK"]
 avoids = [r for r in rows if r["rating"] == "AVOID"]
 neutral = [r for r in rows if r["rating"] == "NEUTRAL"]
@@ -25,7 +27,7 @@ def spark(vals, w=104, h=30):
     c = "#00c805" if vals[-1] >= vals[0] else "#ff5000"
     return f'<svg class="spk" viewBox="0 0 {w} {h}" preserveAspectRatio="none"><polyline points="{pts}" fill="none" stroke="{c}" stroke-width="1.6"/></svg>'
 
-STRATEGY = """
+_FALLBACK_STRATEGY = """
 The book is a leveraged bet on one sentence: **AI demand is physically constrained, and the market is mispricing the constraint rather than the demand.**
 Thirteen picks, 82.9% invested, 17.1% cash held back by the single-name cap. Portfolio beta is **2.06** — this is not a defensive book and should not be described as one.
 
@@ -53,6 +55,8 @@ all of them together. Cybersecurity and Enterprise Software correlate at **0.80*
 short side is not the diversifier it appears to be either. Size accordingly, and treat the 17.1% cash as thesis insurance
 rather than laziness.
 """
+_sp = Path("strategy.md")
+STRATEGY = _sp.read_text() if _sp.exists() else _FALLBACK_STRATEGY
 def md(t):
     """Bold via **, italic via single * — order matters, bold first."""
     t = e(t).replace("**", "\x00"); out, b = [], False
@@ -297,7 +301,7 @@ th,td{{padding:8px 6px;font-size:11.5px}}section{{padding:30px 0}}}}
 </style></head><body>
 <header><div class="wrap">
 <div class="top"><div><div class="kick">● Live desk · refreshed weekly</div><h1>Ten Themes</h1></div>
-<div class="asof">Market data <b class="mono" style="color:#fff">{asof}</b><br>Options: CBOE delayed · 13F Q2 2026<br>Form 4 trailing 90d</div></div>
+<div class="asof">Market data <b class="mono" style="color:#fff">{asof}</b><br>Options: CBOE delayed · 13F Q2 2026<br>Form 4 trailing 90d<br><a href="/map" style="color:#5b9cff">Macro map →</a></div></div>
 <div class="hero">
 <div class="hs"><b>10</b><span>Themes</span></div>
 <div class="hs"><b>{len(rows)}</b><span>Public</span></div>

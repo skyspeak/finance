@@ -99,11 +99,10 @@ and options chains and will notice immediately if you are bluffing.
 6. Run score.py, then options.py, then score2.py. Verify options.py produced tickets for most of the
    shortlist; if the count collapses, the expiry-liquidity selection has regressed.
 7. Diff ratings against last week. Every PICK/NEUTRAL/AVOID flip is news and must be explained.
-8. Rewrite STRATEGY in build_site2.py and INTRO in build_email2.py from what actually changed. Never
-   reuse last week's text.
-9. Run build_site2.py and republish with the SAME artifact id so the dashboard link stays stable.
-10. Write the published URL into link.txt, run build_email2.py, send the email.
-11. Update the tracker tables with this week's snapshot.
+8. Unattended runs write strategy.md / intro.md from rating diffs (pipeline/strategy.py). A strategist rewrite is still better — drop the files in and rebuild if you do one.
+9. job.py copies HTML into public/ and publishes to Vercel. Manual path: run_weekly.sh then npx vercel --prod.
+10. Email HTML is at /email. Sending the digest is still a separate step (email2_params.json); the desk publish does not mail anyone.
+11. Snapshot lands in Postgres (snapshots + ratings). Update any tracker tables from there.
 ```
 
 ### Alert conditions
@@ -127,13 +126,17 @@ Not everything needs weekly refreshing, and refreshing the slow-moving streams w
 
 | Stream | Cadence | Why |
 |---|---|---|
-| Prices, technicals | Weekly | The point of the product |
-| Fundamentals, earnings dates | Weekly | Cheap, one call per ticker |
-| Option chains | Weekly | Quotes and IV move constantly |
-| Analyst coverage | Weekly | Ratings and targets change on news |
-| Insider Form 4 | Weekly | Filings arrive continuously; cheap via EDGAR |
-| Activist 13D | Weekly | Rare but high-impact; cheap to screen |
-| Events, IPOs | Weekly | Roll the window; catch new S-1s |
+| Prices, technicals | Weekly (Railway cron) | The point of the product |
+| Fundamentals, earnings dates | Weekly (Railway cron) | Cheap, one call per ticker |
+| Option chains | Weekly (Railway cron) | Quotes and IV move constantly |
+| Macro series, Treasury curve | Weekly (Railway cron) | `macro.py` — market-priced only, no CPI/payrolls |
+| GICS sectors | Weekly (Railway cron) | Yahoo assetProfile; themes can be single-sector |
+| Factor betas | Weekly (Railway cron) | Needs hist + macro + data2 |
+| Value-chain layers | **Monthly / on universe change** | Editorial `layers.json`; job carries last file |
+| Analyst coverage | Weekly, **manual/agent** | Job carries last file and dates the lag |
+| Insider Form 4 | Weekly, carried until the EDGAR screens are re-run | Cheap via EDGAR; scripts still assume /agent/workspace |
+| Activist 13D | Weekly, carried until re-run | Rare but high-impact |
+| Events, IPOs | Weekly, **manual/agent** | Roll the window; catch new S-1s |
 | **13F positioning** | **Quarterly** | Only updates after a filing deadline. Refreshing weekly just re-reads the same stale snapshot. |
 | **Private competitors** | **Monthly** | Or immediately on a major round. Funding rounds are lumpy. |
 | **Secular theme scores** | **Quarterly** | Churning the one subjective input destroys week-over-week comparability. |
@@ -142,6 +145,6 @@ Not everything needs weekly refreshing, and refreshing the slow-moving streams w
 
 ## Delivery note
 
-The published dashboard URL is session-authenticated. A link to it only opens in a browser already signed in to the owning account, and returns `{"error":"Not authenticated"}` otherwise — which means an emailed link silently fails on a phone that isn't logged in. Either publish a genuinely public share link for the email, or accept that the link is desktop-and-signed-in only. Decide deliberately; the failure is invisible from the sending side.
+The desk is a public static site on Vercel (`public/index.html` → `/`, `public/map.html` → `/map`). Railway `job.py` publishes both every Monday after a successful snapshot.
 
-Unattended scheduled runs may have integration writes disabled by default, which lets the whole refresh succeed and then fail silently at the send step. Confirm write permission on the schedule before relying on delivery.
+Unattended runs write a mechanical strategy note from rating diffs and carry research JSON from Postgres. They do not send email — `email2_params.json` is still a payload for a separate mailer.
