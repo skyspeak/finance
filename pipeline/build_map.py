@@ -285,7 +285,7 @@ footer{{padding:26px 0;color:var(--mut);font-size:11.5px}}
 </style></head><body>
 <header><div class="wrap">
 <div class="top"><div><div class="kick">Macro &amp; Market Structure</div><h1>Ten Themes — Map Room</h1></div>
-<div class="asof">Market data <b class="mono" style="color:#fff">{asof}</b><br>Yield curve: US Treasury · Factors: 1y daily<br>Descriptive view — no trade conclusions<br><a href="/" style="color:#5b9cff">← Trading desk</a></div></div>
+<div class="asof">Market data <b class="mono" style="color:#fff">{asof}</b><br>Yield curve: US Treasury · Factors: 1y daily<br>Descriptive view — no trade conclusions<br><a href="/" style="color:#5b9cff">← Desk</a> · <a href="/backtest" style="color:#5b9cff">Backtest →</a></div></div>
 <div class="regstrip">{reg_strip}</div></div></header>
 
 <section><div class="wrap"><h2>1 · Macro Scorecard</h2>

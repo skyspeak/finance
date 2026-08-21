@@ -132,6 +132,7 @@ Not everything needs weekly refreshing, and refreshing the slow-moving streams w
 | Macro series, Treasury curve | Weekly (Railway cron) | `macro.py` — market-priced only, no CPI/payrolls |
 | GICS sectors | Weekly (Railway cron) | Yahoo assetProfile; themes can be single-sector |
 | Factor betas | Weekly (Railway cron) | Needs hist + macro + data2 |
+| Pick-book backtest | Weekly (Railway cron) | Buy-and-hold of *this week's* list vs SPY — not a walk-forward |
 | Value-chain layers | **Monthly / on universe change** | Editorial `layers.json`; job carries last file |
 | Analyst coverage | Weekly, **manual/agent** | Job carries last file and dates the lag |
 | Insider Form 4 | Weekly, carried until the EDGAR screens are re-run | Cheap via EDGAR; scripts still assume /agent/workspace |
@@ -145,6 +146,6 @@ Not everything needs weekly refreshing, and refreshing the slow-moving streams w
 
 ## Delivery note
 
-The desk is a public static site on Vercel (`public/index.html` → `/`, `public/map.html` → `/map`). Railway `job.py` publishes both every Monday after a successful snapshot.
+The desk is a public static site on Vercel (`public/index.html` → `/`, `public/map.html` → `/map`, `public/backtest.html` → `/backtest`). Railway `job.py` publishes all three every Monday after a successful snapshot.
 
 Unattended runs write a mechanical strategy note from rating diffs and carry research JSON from Postgres. They do not send email — `email2_params.json` is still a payload for a separate mailer.

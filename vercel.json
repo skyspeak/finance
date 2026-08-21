@@ -16,6 +16,7 @@
   ],
   "rewrites": [
     { "source": "/desk", "destination": "/" },
-    { "source": "/map-room", "destination": "/map" }
+    { "source": "/map-room", "destination": "/map" },
+    { "source": "/lab", "destination": "/backtest" }
   ]
 }

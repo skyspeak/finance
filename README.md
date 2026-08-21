@@ -49,7 +49,7 @@ What the Monday job does:
 3. Re-scores, diffs ratings vs last week, writes a mechanical strategy note (does not reuse last week's prose).
 4. Builds factor betas, GICS cross-tabs, and the map-room HTML (value-chain layers come from `layers.json`).
 5. Stores the full snapshot + per-ticker ratings in Postgres.
-6. Publishes `public/index.html` and `public/map.html` to Vercel.
+6. Publishes `public/index.html`, `public/map.html`, and `public/backtest.html` to Vercel.
 
 It will **fail the deploy** if fewer than 60 prices come back or fewer than 8 option tickets clear the liquidity screen.
 
@@ -91,8 +91,10 @@ pipeline/       The weekly pipeline. Run in the order above.
   macro.py        Treasury curve + Yahoo macro/sector/thematic series
   sectors.py      Yahoo GICS sector/industry per ticker
   factors.py      Univariate OLS factor betas, residual exposure, regimes
+  backtest.py     Buy-and-hold of this week's picks vs SPY (not a walk-forward)
   build_site2.py  Generates the dashboard HTML (reads strategy.md if present)
   build_map.py    Generates the Macro & Market Map HTML
+  build_backtest.py  Generates the backtest lab HTML
   build_email2.py Generates the email HTML + Gmail params (reads intro.md if present)
   strategy.py     Mechanical STRATEGY/INTRO from this week vs last week's ratings
   dates.py        today() / ASOF=YYYY-MM-DD replay
@@ -109,7 +111,7 @@ research/       Scripts behind the research JSON that the pipeline consumes.
 
 data/           Committed snapshot of every input and intermediate file.
 output/         Rendered dashboard.html and email.html from that snapshot.
-public/         Vercel publish root — index.html (desk) and email.html.
+public/         Vercel publish root — index.html (desk), map.html, backtest.html, email.html.
 legacy/         The v1 light-themed generators, superseded by build_site2/build_email2.
 docs/           METHODOLOGY.md, DATA_SOURCES.md, AGENT.md, CHANGELOG.md
 ```
@@ -118,13 +120,13 @@ docs/           METHODOLOGY.md, DATA_SOURCES.md, AGENT.md, CHANGELOG.md
 
 ## Publish the desk (Vercel)
 
-The public desk is [https://ten-themes.vercel.app](https://ten-themes.vercel.app). The map room is [https://ten-themes.vercel.app/map](https://ten-themes.vercel.app/map). The Railway job publishes both after each successful run. Manual publish:
+The public desk is [https://ten-themes.vercel.app](https://ten-themes.vercel.app). The map room is [https://ten-themes.vercel.app/map](https://ten-themes.vercel.app/map). The pick backtest is [https://ten-themes.vercel.app/backtest](https://ten-themes.vercel.app/backtest). The Railway job publishes all three after each successful run. Manual publish:
 
 ```bash
 npx vercel --prod
 ```
 
-`/` is the desk, `/map` is the macro map, `/email` is the digest. The email CTA uses `PUBLIC_URL` or `pipeline/link.txt`.
+`/` is the desk, `/map` is the macro map, `/backtest` is the pick-book lab, `/email` is the digest.
 
 ---
 

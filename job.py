@@ -116,6 +116,7 @@ def copy_artifacts() -> None:
     site = WORK / "site2.html"
     email = WORK / "email2.html"
     mapp = WORK / "map.html"
+    bt = WORK / "backtest.html"
     if site.exists():
         shutil.copy(site, OUTPUT / "dashboard.html")
         shutil.copy(site, PUBLIC / "index.html")
@@ -125,6 +126,9 @@ def copy_artifacts() -> None:
     if mapp.exists():
         shutil.copy(mapp, OUTPUT / "map_room.html")
         shutil.copy(mapp, PUBLIC / "map.html")
+    if bt.exists():
+        shutil.copy(bt, OUTPUT / "backtest.html")
+        shutil.copy(bt, PUBLIC / "backtest.html")
 
 
 def seed() -> None:
@@ -201,6 +205,8 @@ def weekly() -> None:
         run_script("build_site2.py")
         run_script("build_email2.py")
         run_script("build_map.py")
+        run_script("backtest.py")
+        run_script("build_backtest.py")
         copy_artifacts()
 
         html = (PUBLIC / "index.html").read_text() if (PUBLIC / "index.html").exists() else None

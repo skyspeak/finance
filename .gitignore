@@ -12,4 +12,5 @@ intro.md
 .env
 /pipeline/*.json
 /pipeline/map.html
+/pipeline/backtest.html
 
