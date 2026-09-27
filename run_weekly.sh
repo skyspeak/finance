@@ -44,5 +44,5 @@ mkdir -p "${ROOT}/output" "${ROOT}/public"
 echo
 echo "Done. Refreshed JSON is in pipeline/; rendered output in output/ and public/ (Vercel)."
 echo "Remember to rewrite STRATEGY (build_site2.py) and INTRO (build_email2.py) before publishing."
-echo "Redeploy the desk with: npx vercel --prod"
+echo "Publish with: GITHUB_TOKEN=... python3 -c 'from pathlib import Path; from publish import publish_public; publish_public(Path(\"public\"))'"
 echo "Or run the cloud job: DATABASE_URL=... python3 job.py"

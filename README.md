@@ -49,14 +49,14 @@ What the Monday job does:
 3. Re-scores, diffs ratings vs last week, writes a mechanical strategy note (does not reuse last week's prose).
 4. Builds factor betas, GICS cross-tabs, and the map-room HTML (value-chain layers come from `layers.json`).
 5. Stores the full snapshot + per-ticker ratings in Postgres.
-6. Publishes `public/index.html`, `public/map.html`, and `public/backtest.html` to Vercel.
+6. Publishes `public/*.html` by committing them to [skyspeak/industry](https://github.com/skyspeak/industry); Vercel's Git integration deploys every push to `main`.
 
 It will **fail the deploy** if fewer than 60 prices come back or fewer than 8 option tickets clear the liquidity screen.
 
 ### One-time setup
 
 1. Create a Railway project, attach **Postgres**, deploy this repo as a service (Dockerfile + `railway.toml`).
-2. Copy `.env.example` into Railway variables. `DATABASE_URL` is injected by the plugin. Add `VERCEL_TOKEN` (Vercel → Account → Tokens) so the job can publish. `VERCEL_PROJECT_ID` / `VERCEL_ORG_ID` are already filled for the live desk.
+2. Copy `.env.example` into Railway variables. `DATABASE_URL` is injected by the plugin. Add `GITHUB_TOKEN` — a fine-grained GitHub token with **Contents: read & write on `skyspeak/industry` only** — so the job can publish.
 3. Seed the committed snapshot so week-over-week diffs have a baseline:
 
 ```bash
@@ -101,7 +101,7 @@ pipeline/       The weekly pipeline. Run in the order above.
 
 job.py          Railway entrypoint: fetch → score → Postgres → Vercel
 db.py           snapshots + ratings schema
-publish.py      Vercel REST deploy of public/
+publish.py      Commits public/ to skyspeak/industry (Vercel deploys main)
 
 research/       Scripts behind the research JSON that the pipeline consumes.
                 EDGAR Form 4 / SC 13D screening. These produce insiders.json
@@ -120,10 +120,10 @@ docs/           METHODOLOGY.md, DATA_SOURCES.md, AGENT.md, CHANGELOG.md
 
 ## Publish the desk (Vercel)
 
-The public desk is [https://ten-themes.vercel.app](https://ten-themes.vercel.app). The map room is [https://ten-themes.vercel.app/map](https://ten-themes.vercel.app/map). The pick backtest is [https://ten-themes.vercel.app/backtest](https://ten-themes.vercel.app/backtest). The Railway job publishes all three after each successful run. Manual publish:
+The public desk is [https://ten-themes.vercel.app](https://ten-themes.vercel.app). The map room is [https://ten-themes.vercel.app/map](https://ten-themes.vercel.app/map). The pick backtest is [https://ten-themes.vercel.app/backtest](https://ten-themes.vercel.app/backtest). The site is served from [skyspeak/industry](https://github.com/skyspeak/industry), which Vercel deploys on every push to `main` — don't `vercel --prod` from here, the next push would overwrite it. The Railway job publishes all pages after each successful run. Manual publish:
 
 ```bash
-npx vercel --prod
+GITHUB_TOKEN=... python3 -c 'from pathlib import Path; from publish import publish_public; publish_public(Path("public"))'
 ```
 
 `/` is the desk, `/map` is the macro map, `/backtest` is the pick-book lab, `/email` is the digest.

@@ -4,9 +4,12 @@ Sources (all free, no auth):
   - treasury.gov daily par yield curve CSV  (rates; ^TNX on Yahoo is too sparse)
   - Yahoo v8 chart                          (vol, dollar, commodities, credit, crypto, ETFs)
 """
-import json, csv, io, time, math, urllib.request, datetime as dt, statistics as st
+import json, csv, io, time, math, urllib.request, datetime as dt, statistics as st, os
+from yahoo_http import get_json
 
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
+_CACHE_PATH = os.environ.get("CHART_CACHE")
+_CACHE = json.load(open(_CACHE_PATH)) if _CACHE_PATH and os.path.exists(_CACHE_PATH) else None
 
 # ---------------------------------------------------------------- Treasury curve
 TCSV = ("https://home.treasury.gov/resource-center/data-chart-center/interest-rates/"
@@ -81,9 +84,11 @@ SERIES = {
 }
 
 def chart(sym, rng="2y"):
-    u = f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?range={rng}&interval=1d"
-    with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=25) as r:
-        d = json.load(r)["chart"]["result"][0]
+    if _CACHE and sym in _CACHE and _CACHE[sym].get("timestamp"):
+        d = _CACHE[sym]
+    else:
+        u = f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?range={rng}&interval=1d"
+        d = get_json(u, UA)["chart"]["result"][0]
     ts, c = d["timestamp"], d["indicators"]["quote"][0]["close"]
     pair = [(t, v) for t, v in zip(ts, c) if v is not None]
     return ([dt.datetime.utcfromtimestamp(t).strftime("%Y-%m-%d") for t, _ in pair],
@@ -144,7 +149,7 @@ def build():
             print(f"  ok   {sym:10s} {name[:22]:24s} last={vals[-1]:>10.2f}  1m={out['series'][sym]['chg_1m']}", flush=True)
         except Exception as e:
             print(f"  FAIL {sym:10s} {str(e)[:50]}", flush=True)
-        time.sleep(0.25)
+        time.sleep(0.7)
 
     # derived credit-appetite spread proxy: HYG relative to LQD
     S = out["series"]

@@ -1,12 +1,26 @@
 """GICS sector/industry per ticker via Yahoo assetProfile (crumb-gated) -> sectors.json"""
-import json, time, urllib.request, http.cookiejar
+import json, time, urllib.request, urllib.error, http.cookiejar
 from universe import ALL, UNIVERSE
 
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36"
 cj = http.cookiejar.CookieJar()
 OP = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
 OP.addheaders = [("User-Agent", UA)]
-get = lambda u, t=25: OP.open(u, timeout=t).read()
+
+def get(u, t=25):
+    last = None
+    for i in range(7):
+        try:
+            return OP.open(u, timeout=t).read()
+        except urllib.error.HTTPError as e:
+            last = e
+            if e.code in (429, 500, 502, 503) and i < 6:
+                wait = min(120, 20 * (i + 1))
+                print(f"  http {e.code} wait {wait}s", flush=True)
+                time.sleep(wait)
+                continue
+            raise
+    raise last
 
 def crumb():
     for seed in ("https://fc.yahoo.com", "https://finance.yahoo.com/quote/NVDA"):
@@ -35,7 +49,7 @@ for t in ALL:
     except Exception as e:
         out[t] = {"ticker": t, "sector": None, "industry": None, "error": str(e)[:60]}
         print(f"  {t:6s} FAIL {str(e)[:50]}", flush=True)
-    time.sleep(0.3)
+    time.sleep(0.7)
 
 # theme x sector cross-tab
 import collections

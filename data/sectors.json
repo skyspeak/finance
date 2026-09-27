@@ -14,7 +14,7 @@
    "sector": "Financial Services",
    "industry": "Credit Services",
    "country": "United States",
-   "employees": 2206,
+   "employees": 2358,
    "exchange": "NasdaqGS",
    "long_name": "Affirm Holdings, Inc."
   },
@@ -131,7 +131,7 @@
    "sector": "Technology",
    "industry": "Software - Infrastructure",
    "country": "United States",
-   "employees": 11157,
+   "employees": 11706,
    "exchange": "NasdaqGS",
    "long_name": "CrowdStrike Holdings, Inc."
   },
@@ -169,7 +169,7 @@
    "country": "Ireland",
    "employees": 97303,
    "exchange": "NYSE",
-   "long_name": "Eaton Corporation, PLC"
+   "long_name": "Eaton Corporation plc"
   },
   "FANUY": {
    "ticker": "FANUY",
@@ -232,7 +232,7 @@
    "country": "United States",
    "employees": 11100,
    "exchange": "NYSE",
-   "long_name": "Heico Corporation"
+   "long_name": "HEICO Corporation"
   },
   "HOOD": {
    "ticker": "HOOD",
@@ -338,7 +338,7 @@
    "sector": "Technology",
    "industry": "Software - Infrastructure",
    "country": "United States",
-   "employees": 5636,
+   "employees": 5783,
    "exchange": "NasdaqGM",
    "long_name": "MongoDB, Inc."
   },
@@ -437,7 +437,7 @@
    "sector": "Technology",
    "industry": "Software - Infrastructure",
    "country": "United States",
-   "employees": 21491,
+   "employees": 21921,
    "exchange": "NasdaqGS",
    "long_name": "Palo Alto Networks, Inc."
   },
@@ -509,7 +509,7 @@
    "sector": "Technology",
    "industry": "Software - Infrastructure",
    "country": "United States",
-   "employees": 3000,
+   "employees": 2800,
    "exchange": "NYSE",
    "long_name": "SentinelOne, Inc."
   },
@@ -536,7 +536,7 @@
    "sector": "Technology",
    "industry": "Software - Application",
    "country": "United States",
-   "employees": 9250,
+   "employees": 9394,
    "exchange": "NYSE",
    "long_name": "Snowflake Inc."
   },
@@ -644,7 +644,7 @@
    "sector": "Technology",
    "industry": "Software - Infrastructure",
    "country": "United States",
-   "employees": 7923,
+   "employees": 8700,
    "exchange": "NasdaqGS",
    "long_name": "Zscaler, Inc."
   }

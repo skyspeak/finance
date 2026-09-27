@@ -1,13 +1,16 @@
-import json, time, urllib.request, datetime as dt
+import json, time, urllib.request, datetime as dt, os
 from universe import ALL, UNIVERSE
+from yahoo_http import get_json
 
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
+_CACHE_PATH = os.environ.get("CHART_CACHE")
+_CACHE = json.load(open(_CACHE_PATH)) if _CACHE_PATH and os.path.exists(_CACHE_PATH) else None
 
 def fetch(t):
+    if _CACHE and t in _CACHE and _CACHE[t].get("timestamp"):
+        return {"chart": {"result": [_CACHE[t]]}}
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{t}?range=2y&interval=1d"
-    req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=25) as r:
-        return json.load(r)
+    return get_json(url, UA)
 
 def pct(a, b):
     if a is None or b in (None, 0): return None
@@ -52,7 +55,7 @@ for t in ALL:
         print(t, row["last"], row["chg_1y"], flush=True)
     except Exception as e:
         print("FAIL", t, e, flush=True)
-    time.sleep(0.35)
+    time.sleep(0.7)
 
 json.dump(out, open("prices.json","w"), indent=1)
 print("saved", len(out))

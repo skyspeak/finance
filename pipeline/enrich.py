@@ -1,5 +1,5 @@
 """Yahoo quoteSummary (crumb-gated) + FINRA short interest -> enrich.json, shortint.json"""
-import json, time, urllib.request, http.cookiejar, datetime as dt, csv, io
+import json, time, urllib.request, urllib.error, http.cookiejar, datetime as dt, csv, io
 from universe import ALL
 
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
@@ -8,7 +8,20 @@ OP = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
 OP.addheaders = [("User-Agent", UA)]
 
 def get(url, timeout=25):
-    with OP.open(url, timeout=timeout) as r: return r.read()
+    last = None
+    for i in range(7):
+        try:
+            with OP.open(url, timeout=timeout) as r:
+                return r.read()
+        except urllib.error.HTTPError as e:
+            last = e
+            if e.code in (429, 500, 502, 503) and i < 6:
+                wait = min(120, 20 * (i + 1))
+                print(f"  http {e.code} wait {wait}s", flush=True)
+                time.sleep(wait)
+                continue
+            raise
+    raise last
 
 def crumb():
     for seed in ("https://fc.yahoo.com", "https://finance.yahoo.com/quote/NVDA"):
@@ -77,7 +90,7 @@ for t in ALL:
     except Exception as ex:
         row["error"] = str(ex)[:90]; print("FAIL", t, str(ex)[:70], flush=True)
     out[t] = row
-    time.sleep(0.3)
+    time.sleep(0.7)
 
 json.dump(out, open("enrich.json", "w"), indent=1)
 print("enrich saved", sum(1 for r in out.values() if not r.get("error")), "/", len(out))

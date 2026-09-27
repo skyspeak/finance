@@ -2,7 +2,8 @@
 """Weekly Ten Themes job.
 
 Fetches prices / fundamentals / technicals / options / macro, scores the universe,
-writes a Postgres snapshot, generates the desk + map HTML, and publishes both to Vercel.
+writes a Postgres snapshot, generates the desk + map HTML, and publishes public/ by
+committing it to the site repo (skyspeak/industry), which Vercel deploys.
 
 Research JSON (analysts, events, IPOs, 13F, privates, insiders, activists) is
 carried forward from the latest snapshot so the job can run unattended.
@@ -225,11 +226,11 @@ def weekly() -> None:
         )
         print(f"saved snapshot asof={asof} trades={trades}", flush=True)
 
-        if os.environ.get("VERCEL_TOKEN"):
+        if os.environ.get("GITHUB_TOKEN"):
             from publish import publish_public
-            publish_public(PUBLIC)
+            publish_public(PUBLIC, asof=str(asof))
         else:
-            print("VERCEL_TOKEN unset — skipped publish; HTML is in public/", flush=True)
+            print("GITHUB_TOKEN unset — skipped publish; HTML is in public/", flush=True)
     except Exception as err:
         traceback.print_exc()
         fail_asof = asof or date.today()

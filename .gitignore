@@ -14,3 +14,11 @@ intro.md
 /pipeline/map.html
 /pipeline/backtest.html
 
+
+# --- added by cleanup 2026-09-09 ---
+node_modules/
+.next/
+dist/
+build/
+.turbo/
+.vite/
