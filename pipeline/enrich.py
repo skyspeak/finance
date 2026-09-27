@@ -94,12 +94,23 @@ def yahoo_row(t, cr):
 # ---- FINRA official consolidated short interest (latest 2 settlement periods) ----
 def finra():
     fin = {}
+    base = "https://api.finra.org/{kind}/group/otcMarket/name/consolidatedShortInterest"
     try:
-        req = urllib.request.Request("https://api.finra.org/data/group/otcMarket/name/consolidatedShortInterest",
-            data=json.dumps({"limit":5000,"sortFields":["-settlementDate"]}).encode(),
-            headers={"Content-Type":"application/json","User-Agent":UA})
-        with urllib.request.urlopen(req, timeout=90) as r: raw = r.read().decode()
-        rd = list(csv.DictReader(io.StringIO(raw)))
+        # FINRA only allows an exact settlementDate per query (no sorting across
+        # partitions), so ask which dates exist and pull the latest two.
+        req = urllib.request.Request(base.format(kind="partitions"), headers={"User-Agent": UA, "Accept": "application/json"})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            parts = json.load(r)["availablePartitions"]
+        dates = sorted((p["partitions"][0] for p in parts), reverse=True)[:2]
+        rd = []
+        for d in dates:
+            body = {"limit": 5000,
+                    "compareFilters": [{"compareType": "EQUAL", "fieldName": "settlementDate", "fieldValue": d}],
+                    "domainFilters": [{"fieldName": "symbolCode", "values": ALL}]}
+            req = urllib.request.Request(base.format(kind="data"), data=json.dumps(body).encode(),
+                headers={"Content-Type":"application/json","User-Agent":UA})
+            with urllib.request.urlopen(req, timeout=90) as r: raw = r.read().decode()
+            rd += list(csv.DictReader(io.StringIO(raw)))
         uni = set(ALL)
         for r in rd:
             s = r.get("symbolCode")
