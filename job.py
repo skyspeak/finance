@@ -84,6 +84,16 @@ def stage_research_from_snapshot(snap: dict) -> str:
     return rasof_s
 
 
+def stage_prev(snap: dict | None) -> None:
+    """Last good prices/enrich/sectors as *_prev.json: the fallback when a source refuses
+    this week (fields carried from here are marked stale)."""
+    for key in ("prices", "enrich", "sectors"):
+        obj = (snap or {}).get(key) or load_json(DATA / f"{key}.json")
+        if obj:
+            dump_json(WORK / f"{key}_prev.json", obj)
+    print("staged prior prices/enrich/sectors for carry-forward", flush=True)
+
+
 def collect_blobs() -> dict:
     a1 = load_json(WORK / "analysts_1.json") or {}
     a2 = load_json(WORK / "analysts_2.json") or {}
@@ -168,6 +178,7 @@ def weekly() -> None:
         stage_from_data()
         d2 = load_json(WORK / "data2.json") or {}
         research_asof = str(d2.get("asof") or date.today())
+    stage_prev(prev)
 
     public_url = os.environ.get("PUBLIC_URL", "https://ten-themes.vercel.app")
     (WORK / "link.txt").write_text(public_url.strip() + "\n")

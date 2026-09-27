@@ -1,16 +1,10 @@
-import json, time, urllib.request, datetime as dt, os
+import json, time, datetime as dt, os
 from universe import ALL, UNIVERSE
-from yahoo_http import get_json
+from market_data import daily_chart, SOURCES
 
-UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
-_CACHE_PATH = os.environ.get("CHART_CACHE")
-_CACHE = json.load(open(_CACHE_PATH)) if _CACHE_PATH and os.path.exists(_CACHE_PATH) else None
-
-def fetch(t):
-    if _CACHE and t in _CACHE and _CACHE[t].get("timestamp"):
-        return {"chart": {"result": [_CACHE[t]]}}
-    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{t}?range=2y&interval=1d"
-    return get_json(url, UA)
+# Last good snapshot (staged by job.py): names for sources that don't carry them,
+# and a stale carry-forward for tickers no source returns this week.
+PREV = json.load(open("prices_prev.json")) if os.path.exists("prices_prev.json") else {}
 
 def pct(a, b):
     if a is None or b in (None, 0): return None
@@ -27,8 +21,7 @@ def nearest(ts, closes, target):
 out = {}
 for t in ALL:
     try:
-        d = fetch(t)
-        res = d["chart"]["result"][0]
+        res = daily_chart(t)
         meta = res["meta"]
         ts = res["timestamp"]
         closes = res["indicators"]["quote"][0]["close"]
@@ -37,7 +30,7 @@ for t in ALL:
         now = meta["regularMarketTime"]
         row = {
             "ticker": t,
-            "name": meta.get("longName") or meta.get("shortName") or t,
+            "name": meta.get("longName") or meta.get("shortName") or PREV.get(t, {}).get("name") or t,
             "currency": meta.get("currency"),
             "last": round(last, 2),
             "asof": dt.datetime.utcfromtimestamp(now).strftime("%Y-%m-%d"),
@@ -51,11 +44,16 @@ for t in ALL:
             p = nearest(ts, closes, now - days*86400)
             row[f"px_{label}_ago"] = round(p,2) if p else None
             row[f"chg_{label}"] = pct(last, p)
+        row["source"] = SOURCES.get(t)
         out[t] = row
-        print(t, row["last"], row["chg_1y"], flush=True)
+        print(t, row["last"], row["chg_1y"], row["source"], flush=True)
     except Exception as e:
-        print("FAIL", t, e, flush=True)
-    time.sleep(0.7)
+        if t in PREV:
+            out[t] = {**PREV[t], "stale": True}
+            print("STALE", t, "carried from", PREV[t].get("asof"), "-", str(e)[:120], flush=True)
+        else:
+            print("FAIL", t, e, flush=True)
+    time.sleep(0.2)
 
 json.dump(out, open("prices.json","w"), indent=1)
-print("saved", len(out))
+print("saved", len(out), "| stale:", [t for t, r in out.items() if r.get("stale")])

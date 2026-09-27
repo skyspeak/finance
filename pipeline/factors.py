@@ -35,10 +35,10 @@ add("CURVE", "2s10s slope", "Daily change in the 2s10s curve slope, basis points
     diffs(cd, [x["s2s10"] * 100 for x in curve]), unit="bp")
 
 for sym, key, label, desc in [
-    ("DX-Y.NYB", "DOLLAR", "US dollar",      "Daily return on the trade-weighted dollar index"),
-    ("CL=F",     "OIL",    "Crude oil",      "Daily return on front-month WTI"),
-    ("GC=F",     "GOLD",   "Gold",           "Daily return on front-month gold"),
-    ("HG=F",     "COPPER", "Copper",         "Daily return on front-month copper — industrial demand proxy"),
+    ("DX-Y.NYB", "DOLLAR", "US dollar",      "Daily return on the US dollar index (UUP ETF)"),
+    ("CL=F",     "OIL",    "Crude oil",      "Daily return on front-month WTI (USO ETF)"),
+    ("GC=F",     "GOLD",   "Gold",           "Daily return on gold (GLD ETF)"),
+    ("HG=F",     "COPPER", "Copper",         "Daily return on copper (CPER ETF) — industrial demand proxy"),
     ("^VIX",     "VOL",    "VIX",            "Daily return on the VIX"),
     ("CREDIT",   "CREDIT", "Credit appetite","Daily return on HYG/LQD — rising means risk appetite improving"),
     ("^GSPC",    "SPX",    "S&P 500",        "Daily return on the S&P 500 — the market factor"),

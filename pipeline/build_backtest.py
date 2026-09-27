@@ -166,7 +166,7 @@ footer{{padding:26px 0;color:var(--mut);font-size:11.5px}}
 
 <section><div class="wrap">
 <h2>Method</h2>
-<p class="note"><b>Alignment.</b> Daily closes from Yahoo via <code>hist.json</code>, inner-joined to SPY and every pick with a full tape ({BT['n_days']} sessions, {BT['start']} to {BT['end']}).
+<p class="note"><b>Alignment.</b> Daily closes (CBOE delayed history) via <code>hist.json</code>, inner-joined to SPY and every pick with a full tape ({BT['n_days']} sessions, {BT['start']} to {BT['end']}).
 <b>Weights.</b> Model = inverse-vol sleeves with a 12% cap, renormalized to fully invested. Published keeps the {BT.get('cash')}% cash sleeve at a 0% return.
 <b>Sharpe.</b> Daily mean annualized minus 4%, divided by annualized daily vol.
 <b>Next.</b> Once Railway has more than one weekly snapshot, this page can walk ratings forward instead of freezing this week's list.</p>

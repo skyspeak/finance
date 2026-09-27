@@ -1,19 +1,12 @@
 """2y history -> technicals, risk metrics, correlation matrix. Writes tech.json, hist.json"""
-import json, time, math, urllib.request, statistics as st, os
+import json, time, math, statistics as st, os
 from universe import ALL, UNIVERSE
-from yahoo_http import get_json
+from market_data import daily_chart
 
-UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
 SYMS = ALL + ["SPY"]
-_CACHE_PATH = os.environ.get("CHART_CACHE")
-_CACHE = json.load(open(_CACHE_PATH)) if _CACHE_PATH and os.path.exists(_CACHE_PATH) else None
 
 def fetch(t):
-    if _CACHE and t in _CACHE and _CACHE[t].get("timestamp"):
-        d = _CACHE[t]
-    else:
-        u = f"https://query1.finance.yahoo.com/v8/finance/chart/{t}?range=2y&interval=1d"
-        d = get_json(u, UA)["chart"]["result"][0]
+    d = daily_chart(t)
     ts = d["timestamp"]; c = d["indicators"]["quote"][0]["close"]
     v = d["indicators"]["quote"][0].get("volume") or [None]*len(ts)
     pair = [(a, b, w) for a, b, w in zip(ts, c, v) if b is not None]
@@ -24,8 +17,8 @@ for t in SYMS:
     try:
         ts, c, v = fetch(t); H[t] = {"ts": ts, "c": c, "v": v}
         print(t, len(c), flush=True)
-    except Exception as e: print("FAIL", t, str(e)[:50], flush=True)
-    time.sleep(0.7)
+    except Exception as e: print("FAIL", t, str(e)[:120], flush=True)
+    time.sleep(0.2)
 
 def rets(c): return [(c[i]/c[i-1]-1) for i in range(1, len(c))]
 def sma(c, n): return sum(c[-n:])/n if len(c) >= n else None

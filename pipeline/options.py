@@ -2,6 +2,7 @@
 import json, re, time, urllib.request, datetime as dt
 
 from dates import today
+from market_data import cboe_json
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
 D = json.load(open("data.json")); TECH = json.load(open("tech.json"))["tech"]; EN = json.load(open("enrich.json"))
 rows = {r["ticker"]: r for r in D["rows"]}
@@ -39,8 +40,7 @@ OUT = {}
 for t in SHORT:
     try:
         u = f"https://cdn.cboe.com/api/global/delayed_quotes/options/{t}.json"
-        with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=40) as r:
-            raw = json.load(r)["data"]
+        raw = cboe_json(u)["data"]
     except Exception as e:
         print("FAIL", t, str(e)[:60]); continue
     S = raw.get("close") or rows[t].get("last")

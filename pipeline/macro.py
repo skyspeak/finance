@@ -2,14 +2,13 @@
 
 Sources (all free, no auth):
   - treasury.gov daily par yield curve CSV  (rates; ^TNX on Yahoo is too sparse)
-  - Yahoo v8 chart                          (vol, dollar, commodities, credit, crypto, ETFs)
+  - CBOE delayed daily history via market_data (vol, benchmarks, credit, sector/thematic ETFs;
+    Nasdaq 100, dollar, commodities and bitcoin through the ETFs that track them)
 """
 import json, csv, io, time, math, urllib.request, datetime as dt, statistics as st, os
-from yahoo_http import get_json
+from market_data import daily_chart, SOURCES
 
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
-_CACHE_PATH = os.environ.get("CHART_CACHE")
-_CACHE = json.load(open(_CACHE_PATH)) if _CACHE_PATH and os.path.exists(_CACHE_PATH) else None
 
 # ---------------------------------------------------------------- Treasury curve
 TCSV = ("https://home.treasury.gov/resource-center/data-chart-center/interest-rates/"
@@ -46,17 +45,17 @@ def treasury(years=None):
 SERIES = {
     # macro factors
     "^VIX":     ("VIX",              "vol",       "Equity implied volatility"),
-    "DX-Y.NYB": ("Dollar Index",     "fx",        "Trade-weighted US dollar"),
-    "CL=F":     ("WTI Crude",        "commodity", "Front-month crude oil"),
-    "GC=F":     ("Gold",             "commodity", "Front-month gold"),
-    "HG=F":     ("Copper",           "commodity", "Front-month copper — industrial demand proxy"),
+    "DX-Y.NYB": ("Dollar (UUP)",     "fx",        "US dollar index, via the UUP ETF that tracks DXY futures"),
+    "CL=F":     ("WTI Crude (USO)",  "commodity", "Front-month crude oil, via the USO ETF"),
+    "GC=F":     ("Gold (GLD)",       "commodity", "Gold, via the GLD ETF"),
+    "HG=F":     ("Copper (CPER)",    "commodity", "Copper futures, via the CPER ETF — industrial demand proxy"),
     "TLT":      ("TLT 20y+ Treasury","rates",     "Long-duration Treasury price"),
     "HYG":      ("HYG High Yield",   "credit",    "High-yield corporate bond price"),
     "LQD":      ("LQD Inv Grade",    "credit",    "Investment-grade corporate bond price"),
-    "BTC-USD":  ("Bitcoin",          "crypto",    "Crypto risk appetite"),
+    "BTC-USD":  ("Bitcoin (IBIT)",   "crypto",    "Crypto risk appetite, via the IBIT spot bitcoin ETF"),
     # benchmarks
     "^GSPC":    ("S&P 500",          "benchmark", "Broad market"),
-    "^NDX":     ("Nasdaq 100",       "benchmark", "Large-cap growth"),
+    "^NDX":     ("Nasdaq 100 (QQQ)", "benchmark", "Large-cap growth, via the QQQ ETF"),
     "^RUT":     ("Russell 2000",     "benchmark", "Small caps"),
     # GICS sector SPDRs
     "XLK": ("Technology", "sector", "GICS Information Technology"),
@@ -84,11 +83,7 @@ SERIES = {
 }
 
 def chart(sym, rng="2y"):
-    if _CACHE and sym in _CACHE and _CACHE[sym].get("timestamp"):
-        d = _CACHE[sym]
-    else:
-        u = f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?range={rng}&interval=1d"
-        d = get_json(u, UA)["chart"]["result"][0]
+    d = daily_chart(sym, rng)
     ts, c = d["timestamp"], d["indicators"]["quote"][0]["close"]
     pair = [(t, v) for t, v in zip(ts, c) if v is not None]
     return ([dt.datetime.utcfromtimestamp(t).strftime("%Y-%m-%d") for t, _ in pair],
@@ -126,7 +121,7 @@ def build():
         }
         out["rates"]["y10_pctile_1y"] = pctile([x["y10"] for x in out["curve"][-252:] if x.get("y10")], last["y10"])
 
-    print("Yahoo series:")
+    print("Market series:")
     for sym, (name, kind, desc) in SERIES.items():
         try:
             dates, vals, meta = chart(sym)
@@ -138,7 +133,7 @@ def build():
             y = vals[-253] if len(vals) > 253 else vals[0]
             y1 = vals[-252:]
             out["series"][sym] = {
-                "symbol": sym, "name": name, "kind": kind, "desc": desc,
+                "symbol": sym, "name": name, "kind": kind, "desc": desc, "source": SOURCES.get(sym),
                 "last": round(vals[-1], 2), "asof": dates[-1],
                 "chg_1w": pct(vals[-1], w), "chg_1m": pct(vals[-1], m),
                 "chg_3m": pct(vals[-1], q), "chg_1y": pct(vals[-1], y),
@@ -148,8 +143,8 @@ def build():
             }
             print(f"  ok   {sym:10s} {name[:22]:24s} last={vals[-1]:>10.2f}  1m={out['series'][sym]['chg_1m']}", flush=True)
         except Exception as e:
-            print(f"  FAIL {sym:10s} {str(e)[:50]}", flush=True)
-        time.sleep(0.7)
+            print(f"  FAIL {sym:10s} {str(e)[:120]}", flush=True)
+        time.sleep(0.2)
 
     # derived credit-appetite spread proxy: HYG relative to LQD
     S = out["series"]
