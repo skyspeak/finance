@@ -25,6 +25,16 @@ into its next print. Seventeen defined-risk tickets are live below."""
 _ip = Path("intro.md")
 INTRO = _ip.read_text().strip() if _ip.exists() else _FALLBACK_INTRO
 
+# ---- the world this week (world.py) + a markets snapshot (macro.py); both optional
+def _load(name):
+    try: return json.load(open(name))
+    except Exception: return None
+WORLD = _load("world.json") or {}
+MAC = _load("macro.json") or {}
+SEC_LABEL = {"world": "The World", "economy": "Economy &amp; Business", "tech": "Technology"}
+SNAP = [("^GSPC", "S&amp;P 500"), ("^NDX", "Nasdaq 100 (QQQ)"), ("^VIX", "VIX"), ("Y10", "10Y Treasury"),
+        ("DX-Y.NYB", "Dollar (UUP)"), ("CL=F", "WTI crude (USO)"), ("GC=F", "Gold (GLD)"), ("BTC-USD", "Bitcoin (IBIT)")]
+
 TD = f"padding:10px 11px;border-bottom:1px solid #23272e"
 TH = f"padding:8px 11px;border-bottom:1px solid #3a4048;font:600 9.5px {M};letter-spacing:.09em;text-transform:uppercase;color:#7d8a9c;text-align:left"
 
@@ -84,6 +94,42 @@ irow = "".join(f"""<tr style="background:{'#111317' if i%2==0 else '#0d0f12'}">
 <td style="{TD};text-align:right;font-family:{M};color:#00c805;font-weight:700;white-space:nowrap">{('$%.0fB'%p['valuation_b']) if isinstance(p.get('valuation_b'),(int,float)) else '—'}</td></tr>"""
  for i, p in enumerate(ipo_hot))
 
+def story(r):
+    badge = (f'<span style="font:700 9px {M};color:#08090b;background:#5b9cff;border-radius:3px;padding:2px 5px;margin-left:6px">{r["n_outlets"]} outlets</span>'
+             if r.get("n_outlets", 1) > 1 else "")
+    return f"""<tr><td style="padding:11px 0;border-bottom:1px solid #23272e">
+<a href="{e(r['link'])}" style="color:#e8ecf1;text-decoration:none;font-size:14px;font-weight:650;line-height:1.4">{e(r['title'])}</a>{badge}
+<div style="font-size:12px;color:#9fb0c4;line-height:1.55;margin-top:4px">{e(r.get('summary'))}</div>
+<div style="font-size:10px;color:#7d8a9c;margin-top:4px;font-family:{M}">{e(', '.join(r.get('outlets') or [r.get('outlet')]))} · {e(r.get('published'))}</div></td></tr>"""
+
+WORLD_HTML = ""
+for sec in ("world", "economy", "tech"):
+    items = (WORLD.get("sections") or {}).get(sec) or []
+    if items:
+        WORLD_HTML += f"""<tr><td style="padding:22px 26px 4px">
+<div style="color:#5b9cff;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:4px">{SEC_LABEL[sec]}</div>
+<table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse">{''.join(story(r) for r in items)}</table></td></tr>"""
+
+def _snap_rows():
+    S, rates, out = MAC.get("series") or {}, MAC.get("rates") or {}, []
+    for key, label in SNAP:
+        if key == "Y10":
+            lv = (rates.get("levels") or {}).get("y10")
+            if lv is None: continue
+            bp = rates.get("chg_1w_bp")
+            chg = '<span style="color:#7d8a9c">—</span>' if bp is None else f'<span style="color:{"#ff5000" if bp > 0 else "#00c805"};font-weight:600">{bp:+d} bp</span>'
+            out.append((label, f"{lv:.2f}%", chg))
+        elif key in S:
+            out.append((label, n(S[key].get("last"), 2), sg(S[key].get("chg_1w"))))
+    return out
+SNAP_ROWS = _snap_rows()
+SNAP_HTML = "" if not SNAP_ROWS else f"""<tr><td style="padding:22px 26px 4px">
+<div style="color:#5b9cff;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:10px">Markets — week to {e(MAC.get('asof') or asof)}</div>
+<table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse">
+<tr><th style="{TH}"></th><th style="{TH};text-align:right">Last</th><th style="{TH};text-align:right">1 week</th></tr>
+{''.join(f'<tr style="background:{"#111317" if i%2==0 else "#0d0f12"}"><td style="{TD};color:#c3cede;font-size:12.5px">{l}</td><td style="{TD};text-align:right;font-family:{M};color:#e8ecf1">{v}</td><td style="{TD};text-align:right;font-family:{M};font-size:12px">{c}</td></tr>' for i,(l,v,c) in enumerate(SNAP_ROWS))}
+</table></td></tr>"""
+
 STAT = "".join(
   f'<td align="center" style="padding:13px 3px;border-right:1px solid #23272e">'
   f'<div style="color:{c};font-size:20px;font-weight:700;font-family:{M}">{v}</div>'
@@ -98,7 +144,10 @@ H = f"""<!DOCTYPE html><html><body style="margin:0;padding:0;background:#08090b"
 <tr><td style="padding:24px 26px 20px;background:linear-gradient(180deg,#12161b,#0d0f12)">
 <div style="color:#00c805;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:7px">● Live desk · weekly</div>
 <div style="color:#fff;font-size:29px;font-weight:800;letter-spacing:-.8px">Ten Themes</div>
-<div style="color:#7d8a9c;font-size:11.5px;margin-top:6px">Market data {asof} · CBOE delayed options · 13F Q2 2026</div></td></tr>
+<div style="color:#7d8a9c;font-size:11.5px;margin-top:6px">The world, the markets and the ten themes · market data {asof}</div></td></tr>
+{WORLD_HTML}
+{SNAP_HTML}
+<tr><td style="padding:30px 26px 0"><div style="color:#00c805;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700">● Ten Themes desk</div></td></tr>
 
 <tr><td style="background:#111317;border-top:1px solid #23272e;border-bottom:1px solid #23272e">
 <table width="100%" cellpadding="0" cellspacing="0"><tr>{STAT}</tr></table></td></tr>
@@ -150,9 +199,14 @@ H = f"""<!DOCTYPE html><html><body style="margin:0;padding:0;background:#08090b"
 <b style="color:#c3cede">This is research, not investment advice.</b></div></td></tr>
 </table></td></tr></table></body></html>"""
 open("email2.html", "w").write(H)
+_top = ((WORLD.get("sections") or {}).get("world") or [{}])[0].get("title")
+_world_txt = "\n".join(
+    f"- {r['title']} ({', '.join(r.get('outlets') or [])}) {r.get('link','')}"
+    for sec in ("world", "economy", "tech") for r in ((WORLD.get("sections") or {}).get(sec) or []))
 json.dump({"to": "stuymusty@gmail.com",
- "subject": f"Ten Themes — {asof} · {len(trades)} trade tickets, {len(watch)} names flagged, beta {D['port_beta']}",
+ "subject": (f"Weekly brief {asof} — {_top if len(_top) <= 72 else _top[:72].rsplit(' ', 1)[0] + '…'}" if _top else f"Weekly brief {asof}")
+            + f" · Ten Themes: {len(trades)} tickets, beta {D['port_beta']}",
  "htmlBody": H,
- "textBody": f"Ten Themes weekly, data as of {asof}. {len(picks)} picks / {len(avoids)} avoids. {len(trades)} defined-risk option tickets. {len(watch)} names flagged. Book beta {D['port_beta']}, {D['cluster_w']}% in three correlated themes. Dashboard: {LINK}"},
+ "textBody": (f"The world this week:\n{_world_txt}\n\n" if _world_txt else "") + f"Ten Themes weekly, data as of {asof}. {len(picks)} picks / {len(avoids)} avoids. {len(trades)} defined-risk option tickets. {len(watch)} names flagged. Book beta {D['port_beta']}, {D['cluster_w']}% in three correlated themes. Dashboard: {LINK}"},
  open("email2_params.json", "w"))
 print("wrote email2.html", len(H))

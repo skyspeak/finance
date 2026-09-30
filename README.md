@@ -53,6 +53,18 @@ What the Monday job does:
 
 It will **fail the deploy** if fewer than 60 prices come back or fewer than 8 option tickets clear the liquidity screen.
 
+### Weekly email
+
+After a successful publish the job emails a digest to **stuymusty@gmail.com**: the week's top world, economy and tech stories (`pipeline/world.py` — 12 outlets' RSS, ranked by how many outlets carried each story), a markets snapshot, then the Ten Themes desk. A failed run sends a short alert instead, so no email means the job didn't run.
+
+Sending uses Gmail SMTP with an **App Password**, which doesn't expire (Google revokes it only on a password change or if 2-Step Verification is turned off):
+
+1. Signed in as stuymusty@gmail.com, open https://myaccount.google.com/apppasswords (2-Step Verification must be on), create one named `ten-themes`.
+2. Railway → fortunate-healing → finance → Variables: `GMAIL_APP_PASSWORD` = the 16 characters (spaces are fine).
+3. Test without waiting for Monday: `railway ssh --service finance -- python3 mailer.py --test`.
+
+`MAIL_TO` (comma-separated) and `MAIL_FROM` override the defaults. The Gmail API path (`GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GMAIL_REFRESH_TOKEN`) also works, but only lasts if the OAuth consent screen is published to **Production** — in Testing, Google expires refresh tokens after 7 days.
+
 ### One-time setup
 
 1. Create a Railway project, attach **Postgres**, deploy this repo as a service (Dockerfile + `railway.toml`).

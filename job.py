@@ -214,6 +214,10 @@ def weekly() -> None:
         prev_r = previous_ratings(asof)
         strategy, intro = write_copy(WORK, data2, prev_r, research_asof)
 
+        try:
+            run_script("world.py")  # news section for the digest; the desk doesn't depend on it
+        except SystemExit as e:
+            print(f"world.py failed ({e}) — digest goes out without the news section", flush=True)
         run_script("build_site2.py")
         run_script("build_email2.py")
         run_script("build_map.py")
@@ -242,14 +246,50 @@ def weekly() -> None:
             publish_public(PUBLIC, asof=str(asof))
         else:
             print("GITHUB_TOKEN unset — skipped publish; HTML is in public/", flush=True)
-    except Exception as err:
+    except (Exception, SystemExit) as err:  # SystemExit: the MIN_PRICES / MIN_TRADES / macro guards
         traceback.print_exc()
         fail_asof = asof or date.today()
         try:
             save_snapshot(asof=fail_asof, status="failed", error=str(err)[:2000], blobs=collect_blobs())
         except Exception:
             traceback.print_exc()
+        alert_failure(err)
         raise
+
+    mail_digest()
+
+
+def mail_digest() -> None:
+    """Email this week's digest. Runs only after a successful publish; a mail failure
+    exits non-zero (visible in Railway) without marking the snapshot failed."""
+    import mailer
+
+    if not mailer.configured():
+        print("mail not configured (GMAIL_APP_PASSWORD) — digest not emailed", flush=True)
+        return
+    params = WORK / "email2_params.json"
+    if not params.exists():
+        raise SystemExit("email2_params.json missing — digest not emailed")
+    try:
+        mailer.send_params(params)
+    except Exception as e:
+        raise SystemExit(f"digest email failed: {e}")
+
+
+def alert_failure(err: BaseException) -> None:
+    """Best-effort heads-up when the weekly job fails, so silence never means 'fine'."""
+    try:
+        import mailer
+
+        if mailer.configured():
+            mailer.send(
+                f"Ten Themes weekly job FAILED — {date.today()}",
+                f"The weekly job stopped before publishing; the site still shows last week.\n\n"
+                f"Error: {str(err)[:1500]}\n\nLogs: Railway -> fortunate-healing -> finance -> Deployments.",
+                to=os.environ.get("MAIL_TO") or "stuymusty@gmail.com",
+            )
+    except Exception:
+        traceback.print_exc()
 
 
 def main() -> None:

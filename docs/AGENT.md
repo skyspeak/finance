@@ -101,7 +101,7 @@ and options chains and will notice immediately if you are bluffing.
 7. Diff ratings against last week. Every PICK/NEUTRAL/AVOID flip is news and must be explained.
 8. Unattended runs write strategy.md / intro.md from rating diffs (pipeline/strategy.py). A strategist rewrite is still better — drop the files in and rebuild if you do one.
 9. job.py copies HTML into public/ and publishes to Vercel. Manual path: run_weekly.sh then npx vercel --prod.
-10. Email HTML is at /email. Sending the digest is still a separate step (email2_params.json); the desk publish does not mail anyone.
+10. Email HTML is at /email. After a successful publish, `job.py` emails the digest (`mailer.py`, Gmail) to stuymusty@gmail.com when `GMAIL_APP_PASSWORD` is set; job failures send an alert instead.
 11. Snapshot lands in Postgres (snapshots + ratings). Update any tracker tables from there.
 ```
 
@@ -148,4 +148,4 @@ Not everything needs weekly refreshing, and refreshing the slow-moving streams w
 
 The desk is a public static site on Vercel (`public/index.html` → `/`, `public/map.html` → `/map`, `public/backtest.html` → `/backtest`). Railway `job.py` publishes all three every Monday after a successful snapshot.
 
-Unattended runs write a mechanical strategy note from rating diffs and carry research JSON from Postgres. They do not send email — `email2_params.json` is still a payload for a separate mailer.
+Unattended runs write a mechanical strategy note from rating diffs and carry research JSON from Postgres. They email the digest — world headlines (`world.py`), a markets snapshot, then the desk — via `mailer.py` once `GMAIL_APP_PASSWORD` is set on Railway.
