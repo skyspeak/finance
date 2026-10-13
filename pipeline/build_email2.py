@@ -203,7 +203,7 @@ _top = ((WORLD.get("sections") or {}).get("world") or [{}])[0].get("title")
 _world_txt = "\n".join(
     f"- {r['title']} ({', '.join(r.get('outlets') or [])}) {r.get('link','')}"
     for sec in ("world", "economy", "tech") for r in ((WORLD.get("sections") or {}).get(sec) or []))
-json.dump({"to": "stuymusty@gmail.com",
+json.dump({"to": "skyspeak@gmail.com",
  "subject": (f"Weekly brief {asof} — {_top if len(_top) <= 72 else _top[:72].rsplit(' ', 1)[0] + '…'}" if _top else f"Weekly brief {asof}")
             + f" · Ten Themes: {len(trades)} tickets, beta {D['port_beta']}",
  "htmlBody": H,

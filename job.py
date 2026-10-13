@@ -286,7 +286,7 @@ def alert_failure(err: BaseException) -> None:
                 f"Ten Themes weekly job FAILED — {date.today()}",
                 f"The weekly job stopped before publishing; the site still shows last week.\n\n"
                 f"Error: {str(err)[:1500]}\n\nLogs: Railway -> fortunate-healing -> finance -> Deployments.",
-                to=os.environ.get("MAIL_TO") or "stuymusty@gmail.com",
+                to=os.environ.get("MAIL_TO") or "skyspeak@gmail.com",
             )
     except Exception:
         traceback.print_exc()

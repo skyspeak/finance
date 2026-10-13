@@ -18,8 +18,9 @@ Three transports, tried in this order:
    screen is published to Production; in Testing, Google kills it after 7 days.
 
 Env:
-  MAIL_FROM   sender Gmail address   (default stuymusty@gmail.com)
-  MAIL_TO     comma-separated list   (default: the payload's "to", else MAIL_FROM)
+  MAIL_FROM   sender Gmail address   (default stuymusty@gmail.com; the relay sends as
+              whichever Gmail the brief app has connected — stuymusty@gmail.com)
+  MAIL_TO     comma-separated list   (default: the payload's "to" — skyspeak@gmail.com)
 
   python3 mailer.py --test           # send a one-line test message
 """
@@ -88,6 +89,8 @@ def _send_relay(to: list[str], subject: str, html: str | None, text: str) -> str
             out = json.load(r)
     except urllib.error.HTTPError as e:
         raise RuntimeError(f"mail relay {e.code}: {e.read().decode('utf-8', 'replace')[:300]}") from e
+    if out.get("from"):
+        print(f"relay sent as {out['from']}", flush=True)
     return f"relay:{out.get('via', '?')}"
 
 

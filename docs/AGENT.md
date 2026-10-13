@@ -101,7 +101,7 @@ and options chains and will notice immediately if you are bluffing.
 7. Diff ratings against last week. Every PICK/NEUTRAL/AVOID flip is news and must be explained.
 8. Unattended runs write strategy.md / intro.md from rating diffs (pipeline/strategy.py). A strategist rewrite is still better — drop the files in and rebuild if you do one.
 9. job.py copies HTML into public/ and publishes to Vercel. Manual path: run_weekly.sh then npx vercel --prod.
-10. Email HTML is at /email. After a successful publish, `job.py` emails the digest (`mailer.py`, Gmail) to stuymusty@gmail.com when `GMAIL_APP_PASSWORD` is set; job failures send an alert instead.
+10. Email HTML is at /email. After a successful publish, `job.py` emails the digest (`mailer.py`, via the brief relay's Gmail) from stuymusty@gmail.com to skyspeak@gmail.com; job failures send an alert instead.
 11. Snapshot lands in Postgres (snapshots + ratings). Update any tracker tables from there.
 ```
 
