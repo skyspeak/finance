@@ -1,8 +1,13 @@
 """Send the weekly digest (and failure alerts) from Gmail. Stdlib only.
 
-Two ways to authenticate, tried in this order:
+Three transports, tried in this order:
 
-1. Gmail SMTP + App Password (recommended). GMAIL_APP_PASSWORD is a 16-character
+0. HTTPS relay (MAIL_RELAY_URL + MAIL_RELAY_SECRET): POSTs to the brief app's
+   /api/relay-send, which sends via Resend (API key, no expiry) and falls back to
+   its connected Gmail. Use this on Railway: Railway blocks outbound SMTP on
+   Free/Trial/Hobby plans ("Network is unreachable"), but HTTPS is fine.
+
+1. Gmail SMTP + App Password. GMAIL_APP_PASSWORD is a 16-character
    password generated at https://myaccount.google.com/apppasswords for MAIL_FROM
    (needs 2-Step Verification). It does not expire; Google revokes it only if the
    account password changes or 2-Step Verification is turned off. No OAuth app, so
@@ -39,6 +44,8 @@ class MailNotConfigured(RuntimeError):
 
 
 def configured() -> str | None:
+    if os.environ.get("MAIL_RELAY_URL") and os.environ.get("MAIL_RELAY_SECRET"):
+        return "relay"
     if os.environ.get("GMAIL_APP_PASSWORD"):
         return "smtp"
     if all(os.environ.get(k) for k in ("GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET", "GMAIL_REFRESH_TOKEN")):
@@ -63,6 +70,23 @@ def _send_smtp(msg: EmailMessage, sender: str) -> str:
         s.login(sender, password)
         s.send_message(msg)
     return "smtp"
+
+
+def _send_relay(to: list[str], subject: str, html: str | None, text: str) -> str:
+    payload = {"to": ", ".join(to), "subject": subject, "html": html or f"<pre>{text}</pre>",
+               "text": text, "fromName": "Ten Themes"}
+    req = urllib.request.Request(
+        os.environ["MAIL_RELAY_URL"],
+        data=json.dumps(payload).encode(),
+        headers={"Authorization": f"Bearer {os.environ['MAIL_RELAY_SECRET']}",
+                 "Content-Type": "application/json", "User-Agent": "ten-themes-mailer/1.0"},
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            out = json.load(r)
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"mail relay {e.code}: {e.read().decode('utf-8', 'replace')[:300]}") from e
+    return f"relay:{out.get('via', '?')}"
 
 
 def _send_gmail_api(msg: EmailMessage) -> str:
@@ -100,7 +124,8 @@ def send(subject: str, text: str, html: str | None = None, to: list[str] | str |
     """Send one message. Returns the transport used; raises on failure."""
     how = configured()
     if not how:
-        raise MailNotConfigured("set GMAIL_APP_PASSWORD (or GOOGLE_CLIENT_ID/SECRET + GMAIL_REFRESH_TOKEN)")
+        raise MailNotConfigured("set MAIL_RELAY_URL + MAIL_RELAY_SECRET, GMAIL_APP_PASSWORD, "
+                                "or GOOGLE_CLIENT_ID/SECRET + GMAIL_REFRESH_TOKEN")
     sender = os.environ.get("MAIL_FROM", DEFAULT_FROM)
     env_to = os.environ.get("MAIL_TO")
     if env_to:
@@ -108,8 +133,11 @@ def send(subject: str, text: str, html: str | None = None, to: list[str] | str |
     if isinstance(to, str):
         to = [a.strip() for a in to.split(",") if a.strip()]
     to = to or [sender]
-    msg = _message(sender, to, subject, html, text)
-    used = _send_smtp(msg, sender) if how == "smtp" else _send_gmail_api(msg)
+    if how == "relay":
+        used = _send_relay(to, subject, html, text)
+    else:
+        msg = _message(sender, to, subject, html, text)
+        used = _send_smtp(msg, sender) if how == "smtp" else _send_gmail_api(msg)
     print(f"emailed '{subject[:70]}' to {', '.join(to)} via {used}", flush=True)
     return used
 

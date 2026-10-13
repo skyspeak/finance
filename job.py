@@ -265,7 +265,7 @@ def mail_digest() -> None:
     import mailer
 
     if not mailer.configured():
-        print("mail not configured (GMAIL_APP_PASSWORD) — digest not emailed", flush=True)
+        print("mail not configured (MAIL_RELAY_URL/SECRET or GMAIL_APP_PASSWORD) — digest not emailed", flush=True)
         return
     params = WORK / "email2_params.json"
     if not params.exists():
