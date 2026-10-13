@@ -57,7 +57,7 @@ It will **fail the deploy** if fewer than 60 prices come back or fewer than 8 op
 
 After a successful publish the job emails a digest to **stuymusty@gmail.com**: the week's top world, economy and tech stories (`pipeline/world.py` — 12 outlets' RSS, ranked by how many outlets carried each story), a markets snapshot, then the Ten Themes desk. A failed run sends a short alert instead, so no email means the job didn't run.
 
-**On Railway the mail goes through the brief app's HTTPS relay** (`MAIL_RELAY_URL` = https://brief-livid.vercel.app/api/relay-send, `MAIL_RELAY_SECRET` = a value also listed in brief's `EMAIL_RELAY_EXTRA_SECRETS` on Vercel). Railway blocks outbound SMTP on Free/Trial/Hobby plans — a direct Gmail SMTP attempt fails with `Network is unreachable`. The relay sends via Resend when its domain is verified, otherwise via brief's connected Gmail.
+**On Railway the mail goes through the brief app's HTTPS relay** (`MAIL_RELAY_URL` = https://brief-livid.vercel.app/api/relay-send, `MAIL_RELAY_SECRET` = a value also listed in brief's `EMAIL_RELAY_EXTRA_SECRETS` on Vercel). Railway blocks outbound SMTP on Free/Trial/Hobby plans — a direct Gmail SMTP attempt fails with `Network is unreachable`. The relay sends via brief's connected Gmail (`MAIL_RELAY_PREFER=gmail`, the default); set `MAIL_RELAY_PREFER=resend` to try Resend first.
 
 Off Railway (or on Railway Pro), Gmail SMTP with an **App Password** also works and doesn't expire (Google revokes it only on a password change or if 2-Step Verification is turned off):
 

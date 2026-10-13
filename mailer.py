@@ -3,8 +3,8 @@
 Three transports, tried in this order:
 
 0. HTTPS relay (MAIL_RELAY_URL + MAIL_RELAY_SECRET): POSTs to the brief app's
-   /api/relay-send, which sends via Resend (API key, no expiry) and falls back to
-   its connected Gmail. Use this on Railway: Railway blocks outbound SMTP on
+   /api/relay-send, which sends via its connected Gmail (MAIL_RELAY_PREFER=gmail,
+   the default) or tries Resend first and falls back to Gmail (MAIL_RELAY_PREFER=resend). Use this on Railway: Railway blocks outbound SMTP on
    Free/Trial/Hobby plans ("Network is unreachable"), but HTTPS is fine.
 
 1. Gmail SMTP + App Password. GMAIL_APP_PASSWORD is a 16-character
@@ -75,6 +75,8 @@ def _send_smtp(msg: EmailMessage, sender: str) -> str:
 def _send_relay(to: list[str], subject: str, html: str | None, text: str) -> str:
     payload = {"to": ", ".join(to), "subject": subject, "html": html or f"<pre>{text}</pre>",
                "text": text, "fromName": "Ten Themes"}
+    if os.environ.get("MAIL_RELAY_PREFER", "gmail").strip().lower() == "gmail":
+        payload["prefer"] = "gmail"  # relay skips Resend entirely
     req = urllib.request.Request(
         os.environ["MAIL_RELAY_URL"],
         data=json.dumps(payload).encode(),
