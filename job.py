@@ -221,6 +221,7 @@ def weekly() -> None:
         run_script("build_site2.py")
         run_script("build_email2.py")
         run_script("build_map.py")
+        run_script("build_grants.py")
         run_script("backtest.py")
         run_script("build_backtest.py")
         copy_artifacts()

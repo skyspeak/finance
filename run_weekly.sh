@@ -15,6 +15,7 @@ cp "${ROOT}"/data/*.json "${WORK}/" 2>/dev/null || true
 
 cd "${WORK}"
 
+echo "==> build_grants.py"         && python3 build_grants.py
 echo "==> [1/8] prices.py"       && python3 prices.py
 echo "==> [2/8] enrich.py"       && python3 enrich.py
 echo "==> [3/8] tech.py"         && python3 tech.py

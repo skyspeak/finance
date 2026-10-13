@@ -2,7 +2,7 @@
 
 A daily (weekday) thematic equity + options research pipeline. Ten industry themes, 72 public tickers, 74 private-market competitors — scored into PICK / NEUTRAL / AVOID, sized into a model portfolio, and turned into defined-risk option trade tickets.
 
-**Stack:** Railway Postgres + a weekday cron worker (after each US close) run the pipeline. Vercel serves the public desk at [ten-themes.vercel.app](https://ten-themes.vercel.app) and the macro map at [/map](https://ten-themes.vercel.app/map). Fetch scripts stay Python stdlib (Yahoo / CBOE / Treasury / EDGAR, no API keys). The job itself needs `psycopg` (`pip install -r requirements.txt`).
+**Stack:** Railway Postgres + a weekday cron worker (after each US close) run the pipeline. Vercel serves the public desk at [ten-themes.vercel.app](https://ten-themes.vercel.app), the macro map at [/map](https://ten-themes.vercel.app/map), and the grant map at [/grants](https://ten-themes.vercel.app/grants). Fetch scripts stay Python stdlib (Yahoo / CBOE / Treasury / EDGAR, no API keys). The job itself needs `psycopg` (`pip install -r requirements.txt`).
 
 Data snapshot in `data/` is as of **2026-08-14** (market close), generated 2026-08-16.
 
@@ -23,6 +23,7 @@ python3 sectors.py       # -> sectors.json
 python3 factors.py       # -> factors.json
 python3 build_site2.py   # -> site2.html
 python3 build_map.py     # -> map.html
+python3 build_grants.py  # -> ../public/grants.html  (no market data)
 python3 build_email2.py  # -> email2.html, email2_params.json
 ```
 

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ten Themes — Grant map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#08090b;--pan:#111317;--pan2:#171a1f;--line:#23272e;--tx:#e8ecf1;--mut:#7d8a9c;
+--up:#00c805;--dn:#ff5000;--acc:#5b9cff;--warn:#ffb020;--pur:#c77dff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.55 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(14px,3.5vw,40px)}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+header{padding:26px 0 18px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#0d1014,#08090b)}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.kick{color:var(--acc);font:700 10.5px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}
+h1{font:800 clamp(26px,4.6vw,36px)/1.05 Inter,sans-serif;margin:0;letter-spacing:-1px}
+.asof{color:var(--mut);font-size:12px;text-align:right;line-height:1.55}
+.asof a{color:var(--acc);text-decoration:none}
+.asof a:hover{text-decoration:underline}
+.lede{color:#9fb0c4;font-size:15px;line-height:1.65;max-width:78ch;margin:18px 0 0}
+section{padding:28px 0 8px}
+h2{font:700 11px/1 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin:0 0 12px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pill{font:600 12px/1 Inter,sans-serif;color:var(--mut);background:transparent;border:1px solid var(--line);border-radius:999px;padding:7px 12px;cursor:pointer}
+.pill.on{color:var(--tx);background:var(--pan2);border-color:#3a4452}
+.pill:hover{border-color:#3a4452}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:18px;align-items:start;margin-top:14px}
+.mapbox{background:var(--pan);border:1px solid var(--line);border-radius:12px;position:relative}
+svg{width:100%;height:auto;display:block;border-radius:12px}
+.tip{position:absolute;z-index:3;pointer-events:none;background:#0c0e12;border:1px solid #343b46;border-radius:8px;padding:8px 10px;max-width:260px;font-size:12px;line-height:1.45;color:var(--tx);display:none}
+.tip b{display:block;font-size:13px;margin-bottom:2px}
+.tip span{color:var(--mut)}
+.side{background:var(--pan);border:1px solid var(--line);border-radius:12px;padding:14px 14px 16px}
+.side h3{margin:0 0 4px;font:700 16px/1.3 Inter,sans-serif}
+.kicker{font:700 10px/1 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-bottom:6px}
+.verdict{font-size:13.5px;line-height:1.55;color:#d5deea;margin:8px 0 12px}
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 12px}
+.num{background:var(--pan2);border-radius:8px;padding:8px 10px}
+.num span{display:block;color:var(--mut);font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.num b{font:600 14px/1.3 'JetBrains Mono',monospace;font-weight:500}
+label.ctl{display:block;margin:10px 0 0;font-size:12px;color:var(--mut)}
+label.ctl b{color:var(--tx);font-weight:600}
+input[type=range]{width:100%;margin:6px 0 0;accent-color:var(--acc)}
+.check{display:flex;gap:8px;align-items:flex-start;margin-top:12px;font-size:12.5px;color:#c5d0dc;line-height:1.45}
+.check input{margin-top:3px}
+.presets{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.presets button{font:600 11px/1 Inter,sans-serif;color:#c5d0dc;background:var(--pan2);border:1px solid var(--line);border-radius:6px;padding:6px 8px;cursor:pointer}
+.presets button:hover,.presets button.on{border-color:var(--acc);color:#fff}
+.strip{margin-top:14px}
+.strip-bar{position:relative;height:22px;display:flex;border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.seg{display:flex;align-items:center;justify-content:center;font:600 9px/1 'JetBrains Mono',monospace;color:#d7e2ee;white-space:nowrap;overflow:hidden}
+.mk{position:absolute;top:-3px;width:2px;height:28px;background:#fff;border-radius:1px}
+.rule{font-size:12.5px;color:#c5d0dc;line-height:1.5;margin:8px 0 0}
+.legend{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0 0;font-size:11px;color:var(--mut)}
+.sw{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;font:600 9.5px/1.3 'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);padding:8px 7px;border-bottom:1px solid var(--line);cursor:pointer;white-space:nowrap}
+td{padding:8px 7px;border-bottom:1px solid rgba(35,39,46,.7);vertical-align:top}
+tbody tr{cursor:pointer}
+tbody tr:hover,tbody tr.on{background:var(--pan)}
+.n{text-align:right}
+.scroll{overflow:auto;border:1px solid var(--line);border-radius:10px;max-height:640px;margin:12px 0 8px}
+.search{font:14px Inter,sans-serif;color:var(--tx);background:var(--pan);border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-width:180px}
+.why{color:#9fb0c4;font-size:13px;line-height:1.5}
+.tag{font:600 10px/1 'JetBrains Mono',monospace;color:var(--mut)}
+.notes{color:var(--mut);font-size:12px;line-height:1.6;margin:8px 0 28px}
+.notes li{margin:4px 0}
+footer{padding:8px 0 28px;color:var(--mut);font-size:11.5px}
+@media(max-width:960px){
+  .layout{grid-template-columns:1fr}
+  .asof{text-align:left}
+  .seg{font-size:0}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="top">
+  <div>
+    <div class="kick">Employer equity · Oct 2022 to Oct 2026</div>
+    <h1>Where the grant still works</h1>
+  </div>
+  <div class="asof">Modeled grants, not offer letters<br>Pre-tax · dilution called out below<br>
+    <a href="/">Desk</a> · <a href="/map">Macro map</a> · <a href="/backtest">Backtest</a>
+  </div>
+</div>
+<p class="lede">Hold the equity of a company valued under about $300M, with customers already paying, in a workflow or a contracted physical system that gets cheaper to deliver as inference gets cheaper. That is the seat that produced the cloud on this map. Anthropic, OpenAI, Cursor, Harvey, and Nvidia are finished versions of it. A new grant there is struck at a winner’s price.</p>
+</div></header>
+
+<section><div class="wrap">
+<div class="row">
+  <button class="pill on" id="mode-grants" type="button">Late-2022 grants</button>
+  <button class="pill" id="mode-peaks" type="button">2021 peaks</button>
+  <input class="search" id="q" type="search" placeholder="Find a company" aria-label="Find a company">
+</div>
+<div class="row" id="filters" style="margin-top:8px"></div>
+
+<div class="layout">
+  <div>
+    <div class="mapbox" id="mapbox">
+      <svg id="plot" viewBox="0 0 860 520" role="img" aria-label="Grant outcomes"></svg>
+      <div class="tip" id="tip"></div>
+    </div>
+    <div class="legend" id="legend"></div>
+    <div class="scroll"><table id="grid"><thead></thead><tbody></tbody></table></div>
+  </div>
+  <aside class="side">
+    <div class="kicker" id="side-kicker">Your offer</div>
+    <h3 id="side-title">Series B, $250M</h3>
+    <p class="verdict" id="verdict"></p>
+    <div class="nums" id="nums"></div>
+    <div class="presets" id="presets"></div>
+    <label class="ctl">Company mark today <b id="v-label" class="mono"></b>
+      <input id="v" type="range" min="0" max="1000" value="500" aria-valuemin="0" aria-valuemax="1000">
+    </label>
+    <label class="ctl">Mark rises <b id="m-label" class="mono"></b>
+      <input id="m" type="range" min="2" max="200" value="10" step="1">
+    </label>
+    <label class="ctl">Fraction of your percent you keep <b id="k-label" class="mono"></b>
+      <input id="k" type="range" min="40" max="100" value="50" step="5">
+    </label>
+    <label class="check"><input id="lab" type="checkbox" checked> Above $50B, pay a $2M four-year package instead of the $200k cap. OpenAI’s 2023 level, not a 2026 letter.</label>
+    <div class="strip">
+      <div class="strip-bar" id="strip"></div>
+      <p class="rule" id="rule"></p>
+    </div>
+    <div id="picked" style="margin-top:14px"></div>
+  </aside>
+</div>
+
+<h2 style="margin-top:22px">Assumptions baked in</h2>
+<ul class="notes" id="notes"></ul>
+</div></section>
+<footer><div class="wrap">Ten Themes · grant map · figures are headline marks from the source charts, read 12 Oct 2026. Not a solicitation.</div></footer>
+<script id="grants-data" type="application/json">{"asof":"2026-10-12","source":"Two charts read on 12 Oct 2026: startup drawdowns from 2021\u201322 peak marks, and a modeled mid/senior grant from late 2022 to Oct 2026. Headline valuations, not per-share. Common often got less. Gopuff's latest mark is a 2022 secondary.","assumptions":{"bands":[{"below":100000000,"pct":0.002,"label":"Under $100M"},{"below":500000000,"pct":0.001,"label":"$100\u2013500M"},{"below":1000000000,"pct":0.0005,"label":"$500M\u2013$1B"}],"cap_grant":200000,"cap_above":1000000000,"lab_grant":2000000,"lab_above":50000000000,"public_grant":320000,"spx_net":2.2,"target":5000000,"stretch":20000000,"default_valuation":250000000,"default_mark":10,"default_keep":0.5,"notes":["Historical multiples are worth-now divided by the grant at entry. The source chart already nets out dilution, is pre-tax, and includes no refreshers.","The forward slider splits that into two pieces: how many times the company mark rises, and what fraction of your percent you keep. Net multiple = mark multiple \u00d7 fraction kept. Set the fraction to 100% if the number in your head is already a chart-style net multiple.","Under $1B the grant is a percent of the company, using the source chart's bands. At $1B or more the grant is a flat $200k, so the percent shrinks as the price rises.","At $50B or more, if the lab switch is on, the grant becomes $2M over four years. That is OpenAI's 2023 level from the chart ($500k a year), not a 2026 offer letter.","The public preset uses Nvidia's 2022 package from the same chart: $80k a year, times four. It is not a quote for joining Nvidia now.","Reported private marks used as presets: Anthropic about $965B after the May 2026 round, OpenAI about $852B after the spring 2026 round. Higher numbers were being discussed and were not closed.","Where a 2022 grant fits two ownership bands, the map states the band it used. Cursor, ElevenLabs, and Harvey use 0.20% because the grant is what that band produces and the companies were founded in 2022. Grants from $200k to $500k use 0.10%. A flat $200k is treated as the $1B+ cap, not as a precise valuation.","Four companies the chart only calls unicorns are plotted at $1B. Northvolt is plotted on the $14B+ it raised, because the chart gives capital raised rather than a valuation. Cameo's latest point is 10% of $1B, from a 90% down round. Bright Health, Truepill, and Chime stay in the table: the chart doesn't give a company valuation for them.","Sierra was founded in 2023. That row, and OpenEvidence, are the chart's stage-sized grant, not proof someone started in October 2022."]},"winners":[{"id":"cursor","name":"Cursor","kind":"AI apps","entry":113000,"now":82000000,"mult":725,"why":"The editor was where the work already happened, and cheaper inference widened the margin on a product people were paying for. The grant matches 0.20% of about $56M; the other reading, 0.10%, would be $113M. Anysphere was founded in 2022.","entry_val":56000000},{"id":"anthropic","name":"Anthropic","kind":"Labs","entry":800000,"now":76000000,"mult":95,"why":"Levels.fyi on the chart is about $200k a year of equity, times four. The company was already a lab, and the share price still had a long way to rerate. 95x is net of dilution.","entry_val":null},{"id":"openai","name":"OpenAI","kind":"Labs","entry":2000000,"now":40000000,"mult":20,"why":"The chart's OpenAI package is about $500k a year in 2023, times four. Same era as Anthropic, smaller multiple, because the grant was already $2M. The January 2023 Microsoft round was around $29B.","entry_val":29000000000},{"id":"cognition","name":"Cognition","kind":"AI apps","entry":350000,"now":32000000,"mult":90,"why":"Coding agents. A $350k grant is 0.10% of $350M under the chart's rule. The category was not priced as infrastructure yet.","entry_val":350000000},{"id":"figure","name":"Figure","kind":"Defense","entry":400000,"now":28000000,"mult":70,"why":"Humanoid robots. Atoms paid here because the pitch was labor with a buyer, not a factory hoping for the next round. $400k is 0.10% of $400M.","entry_val":400000000},{"id":"perplexity","name":"Perplexity","kind":"AI apps","entry":184000,"now":20000000,"mult":108,"why":"An answer product people used. $184k fits either 0.20% of $92M or 0.10% of $184M. Both are still a startup entry.","entry_val":92000000},{"id":"elevenlabs","name":"ElevenLabs","kind":"AI apps","entry":18000,"now":15000000,"mult":820,"why":"Voice as a pipeline, not a demo. $18k is 0.20% of about $9M. The multiple is the entry price.","entry_val":9000000},{"id":"harvey","name":"Harvey","kind":"AI apps","entry":60000,"now":13000000,"mult":210,"why":"Legal work already had a budget and a matter file. $60k is 0.20% of about $30M.","entry_val":30000000},{"id":"helsing","name":"Helsing","kind":"Defense","entry":454000,"now":12000000,"mult":27,"why":"European defense software. The grant was large because the company was already raising. 27x is the modest end of this chart. $454k is 0.10% of $454M.","entry_val":454000000},{"id":"mistral","name":"Mistral","kind":"Labs","entry":260000,"now":12000000,"mult":47,"why":"A lab still priced like a growth company. $260k is 0.10% of $260M.","entry_val":260000000},{"id":"polymarket","name":"Polymarket","kind":"Markets","entry":350000,"now":10000000,"mult":30,"why":"A venue. The right to operate and the volume showed up after the grant. The chart's $10M and 30x don't multiply back exactly; both numbers are theirs.","entry_val":350000000},{"id":"mercer","name":"Mercer","kind":"AI apps","entry":250000,"now":9200000,"mult":37,"why":"The chart groups Mercer with AI apps: $250k to $9.2M, 37x. There isn't a cleaner public description on the chart, so this map doesn't invent a product story.","entry_val":250000000},{"id":"baseten","name":"Baseten","kind":"Infra","entry":200000,"now":9200000,"mult":46,"why":"Inference infrastructure. $200k is the chart's flat package once a private company is worth $1B or more, so this dot is not a precise entry valuation.","entry_val":null},{"id":"saronic","name":"Saronic","kind":"Defense","entry":174000,"now":7000000,"mult":40,"why":"Autonomous boats, sold into defense. $174k fits 0.20% of $87M or 0.10% of $174M.","entry_val":174000000},{"id":"nvidia","name":"Nvidia","kind":"Public","entry":320000,"now":6100000,"mult":19,"why":"Public RSUs. The chart's Levels.fyi note is about $80k a year, times four. 19x, against about 2.2x for a typical S&P grant over the same window. You could sell along the way. Refreshers are not in the number.","entry_val":null},{"id":"coreweave","name":"CoreWeave","kind":"Public","entry":200000,"now":4000000,"mult":20,"why":"GPU cloud, the chart's public color. $200k grant, 20x. It rented out the scarce input.","entry_val":null},{"id":"legora","name":"Legora","kind":"AI apps","entry":180000,"now":4000000,"mult":22,"why":"Legal software, a smaller multiple than Harvey. $180k fits 0.20% of $90M or 0.10% of $180M.","entry_val":180000000},{"id":"replit","name":"Replit","kind":"AI apps","entry":400000,"now":3600000,"mult":9,"why":"A developer product people already knew. $400k is 0.10% of $400M. Early on a calendar, late on a price.","entry_val":400000000},{"id":"sierra","name":"Sierra","kind":"AI apps","entry":200000,"now":2800000,"mult":14,"why":"Customer-facing agents. Sierra was founded in 2023, so this is the chart's stage-sized $200k grant, not a late-2022 start date.","entry_val":null},{"id":"palantir","name":"Palantir","kind":"Public","entry":160000,"now":2700000,"mult":17,"why":"Public. About $40k a year on the chart, times four. 17x. The government workflow was already the system of record.","entry_val":null},{"id":"openevidence","name":"OpenEvidence","kind":"AI apps","entry":200000,"now":2600000,"mult":13,"why":"Clinical answers. A stage-sized $200k grant and 13x. Treat the start date as the chart's model.","entry_val":null},{"id":"groq","name":"Groq","kind":"Infra","entry":200000,"now":2400000,"mult":12,"why":"Inference chips. The $200k flat grant means the chart already treated the company as a $1B+ private. 12x from there.","entry_val":null},{"id":"spacex","name":"SpaceX","kind":"Public","entry":200000,"now":2000000,"mult":10,"why":"A late-stage private grant of $200k, 10x by Oct 2026. The chart groups it with public stock, which is a statement about 2026, not about 2022.","entry_val":null},{"id":"runway","name":"Runway","kind":"AI apps","entry":250000,"now":2000000,"mult":8,"why":"Video generation. $250k is 0.10% of $250M, or the edge of the 0.05% band. 8x.","entry_val":250000000},{"id":"kalshi","name":"Kalshi","kind":"Markets","entry":200000,"now":1800000,"mult":9,"why":"Regulated event contracts. A $200k flat grant and 9x. Relative to Polymarket, more of the outcome was already in the entry price.","entry_val":null}],"peaks":[{"id":"ftx","name":"FTX","peak":32000000000,"latest":0,"status":"dead","plot":true,"why":"Fraud. There was no business behind the mark."},{"id":"byjus","name":"Byju's","peak":22000000000,"latest":0,"status":"dead","plot":true,"why":"Education growth bought with capital, then a governance failure. Equity to zero."},{"id":"northvolt","name":"Northvolt","peak":14000000000,"latest":0,"status":"dead","plot":true,"x_note":"Capital raised, not a valuation","why":"Battery factories. The chart says $14B+ raised and $0 of equity. Plotted on capital raised."},{"id":"olive","name":"Olive AI","peak":4000000000,"latest":0,"status":"dead","plot":true,"why":"Hospital software sold as AI. It stayed a services business and shut down."},{"id":"convoy","name":"Convoy","peak":3800000000,"latest":0,"status":"dead","plot":true,"why":"Freight brokerage. The take rate did not survive a normal freight market."},{"id":"builder","name":"Builder.ai","peak":1500000000,"latest":0,"status":"dead","plot":true,"why":"Software margins claimed on human labor. Insolvent."},{"id":"bird","name":"Bird","peak":1000000000,"latest":0,"status":"dead","plot":true,"assumed":true,"why":"Scooters. Depreciation, city rules, and a subsidy. The chart says unicorn to bankrupt, so this dot is placed at $1B."},{"id":"bowery","name":"Bowery Farming","peak":1000000000,"latest":0,"status":"dead","plot":true,"assumed":true,"why":"Indoor farming. Power and capex against the price of a crop. Placed at $1B because the chart only says unicorn."},{"id":"veev","name":"Veev","peak":1000000000,"latest":0,"status":"dead","plot":true,"assumed":true,"why":"Prefab construction. Project capex. Placed at $1B because the chart only says unicorn."},{"id":"zeus","name":"Zeus Living","peak":1000000000,"latest":0,"status":"dead","plot":true,"assumed":true,"why":"Corporate housing after a travel boom. Wound down. Placed at $1B because the chart only says unicorn."},{"id":"hopin","name":"Hopin","peak":7750000000,"latest":15000000,"status":"impaired","plot":true,"why":"Virtual events after lockdowns. $7.75B to a $15M sale of the core."},{"id":"bright","name":"Bright Health","peak":null,"latest":null,"remaining":0.01,"status":"impaired","plot":false,"why":"Health insurance. Down 99% from the 2021 IPO. The chart gives no peak valuation, so it stays off the scatter."},{"id":"miro","name":"Miro","peak":17500000000,"latest":1360000000,"status":"impaired","plot":true,"why":"Collaboration software people still use. $17.5B to $1.36B. The product survived the price."},{"id":"cameo","name":"Cameo","peak":1000000000,"latest":100000000,"status":"impaired","plot":true,"assumed":true,"why":"Celebrity shout-outs. The chart says a round at 90% off the $1B mark, so the latest dot is placed at $100M."},{"id":"klarna","name":"Klarna","peak":45600000000,"latest":6700000000,"status":"impaired","plot":true,"why":"Buy-now-pay-later. $45.6B to about $6.7B. Still operating. The loss belongs to the 2021 entry."},{"id":"airtable","name":"Airtable","peak":11700000000,"latest":2250000000,"status":"impaired","plot":true,"why":"Horizontal software. $11.7B to $2.25B. Seats slowed; the company did not vanish."},{"id":"getir","name":"Getir","peak":11800000000,"latest":2500000000,"status":"impaired","plot":true,"why":"Quick commerce. $11.8B to $2.5B. Delivery cost was the product."},{"id":"instacart","name":"Instacart","peak":39000000000,"latest":9600000000,"status":"impaired","plot":true,"why":"Grocery delivery. $39B to about $9.6B. A real business that was marked for a monopoly it did not have."},{"id":"checkout","name":"Checkout.com","peak":40000000000,"latest":12000000000,"status":"impaired","plot":true,"why":"Payments. $40B to $12B. Someone hired at $12B is not holding the peak grant."},{"id":"truepill","name":"Truepill","peak":null,"latest":null,"remaining":0.333,"status":"impaired","plot":false,"why":"Digital pharmacy, about two-thirds below the 2021 peak. No dollar pair on the chart."},{"id":"brex","name":"Brex","peak":12300000000,"latest":4500000000,"status":"impaired","plot":true,"why":"Corporate cards. $12.3B to $4.5B."},{"id":"chime","name":"Chime","peak":null,"latest":null,"remaining":0.478,"status":"impaired","plot":false,"why":"Neobank. The chart gives a share price, $69 to about $33, not a company valuation. 33/69 is about 48%."},{"id":"gopuff","name":"Gopuff","peak":17000000000,"latest":8300000000,"status":"impaired","plot":true,"stale":true,"why":"Delivery. $17B to $8.3B, and the chart dates that latest figure to a 2022 secondary. Stale."},{"id":"discord","name":"Discord","peak":15000000000,"latest":8500000000,"status":"impaired","plot":true,"why":"A product people use. $15B to $8.5B. A grant struck at today's mark is a new bet."},{"id":"plaid","name":"Plaid","peak":13400000000,"latest":8000000000,"status":"impaired","plot":true,"why":"Bank connectivity. $13.4B to $8B. The drawdown is the peak entry, not a reason to ignore the company at the new price."}]}</script>
+<script>
+const DATA = JSON.parse(document.getElementById("grants-data").textContent);
+const A = DATA.assumptions;
+const KINDS = ["AI apps","Labs","Infra","Defense","Public","Markets"];
+const COLOR = {"AI apps":"#5b9cff","Labs":"#ffb020","Infra":"#c77dff","Defense":"#00c805","Public":"#e8ecf1","Markets":"#ff5000","dead":"#ff5000","impaired":"#ffb020"};
+const VMIN = 2e7, VMAX = 1.5e12;
+const state = {
+  mode: "grants",
+  kinds: new Set(KINDS),
+  peak: "all",
+  q: "",
+  selected: null,
+  v: A.default_valuation,
+  mark: A.default_mark,
+  keep: A.default_keep,
+  lab: true,
+  offer: "private",
+  sort: "c",
+  dir: -1,
+  hover: null
+};
+
+function money(n){
+  if (n == null || !isFinite(n)) return "—";
+  const s = n < 0 ? "-" : "";
+  n = Math.abs(n);
+  if (n >= 1e12) return s + "$" + trim(n/1e12) + "T";
+  if (n >= 1e9) return s + "$" + trim(n/1e9) + "B";
+  if (n >= 1e6) return s + "$" + trim(n/1e6) + "M";
+  if (n >= 1e3) return s + "$" + trim(n/1e3) + "k";
+  return s + "$" + Math.round(n);
+}
+function trim(x){
+  if (x >= 100) return String(Math.round(x));
+  if (x >= 10) return String(Math.round(x * 10) / 10).replace(/\.0$/, "");
+  return String(Math.round(x * 100) / 100).replace(/\.0$/, "").replace(/(\.\d)0$/, "$1");
+}
+function pct(x){
+  if (!isFinite(x)) return "—";
+  const p = x * 100;
+  if (p >= 1) return p.toFixed(2) + "%";
+  if (p >= 0.01) return p.toFixed(3) + "%";
+  return p.toFixed(4) + "%";
+}
+function esc(s){return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function packageOf(v, lab){
+  if (lab && v >= A.lab_above) return A.lab_grant;
+  for (const b of A.bands) if (v < b.below) return b.pct * v;
+  return A.cap_grant;
+}
+function offerGrant(){
+  if (state.offer === "public") return A.public_grant;
+  return packageOf(state.v, state.lab);
+}
+function logT(v, a, b){return (Math.log10(v) - Math.log10(a)) / (Math.log10(b) - Math.log10(a));}
+function sliderToV(t){return 10 ** (Math.log10(VMIN) + (t/1000) * (Math.log10(VMAX) - Math.log10(VMIN)));}
+function vToSlider(v){return Math.round(1000 * logT(Math.min(VMAX, Math.max(VMIN, v)), VMIN, VMAX));}
+
+const GEO = {
+  grants: {xmin:1e4, xmax:4e6, ymin:1e6, ymax:1.2e8, ylog:true, xlab:"Grant at entry", ylab:"Worth in Oct 2026, or this offer"},
+  peaks: {xmin:7e8, xmax:6e10, ymin:0, ymax:100, ylog:false, xlab:"Peak mark (log)", ylab:"Share of that mark still there"}
+};
+const PAD = {l:68, r:18, t:16, b:42};
+
+function scales(){
+  const g = GEO[state.mode];
+  const W = 860, H = 520;
+  const iw = W - PAD.l - PAD.r, ih = H - PAD.t - PAD.b;
+  function x(v){
+    const t = Math.min(1, Math.max(0, logT(v, g.xmin, g.xmax)));
+    return PAD.l + t * iw;
+  }
+  function y(v){
+    let t;
+    if (g.ylog) t = Math.min(1, Math.max(0, logT(v, g.ymin, g.ymax)));
+    else t = Math.min(1, Math.max(0, (v - g.ymin) / (g.ymax - g.ymin)));
+    return PAD.t + (1 - t) * ih;
+  }
+  return {g, W, H, iw, ih, x, y};
+}
+
+function ruleText(){
+  if (state.offer === "public") return "Public RSU, modeled as Nvidia’s 2022 four-year grant ($80k a year). The keep slider is an extra haircut. The chart’s 19x already includes four years of the stock.";
+  const v = state.v;
+  if (state.lab && v >= A.lab_above) return "Above $50B the lab switch replaces the $200k cap with a $2M package. The percent is whatever $2M is of this mark.";
+  if (v < 1e8) return "Under $100M the chart grants 0.20% of the company.";
+  if (v <= 5e8) return "From $100M to $500M the chart grants 0.10%.";
+  if (v <= 1e9) return "From $500M to $1B the chart grants 0.05%.";
+  return "At $1B or more the chart caps the grant at $200k. A higher mark does not raise the grant. It shrinks the percent.";
+}
+
+function verdict(grant, net, stake){
+  const v = state.v;
+  if (state.offer === "public") {
+    if (net >= 15) return "A 19x public grant is what Nvidia did from late 2022. From a multi-trillion cap, that multiple is the history, not the forecast. Sell what vests.";
+    return "A public grant you can sell. Size it as part of your savings. The cloud above this dot is private stock from a cheap entry, and most of those companies were not Nvidia.";
+  }
+  if (v >= 1e11) return "This mark has already used up the chart. A double from here is a strong four years, and the labs keep issuing shares to pay for compute. Take the job for the work.";
+  if (v >= 1e9 && stake < A.target) return "The percent is gone. Clearing $5M from a $200k grant takes a net multiple the late-stage rows on this chart did not deliver, unless the package is a lab-sized one and the multiple is still in front of you.";
+  if (grant < 200000 && stake >= A.target) return "The arithmetic still matches Harvey, Cursor, and Saronic. Those were a short list. Ten logos from the same era went to zero. The salary has to pay for your life.";
+  if (stake >= A.target) return "The stake clears $5M on these settings. The exit figure under it is the company you are underwriting.";
+  if (net <= 4) return "This lands near an index grant. A fine job. It is the bottom of the cloud, where Replit and Runway finished, not where Cursor started.";
+  return "A mid-stage grant and a moderate multiple. Closer to Helsing than to ElevenLabs. Real money if the company becomes a decacorn, ordinary if it only doubles.";
+}
+
+function nearest(grant){
+  let best = null, bd = Infinity;
+  for (const w of DATA.winners){
+    const d = Math.abs(Math.log(w.entry) - Math.log(grant));
+    if (d < bd){ bd = d; best = w; }
+  }
+  return best;
+}
+
+function remaining(p){
+  if (p.remaining != null) return p.remaining;
+  if (!p.peak) return 0;
+  return p.latest / p.peak;
+}
+
+function draw(){
+  const S = scales();
+  const svg = document.getElementById("plot");
+  const ticksX = state.mode === "grants"
+    ? [1e4,3e4,1e5,3e5,1e6,3e6]
+    : [1e9,3e9,1e10,3e10];
+  const ticksY = state.mode === "grants"
+    ? [1e6,3e6,1e7,3e7,1e8]
+    : [0,25,50,75,100];
+  let h = `<rect width="${S.W}" height="${S.H}" fill="#111317"/>`;
+  h += `<rect x="${PAD.l}" y="${PAD.t}" width="${S.iw}" height="${S.ih}" fill="#0d0f13" stroke="#23272e"/>`;
+  for (const t of ticksX){
+    const x = S.x(t);
+    h += `<line x1="${x}" y1="${PAD.t}" x2="${x}" y2="${PAD.t+S.ih}" stroke="#23272e"/>`;
+    h += `<text x="${x}" y="${S.H-16}" fill="#7d8a9c" font-size="10" text-anchor="middle" font-family="JetBrains Mono,monospace">${esc(money(t))}</text>`;
+  }
+  for (const t of ticksY){
+    const y = S.y(t === 0 ? (state.mode === "grants" ? S.g.ymin : 0) : t);
+    h += `<line x1="${PAD.l}" y1="${y}" x2="${PAD.l+S.iw}" y2="${y}" stroke="#23272e"/>`;
+    const lab = state.mode === "grants" ? money(t) : (t + "%");
+    h += `<text x="${PAD.l-8}" y="${y+3}" fill="#7d8a9c" font-size="10" text-anchor="end" font-family="JetBrains Mono,monospace">${esc(lab)}</text>`;
+  }
+  h += `<text x="${PAD.l+S.iw/2}" y="${S.H-2}" fill="#7d8a9c" font-size="10" text-anchor="middle">${esc(S.g.xlab)}</text>`;
+  h += `<text transform="translate(14 ${PAD.t+S.ih/2}) rotate(-90)" fill="#7d8a9c" font-size="10" text-anchor="middle">${esc(S.g.ylab)}</text>`;
+
+  if (state.mode === "grants"){
+    for (const k of [A.spx_net, 10, 100]){
+      const xa = Math.max(S.g.xmin, S.g.ymin / k);
+      const xb = Math.min(S.g.xmax, S.g.ymax / k);
+      if (xb <= xa) continue;
+      const p1 = [S.x(xa), S.y(k*xa)], p2 = [S.x(xb), S.y(k*xb)];
+      h += `<line x1="${p1[0]}" y1="${p1[1]}" x2="${p2[0]}" y2="${p2[1]}" stroke="#3a4452" stroke-dasharray="4 4"/>`;
+      const name = k === A.spx_net ? "S&P ~2.2×" : (k + "×");
+      h += `<text x="${p2[0]-4}" y="${p2[1]-6}" fill="#7d8a9c" font-size="10" text-anchor="end">${name}</text>`;
+    }
+    for (const yv of [A.target, A.stretch]){
+      if (yv < S.g.ymin || yv > S.g.ymax) continue;
+      const y = S.y(yv);
+      h += `<line x1="${PAD.l}" y1="${y}" x2="${PAD.l+S.iw}" y2="${y}" stroke="#5b9cff" stroke-opacity="0.35"/>`;
+      h += `<text x="${PAD.l+6}" y="${y-4}" fill="#8eb6ef" font-size="10">${esc(money(yv))} stake</text>`;
+    }
+    const grant = offerGrant();
+    const stakeNow = grant * state.mark * state.keep;
+    const dx = S.x(grant), dy = S.y(stakeNow);
+    const clipped = stakeNow > S.g.ymax || stakeNow < S.g.ymin || grant < S.g.xmin || grant > S.g.xmax;
+    h += `<path d="M${dx} ${dy-9} L${dx+8} ${dy} L${dx} ${dy+9} L${dx-8} ${dy} Z" fill="#fff" stroke="#08090b" stroke-width="1"/>`;
+    h += `<text x="${dx+12}" y="${dy-8}" fill="#fff" font-size="11" font-family="Inter,sans-serif">This offer${clipped?" (off the scale)":""}</text>`;
+  }
+
+  const pts = points();
+  pts.forEach((p, i) => {
+    const c = p.color;
+    const r = p.id === state.selected || p.id === state.hover ? 8 : 5.5;
+    const sw = p.id === state.selected ? 2 : 0;
+    h += `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${r}" fill="${c}" stroke="${sw?"#fff":"none"}" stroke-width="${sw}" pointer-events="none"/>`;
+    h += `<circle data-id="${esc(p.id)}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${r+9}" fill="transparent" style="cursor:pointer"/>`;
+  });
+  svg.innerHTML = h;
+  svg.querySelectorAll("circle[data-id]").forEach(el => {
+    el.addEventListener("pointerenter", () => showTip(el.dataset.id, el));
+    el.addEventListener("pointerleave", hideTip);
+    el.addEventListener("click", () => { state.selected = el.dataset.id; draw(); table(); picked(); });
+  });
+}
+
+function points(){
+  const S = scales();
+  const q = state.q.trim().toLowerCase();
+  if (state.mode === "grants"){
+    return DATA.winners.filter(w => state.kinds.has(w.kind) && (!q || w.name.toLowerCase().includes(q))).map(w => ({
+      id: w.id, x: S.x(w.entry), y: S.y(w.now), color: COLOR[w.kind] || "#fff", raw: w
+    }));
+  }
+  const dead = DATA.peaks.filter(p => p.plot && p.assumed && p.latest === 0);
+  return DATA.peaks.filter(p => p.plot && (state.peak === "all" || p.status === state.peak) && (!q || p.name.toLowerCase().includes(q))).map(p => {
+    let yv = remaining(p) * 100;
+    if (p.assumed && p.latest === 0) yv = 1.6 + dead.indexOf(p) * 2.2;
+    return {id: p.id, x: S.x(p.peak), y: S.y(yv), color: COLOR[p.status], raw: p};
+  });
+}
+
+function showTip(id){
+  state.hover = id;
+  const el = document.getElementById("tip");
+  const rec = find(id);
+  if (!rec) return;
+  let body;
+  if (rec.entry != null){
+    body = `<b>${esc(rec.name)}</b><span>${esc(rec.kind)} · ${esc(money(rec.entry))} → ${esc(money(rec.now))} · ${rec.mult}× net</span>`;
+  } else {
+    const rem = remaining(rec);
+    const latest = rec.latest == null ? "n/a" : money(rec.latest);
+    body = `<b>${esc(rec.name)}</b><span>${esc(money(rec.peak))} peak → ${esc(latest)} · ${Math.round(rem*1000)/10}% left</span>`;
+  }
+  el.innerHTML = body;
+  el.style.display = "block";
+  const svg = document.getElementById("plot");
+  const pt = points().find(p => p.id === id);
+  const box = svg.getBoundingClientRect();
+  const host = document.getElementById("mapbox").getBoundingClientRect();
+  const px = box.left - host.left + (pt.x / 860) * box.width;
+  const py = box.top - host.top + (pt.y / 520) * box.height;
+  el.style.left = Math.min(px + 12, host.width - 270) + "px";
+  el.style.top = Math.max(8, py - 36) + "px";
+}
+function hideTip(){ state.hover = null; document.getElementById("tip").style.display = "none"; }
+function find(id){ return DATA.winners.find(w => w.id === id) || DATA.peaks.find(p => p.id === id); }
+
+function readout(){
+  const grant = offerGrant();
+  const net = state.mark * state.keep;
+  const stakeNow = grant * net;
+  const own = state.offer === "public" ? null : grant / state.v;
+  const ownLeft = own == null ? null : own * state.keep;
+  const exit = state.offer === "public" ? null : state.v * state.mark;
+  const netFor5 = A.target / grant;
+  const markFor5 = netFor5 / state.keep;
+  const exitFor5 = state.offer === "public" ? null : state.v * markFor5;
+  const twin = nearest(grant);
+  document.getElementById("v-label").textContent = state.offer === "public" ? "public RSU" : money(state.v);
+  document.getElementById("m-label").textContent = state.mark + "×";
+  document.getElementById("k-label").textContent = Math.round(state.keep*100) + "%";
+  document.getElementById("side-title").textContent = state.offer === "public"
+    ? "Public RSU, 2022 Nvidia package"
+    : money(state.v) + " company";
+  document.getElementById("verdict").textContent = verdict(grant, net, stakeNow);
+  const rows = [
+    ["Grant", money(grant)],
+    ["Net multiple", trim(net) + "×"],
+    ["Stake in 4 years", money(stakeNow)],
+    ["You keep", ownLeft == null ? "the shares" : pct(ownLeft)],
+    ["Company if the mark does this", exit == null ? (state.mark + "× the stock") : money(exit)],
+    ["Mark that clears $5M", trim(markFor5) + "×" + (exitFor5 ? " · " + money(exitFor5) : "")]
+  ];
+  document.getElementById("nums").innerHTML = rows.map(([k,v]) => `<div class="num"><span>${esc(k)}</span><b>${esc(v)}</b></div>`).join("");
+  document.getElementById("rule").textContent = ruleText() + (twin ? " Nearest 2022 package on the chart: " + twin.name + ", " + money(twin.entry) + " to " + money(twin.now) + " (" + twin.mult + "× net)." : "");
+  const edges = [VMIN, 1e8, 5e8, 1e9, 5e10, VMAX];
+  const labels = ["0.20%","0.10%","0.05%","$200k","$2M lab"];
+  const colors = ["#1d4e34","#1c3f66","#3d3420","#3a2a22","#3a2430"];
+  const span = Math.log10(edges[5]) - Math.log10(edges[0]);
+  let bar = "";
+  for (let i = 0; i < 5; i++){
+    const w = (Math.log10(edges[i+1]) - Math.log10(edges[i])) / span * 100;
+    bar += `<div class="seg" style="width:${w}%;background:${colors[i]}">${labels[i]}</div>`;
+  }
+  const mk = state.offer === "public" ? null : logT(Math.min(VMAX, Math.max(VMIN, state.v)), VMIN, VMAX) * 100;
+  if (mk != null) bar += `<div class="mk" style="left:${mk}%"></div>`;
+  document.getElementById("strip").innerHTML = bar;
+  document.getElementById("strip").style.opacity = state.offer === "public" ? "0.35" : "1";
+  document.querySelectorAll("#presets button").forEach(b => {
+    b.classList.toggle("on", b.dataset.offer === state.offer && (state.offer === "public" || Number(b.dataset.v) === state.v));
+  });
+  const lab = document.getElementById("lab");
+  lab.disabled = state.offer === "public";
+}
+
+function picked(){
+  const box = document.getElementById("picked");
+  const rec = state.selected ? find(state.selected) : null;
+  if (!rec){ box.innerHTML = `<div class="kicker">On the map</div><p class="why">Click a dot. The diamond is this offer, on the same axes as the late-2022 grants.</p>`; return; }
+  if (rec.entry != null){
+    box.innerHTML = `<div class="kicker">${esc(rec.kind)}</div><h3 style="font-size:15px;margin:0 0 6px">${esc(rec.name)}</h3><p class="why">${esc(rec.why)}</p>`;
+  } else {
+    const extra = rec.stale ? " Stale mark." : "";
+    box.innerHTML = `<div class="kicker">${rec.status === "dead" ? "Wiped" : "Still operating"}</div><h3 style="font-size:15px;margin:0 0 6px">${esc(rec.name)}</h3><p class="why">${esc(rec.why)}${esc(extra)}</p>`;
+  }
+}
+
+function rowsForTable(){
+  const q = state.q.trim().toLowerCase();
+  let rows;
+  if (state.mode === "grants"){
+    rows = DATA.winners.filter(w => state.kinds.has(w.kind) && (!q || w.name.toLowerCase().includes(q))).map(w => ({
+      id: w.id, name: w.name, kind: w.kind, a: w.entry, b: w.mult, c: w.now, sub: w.mult + "×"
+    }));
+  } else {
+    rows = DATA.peaks.filter(p => (state.peak === "all" || p.status === state.peak) && (!q || p.name.toLowerCase().includes(q))).map(p => ({
+      id: p.id, name: p.name, kind: p.status === "dead" ? "Wiped" : "Operating",
+      a: p.peak, b: remaining(p), c: p.latest, sub: Math.round(remaining(p)*1000)/10 + "%"
+    }));
+  }
+  const key = state.sort;
+  rows.sort((a, b) => {
+    const ka = key === "name" ? a.name : key === "kind" ? a.kind : key === "a" ? (a.a ?? -1) : key === "b" ? a.b : (a.c ?? -1);
+    const kb = key === "name" ? b.name : key === "kind" ? b.kind : key === "a" ? (b.a ?? -1) : key === "b" ? b.b : (b.c ?? -1);
+    if (typeof ka === "string") return ka.localeCompare(kb) * state.dir;
+    return (ka - kb) * state.dir;
+  });
+  return rows;
+}
+
+function table(){
+  const head = state.mode === "grants"
+    ? [["name","Company"],["kind","Kind"],["a","Grant"],["b","Multiple"],["c","Worth now"]]
+    : [["name","Company"],["kind","Outcome"],["a","Peak"],["b","Left"],["c","Latest"]];
+  document.querySelector("#grid thead").innerHTML = "<tr>" + head.map(([k,lab]) => `<th data-k="${k}" class="${k==="name"||k==="kind"?"":"n"}">${lab}</th>`).join("") + "</tr>";
+  document.querySelectorAll("#grid th").forEach(th => th.addEventListener("click", () => {
+    if (state.sort === th.dataset.k) state.dir *= -1;
+    else { state.sort = th.dataset.k; state.dir = th.dataset.k === "name" || th.dataset.k === "kind" ? 1 : -1; }
+    table();
+  }));
+  const body = rowsForTable().map(r => {
+    const on = r.id === state.selected ? "on" : "";
+    const a = r.a == null ? "—" : money(r.a);
+    const c = r.c == null ? "—" : money(r.c);
+    const b = state.mode === "grants" ? (r.b + "×") : r.sub;
+    return `<tr class="${on}" data-id="${esc(r.id)}"><td>${esc(r.name)}</td><td class="tag">${esc(r.kind)}</td><td class="n mono">${esc(a)}</td><td class="n mono">${esc(b)}</td><td class="n mono">${esc(c)}</td></tr>`;
+  }).join("");
+  document.querySelector("#grid tbody").innerHTML = body;
+  document.querySelectorAll("#grid tbody tr").forEach(tr => tr.addEventListener("click", () => {
+    state.selected = tr.dataset.id;
+    draw(); table(); picked();
+  }));
+}
+
+function filters(){
+  const host = document.getElementById("filters");
+  if (state.mode === "grants"){
+    host.innerHTML = `<button class="pill ${state.kinds.size===KINDS.length?"on":""}" data-k="all" type="button">All</button>` +
+      KINDS.map(k => `<button class="pill ${state.kinds.has(k)?"on":""}" data-k="${esc(k)}" type="button"><i class="sw" style="background:${COLOR[k]}"></i>${esc(k)}</button>`).join("");
+  } else {
+    host.innerHTML = ["all","dead","impaired"].map(k => {
+      const lab = k === "all" ? "All" : k === "dead" ? "Wiped" : "Still operating";
+      return `<button class="pill ${state.peak===k?"on":""}" data-p="${k}" type="button">${lab}</button>`;
+    }).join("");
+  }
+  host.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    if (b.dataset.p) state.peak = b.dataset.p;
+    else if (b.dataset.k === "all") state.kinds = new Set(KINDS);
+    else if (state.kinds.has(b.dataset.k) && state.kinds.size > 1) state.kinds.delete(b.dataset.k);
+    else state.kinds.add(b.dataset.k);
+    filters(); draw(); table();
+  }));
+  const leg = document.getElementById("legend");
+  if (state.mode === "grants"){
+    leg.innerHTML = KINDS.map(k => `<span><i class="sw" style="background:${COLOR[k]}"></i>${esc(k)}</span>`).join("") + `<span><i class="sw" style="background:#fff;border-radius:1px"></i>This offer</span>`;
+  } else {
+    leg.innerHTML = `<span><i class="sw" style="background:${COLOR.dead}"></i>Equity wiped</span><span><i class="sw" style="background:${COLOR.impaired}"></i>Still operating, far below the peak</span><span>Unicorns with no dollar peak are staggered just above zero so four dots are not one dot.</span>`;
+  }
+}
+
+function render(){
+  document.getElementById("mode-grants").classList.toggle("on", state.mode === "grants");
+  document.getElementById("mode-peaks").classList.toggle("on", state.mode === "peaks");
+  document.getElementById("v").disabled = state.offer === "public";
+  filters();
+  readout();
+  draw();
+  table();
+  picked();
+}
+
+const PRESETS = [
+  {label:"Seed · $40M", v:40e6, offer:"private"},
+  {label:"Series B · $250M", v:250e6, offer:"private"},
+  {label:"Late private · $2B", v:2e9, offer:"private"},
+  {label:"Priced winner · $30B", v:30e9, offer:"private"},
+  {label:"Anthropic · $965B", v:965e9, offer:"private"},
+  {label:"OpenAI · $852B", v:852e9, offer:"private"},
+  {label:"Public RSU", v:null, offer:"public"}
+];
+document.getElementById("presets").innerHTML = PRESETS.map(p => `<button type="button" data-offer="${p.offer}" data-v="${p.v||""}">${p.label}</button>`).join("");
+document.getElementById("presets").addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  state.offer = b.dataset.offer;
+  if (state.offer === "private") state.v = Number(b.dataset.v);
+  document.getElementById("v").value = vToSlider(state.v);
+  if (state.mode !== "grants") { state.mode = "grants"; state.sort = "now"; state.dir = -1; }
+  render();
+});
+document.getElementById("v").addEventListener("input", e => { state.offer = "private"; state.v = sliderToV(Number(e.target.value)); readout(); draw(); });
+document.getElementById("m").addEventListener("input", e => { state.mark = Number(e.target.value); readout(); draw(); });
+document.getElementById("k").addEventListener("input", e => { state.keep = Number(e.target.value)/100; readout(); draw(); });
+document.getElementById("lab").addEventListener("change", e => { state.lab = e.target.checked; readout(); draw(); });
+document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; draw(); table(); });
+document.getElementById("mode-grants").addEventListener("click", () => { state.mode = "grants"; state.sort = "c"; state.dir = -1; state.selected = null; render(); });
+document.getElementById("mode-peaks").addEventListener("click", () => { state.mode = "peaks"; state.sort = "b"; state.dir = 1; state.selected = null; render(); });
+document.getElementById("notes").innerHTML = A.notes.map(n => `<li>${esc(n)}</li>`).join("");
+document.getElementById("v").value = vToSlider(state.v);
+render();
+</script>
+</body>
+</html>
