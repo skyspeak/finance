@@ -1,8 +1,8 @@
 # Ten Themes
 
-A weekly thematic equity + options research pipeline. Ten industry themes, 72 public tickers, 74 private-market competitors — scored into PICK / NEUTRAL / AVOID, sized into a model portfolio, and turned into defined-risk option trade tickets.
+A daily (weekday) thematic equity + options research pipeline. Ten industry themes, 72 public tickers, 74 private-market competitors — scored into PICK / NEUTRAL / AVOID, sized into a model portfolio, and turned into defined-risk option trade tickets.
 
-**Stack:** Railway Postgres + a Monday cron worker run the pipeline. Vercel serves the public desk at [ten-themes.vercel.app](https://ten-themes.vercel.app) and the macro map at [/map](https://ten-themes.vercel.app/map). Fetch scripts stay Python stdlib (Yahoo / CBOE / Treasury / EDGAR, no API keys). The job itself needs `psycopg` (`pip install -r requirements.txt`).
+**Stack:** Railway Postgres + a weekday cron worker (after each US close) run the pipeline. Vercel serves the public desk at [ten-themes.vercel.app](https://ten-themes.vercel.app) and the macro map at [/map](https://ten-themes.vercel.app/map). Fetch scripts stay Python stdlib (Yahoo / CBOE / Treasury / EDGAR, no API keys). The job itself needs `psycopg` (`pip install -r requirements.txt`).
 
 Data snapshot in `data/` is as of **2026-08-14** (market close), generated 2026-08-16.
 
@@ -38,11 +38,11 @@ The scripts read and write JSON in their working directory. To reproduce against
 
 ---
 
-## Weekly on Railway (database + cron)
+## Daily on Railway (database + cron)
 
 Vercel cannot run this job (timeouts, no disk). Railway can: long-running Python, attached Postgres, cron that starts the container, runs `job.py`, exits.
 
-What the Monday job does:
+What the weekday job does:
 
 1. Carries the latest research JSON out of Postgres (analysts, events, IPOs, 13F, privates, insiders, activists, layers).
 2. Refetches prices, fundamentals, technicals, option chains, Treasury curve, and macro series.
@@ -53,7 +53,7 @@ What the Monday job does:
 
 It will **fail the deploy** if fewer than 60 prices come back or fewer than 8 option tickets clear the liquidity screen.
 
-### Weekly email
+### Daily email
 
 After a successful publish the job emails a digest **from stuymusty@gmail.com to skyspeak@gmail.com**: the week's top world, economy and tech stories (`pipeline/world.py` — 12 outlets' RSS, ranked by how many outlets carried each story), a markets snapshot, then the Ten Themes desk. A failed run sends a short alert instead, so no email means the job didn't run.
 
@@ -63,7 +63,7 @@ Off Railway (or on Railway Pro), Gmail SMTP with an **App Password** also works 
 
 1. Signed in as stuymusty@gmail.com, open https://myaccount.google.com/apppasswords (2-Step Verification must be on), create one named `ten-themes`.
 2. Railway → fortunate-healing → finance → Variables: `GMAIL_APP_PASSWORD` = the 16 characters (spaces are fine).
-3. Test without waiting for Monday: `railway ssh --service finance -- python3 mailer.py --test`.
+3. Test without waiting for the evening run: `railway ssh --service finance -- python3 mailer.py --test`.
 
 `MAIL_TO` (comma-separated) and `MAIL_FROM` override the defaults. The Gmail API path (`GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GMAIL_REFRESH_TOKEN`) also works, but only lasts if the OAuth consent screen is published to **Production** — in Testing, Google expires refresh tokens after 7 days.
 
@@ -77,7 +77,7 @@ Off Railway (or on Railway Pro), Gmail SMTP with an **App Password** also works 
 railway run python3 job.py --seed
 ```
 
-4. Confirm the cron: Monday `02:00` UTC (`railway.toml`). Trigger once by hand with `railway run python3 job.py`.
+4. Confirm the cron: `0 2 * * 2-6` UTC — Mon–Fri 7pm PT, after the close. Set it on the service (Railway ignores `railway.toml`'s cronSchedule). Trigger once by hand with `railway run python3 job.py`.
 
 Locally, with a Railway DATABASE_URL:
 

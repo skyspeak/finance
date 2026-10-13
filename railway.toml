@@ -1,6 +1,8 @@
 # Railway cron worker. Attach a Postgres plugin to this service
-# so DATABASE_URL is injected. Monday 02:00 UTC = Sunday evening US,
-# using Friday's close rather than a live Monday session.
+# so DATABASE_URL is injected. 02:00 UTC Tue-Sat = 7pm PT / 10pm ET Mon-Fri
+# (an hour earlier in winter), after each weekday's US close.
+# NOTE: Railway ignores this file's cronSchedule; the live schedule is set on the
+# service (Settings -> Cron Schedule, or serviceInstanceUpdate via `railway api`).
 #
 # First deploy: railway run python3 job.py --seed
 # Then the schedule takes over.
@@ -11,5 +13,5 @@ dockerfilePath = "Dockerfile"
 
 [deploy]
 startCommand = "python3 job.py"
-cronSchedule = "0 2 * * 1"
+cronSchedule = "0 2 * * 2-6"
 restartPolicyType = "NEVER"

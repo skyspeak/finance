@@ -126,13 +126,13 @@ Not everything needs weekly refreshing, and refreshing the slow-moving streams w
 
 | Stream | Cadence | Why |
 |---|---|---|
-| Prices, technicals | Weekly (Railway cron) | The point of the product |
-| Fundamentals, earnings dates | Weekly (Railway cron) | Cheap, one call per ticker |
-| Option chains | Weekly (Railway cron) | Quotes and IV move constantly |
-| Macro series, Treasury curve | Weekly (Railway cron) | `macro.py` — market-priced only, no CPI/payrolls |
-| GICS sectors | Weekly (Railway cron) | Yahoo assetProfile; themes can be single-sector |
-| Factor betas | Weekly (Railway cron) | Needs hist + macro + data2 |
-| Pick-book backtest | Weekly (Railway cron) | Buy-and-hold of *this week's* list vs SPY — not a walk-forward |
+| Prices, technicals | Each weekday (Railway cron) | The point of the product |
+| Fundamentals, earnings dates | Each weekday (Railway cron) | Cheap, one call per ticker |
+| Option chains | Each weekday (Railway cron) | Quotes and IV move constantly |
+| Macro series, Treasury curve | Each weekday (Railway cron) | `macro.py` — market-priced only, no CPI/payrolls |
+| GICS sectors | Each weekday (Railway cron) | Yahoo assetProfile; themes can be single-sector |
+| Factor betas | Each weekday (Railway cron) | Needs hist + macro + data2 |
+| Pick-book backtest | Each weekday (Railway cron) | Buy-and-hold of *this week's* list vs SPY — not a walk-forward |
 | Value-chain layers | **Monthly / on universe change** | Editorial `layers.json`; job carries last file |
 | Analyst coverage | Weekly, **manual/agent** | Job carries last file and dates the lag |
 | Insider Form 4 | Weekly, carried until the EDGAR screens are re-run | Cheap via EDGAR; scripts still assume /agent/workspace |

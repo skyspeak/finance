@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Weekly Ten Themes job.
+"""Ten Themes job — runs each weekday after the US close (Railway cron 0 2 * * 2-6 UTC).
 
 Fetches prices / fundamentals / technicals / options / macro, scores the universe,
 writes a Postgres snapshot, generates the desk + map HTML, and publishes public/ by
@@ -11,7 +11,7 @@ Override with files in data/ on the first run (`--seed`).
 
 Usage:
   DATABASE_URL=... python3 job.py --seed     # load committed snapshot into Postgres
-  DATABASE_URL=... python3 job.py            # full weekly fetch + publish
+  DATABASE_URL=... python3 job.py            # full fetch + publish + email
 """
 from __future__ import annotations
 
@@ -277,14 +277,14 @@ def mail_digest() -> None:
 
 
 def alert_failure(err: BaseException) -> None:
-    """Best-effort heads-up when the weekly job fails, so silence never means 'fine'."""
+    """Best-effort heads-up when the daily job fails, so silence never means 'fine'."""
     try:
         import mailer
 
         if mailer.configured():
             mailer.send(
-                f"Ten Themes weekly job FAILED — {date.today()}",
-                f"The weekly job stopped before publishing; the site still shows last week.\n\n"
+                f"Ten Themes daily job FAILED — {date.today()}",
+                f"The daily job stopped before publishing; the site still shows the previous run.\n\n"
                 f"Error: {str(err)[:1500]}\n\nLogs: Railway -> fortunate-healing -> finance -> Deployments.",
                 to=os.environ.get("MAIL_TO") or "skyspeak@gmail.com",
             )
@@ -293,7 +293,7 @@ def alert_failure(err: BaseException) -> None:
 
 
 def main() -> None:
-    p = argparse.ArgumentParser(description="Ten Themes weekly job")
+    p = argparse.ArgumentParser(description="Ten Themes daily job")
     p.add_argument("--seed", action="store_true", help="load data/ into Postgres, do not fetch")
     args = p.parse_args()
     if args.seed:

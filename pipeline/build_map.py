@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Macro & Market Map dashboard. Descriptive only — states relationships, draws no trade conclusions."""
+import mobile
 import json, html, collections
 D2 = json.load(open("data2.json")); MAC = json.load(open("macro.json"))
 FA = json.load(open("factors.json")); SEC = json.load(open("sectors.json")); LAY = json.load(open("layers.json"))
@@ -282,6 +283,7 @@ code{{font:600 9.5px 'JetBrains Mono';background:rgba(91,156,255,.13);color:var(
 .warnbox b{{color:var(--warn)}}
 footer{{padding:26px 0;color:var(--mut);font-size:11.5px}}
 @media(max-width:900px){{.cols2,.cols3{{grid-template-columns:1fr}}th,td{{padding:7px 5px;font-size:11.5px}}}}
+{mobile.CSS}
 </style></head><body>
 <header><div class="wrap">
 <div class="top"><div><div class="kick">Macro &amp; Market Structure</div><h1>Ten Themes — Map Room</h1></div>
@@ -394,7 +396,7 @@ function rollChart(id,data){{
 }}
 rollChart('rollc',RC); rollChart('rollr',RR);
 window.addEventListener('resize',()=>cv.resize());
-</script></body></html>"""
+</script>{mobile.JS}</body></html>"""
 open("map.html", "w").write(HTML)
 print("wrote map.html", len(HTML), "bytes | layers", len(LAY["public"]) + len(LAY["private"]),
       "| gaps", len(LAY["layer_gaps"]), "| series", len(S))

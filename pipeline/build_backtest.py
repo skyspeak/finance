@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Backtest lab — buy-and-hold of this week's picks vs SPY."""
+import mobile
 import json, html
 
 BT = json.load(open("backtest.json"))
@@ -112,6 +113,7 @@ th.n,td.n{{text-align:right}}
 .note{{color:#9fb0c4;font-size:13px;line-height:1.65;max-width:88ch}}
 footer{{padding:26px 0;color:var(--mut);font-size:11.5px}}
 @media(max-width:820px){{th,td{{padding:8px 6px;font-size:11.5px}}#chart{{height:280px}}}}
+{mobile.CSS}
 </style></head><body>
 <header><div class="wrap">
 <div class="top"><div><div class="kick">● Backtest lab · buy and hold</div><h1>Pick book vs the market</h1></div>
@@ -169,7 +171,7 @@ footer{{padding:26px 0;color:var(--mut);font-size:11.5px}}
 <p class="note"><b>Alignment.</b> Daily closes (CBOE delayed history) via <code>hist.json</code>, inner-joined to SPY and every pick with a full tape ({BT['n_days']} sessions, {BT['start']} to {BT['end']}).
 <b>Weights.</b> Model = inverse-vol sleeves with a 12% cap, renormalized to fully invested. Published keeps the {BT.get('cash')}% cash sleeve at a 0% return.
 <b>Sharpe.</b> Daily mean annualized minus 4%, divided by annualized daily vol.
-<b>Next.</b> Once Railway has more than one weekly snapshot, this page can walk ratings forward instead of freezing this week's list.</p>
+<b>Next.</b> Once Railway has more than one daily snapshot, this page can walk ratings forward instead of freezing this week's list.</p>
 </div></section>
 
 <footer><div class="wrap">Ten Themes · pick backtest · ratings {asof} · {len(BT['picks'])} picks · SPY benchmark · not investment advice</div></footer>
@@ -211,6 +213,6 @@ bind('books','data-k',v=>book=v);
 bind('wins','data-n',v=>win=+v);
 draw();
 window.addEventListener('resize',()=>chart.resize());
-</script></body></html>"""
+</script>{mobile.JS}</body></html>"""
 open("backtest.html", "w").write(HTML)
 print("wrote backtest.html", len(HTML), "bytes")

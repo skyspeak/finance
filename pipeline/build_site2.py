@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import mobile
 import json, html, collections, datetime as dt
 from pathlib import Path
 from dates import today
@@ -159,7 +160,7 @@ def icard(p):
 <div class="ipm">{''.join(f'<code>{e(a)}</code>' for a in (p.get('affects') or [])[:6])}
 {f'<a href="{e(p.get("source_url"))}" target="_blank" rel="noopener noreferrer">source</a>' if p.get('source_url') else ''}</div></div>"""
 ipo_sec = "".join(f"""<div class="ipsec"><h3>{s.title()} <span class="sub">{len([p for p in IPO if p.get('status')==s])}</span></h3>
-<div class="ipg">{''.join(icard(p) for p in IPO if p.get('status')==s)}</div></div>""" for s in ("pending","priced","rumored"))
+<div class="ipg" data-mcollapse="4">{''.join(icard(p) for p in IPO if p.get('status')==s)}</div></div>""" for s in ("pending","priced","rumored"))
 
 # ---------- universe table
 def urow(r):
@@ -298,9 +299,10 @@ a{{color:var(--acc);font-size:11px}}
 footer{{padding:26px 0;color:var(--mut);font-size:11.5px}}
 @media(max-width:820px){{.cols{{grid-template-columns:1fr}}.tstats{{grid-template-columns:repeat(2,1fr)}}
 th,td{{padding:8px 6px;font-size:11.5px}}section{{padding:30px 0}}}}
+{mobile.CSS}
 </style></head><body>
 <header><div class="wrap">
-<div class="top"><div><div class="kick">● Live desk · refreshed weekly</div><h1>Ten Themes</h1></div>
+<div class="top"><div><div class="kick">● Live desk · refreshed each weekday</div><h1>Ten Themes</h1></div>
 <div class="asof">Market data <b class="mono" style="color:#fff">{asof}</b><br>Options: CBOE delayed · 13F Q2 2026<br>Form 4 trailing 90d<br><a href="/map" style="color:#5b9cff">Macro map</a> · <a href="/backtest" style="color:#5b9cff">Backtest →</a></div></div>
 <div class="hero">
 <div class="hs"><b>10</b><span>Themes</span></div>
@@ -320,7 +322,7 @@ th,td{{padding:8px 6px;font-size:11.5px}}section{{padding:30px 0}}}}
 
 <section><div class="wrap"><h2>Pay Attention — {len(watch)} names flagged</h2>
 <p class="lede">Ranked by how many independent signals fired this week. A name here is not automatically a buy — it is where the data stopped agreeing with itself.</p>
-<div class="grid">{''.join(wcard(w) for w in watch[:18])}</div></div></section>
+<div class="grid" data-mcollapse="6">{''.join(wcard(w) for w in watch[:18])}</div></div></section>
 
 <section><div class="wrap"><h2>Model Portfolio — {inv}% invested, {D['cash']}% cash</h2>
 <p class="lede">Conviction weighted by inverse realized volatility, bucketed into sleeves, hard-capped at 12% per name. The cap binds on all four core positions — the model wants more concentration than is prudent, and the overflow becomes cash rather than forced diversification.</p>
@@ -330,7 +332,7 @@ th,td{{padding:8px 6px;font-size:11.5px}}section{{padding:30px 0}}}}
 
 <section><div class="wrap"><h2>Trade Tickets — {len(trades)} defined-risk structures</h2>
 <p class="lede">Built from live CBOE chains and screened for tradability: minimum 100 contracts of open interest, bid above $0.05, and bid-ask inside 30% of mid. Names that failed the screen got no ticket rather than an untradeable one. Every figure below is a real quoted strike.</p>
-<div class="grid">{''.join(ticket(r) for r in trades)}</div>
+<div class="grid" data-mcollapse="5">{''.join(ticket(r) for r in trades)}</div>
 <div class="warn"><b>Read this before trading any of it.</b> These are illustrative defined-risk structures generated from delayed quotes — not personalised advice, and not sized to your account. Options can expire worthless; a debit spread can lose 100% of the premium paid, and a credit spread can lose the full width minus credit. Max loss figures are per single lot. Your fill will differ from the mid prices shown.</div>
 </div></section>
 
@@ -340,10 +342,10 @@ th,td{{padding:8px 6px;font-size:11.5px}}section{{padding:30px 0}}}}
 
 <section><div class="wrap"><h2>Earnings Runway</h2>
 <p class="lede">Days until the next confirmed report, with the move the options market is pricing into it — derived from the at-the-money straddle on the first expiry after the print.</p>
-<div class="estrip">{ecard}</div>
+<div class="estrip" data-mcollapse="8">{ecard}</div>
 <h2 style="margin-top:26px">Catalyst Calendar — {len(evs)} events</h2>
 <p class="lede">Non-earnings catalysts over the next four months: product launches, regulatory decisions, capacity auctions, clinical readouts and index rebalances.</p>
-<div class="scroll"><table><thead><tr><th>Date</th><th>Tickers</th><th>Event</th><th>Type</th><th>Direction</th><th></th></tr></thead><tbody>{erow}</tbody></table></div></div></section>
+<div class="scroll"><table class="stack"><thead><tr><th>Date</th><th>Tickers</th><th>Event</th><th>Type</th><th>Direction</th><th></th></tr></thead><tbody data-mcollapse="6">{erow}</tbody></table></div></div></section>
 
 <section><div class="wrap"><h2>IPO Pipeline — {len(IPO)} companies</h2>
 <p class="lede">What is coming public in these themes, and which listed names it reprices. A large listing does not just add a ticker — it hands the market a fresh comparable, and comparables move multiples.</p>
@@ -371,7 +373,7 @@ th,td{{padding:8px 6px;font-size:11.5px}}section{{padding:30px 0}}}}
 <p><b>This is research, not investment advice.</b> Nothing here accounts for your existing exposure, tax situation, time horizon or risk tolerance.</p>
 </div></div></div></section>
 
-<footer><div class="wrap">Ten Themes · {len(rows)} public names · {len(privates)} private competitors · {len(trades)} trade tickets · data as of {asof} · refreshed Mondays</div></footer>
+<footer><div class="wrap">Ten Themes · {len(rows)} public names · {len(privates)} private competitors · {len(trades)} trade tickets · data as of {asof} · refreshed each weekday after the US close</div></footer>
 <script>
 document.querySelectorAll('.ctrl button').forEach(b=>b.onclick=()=>{{
  document.querySelectorAll('.ctrl button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
@@ -382,6 +384,6 @@ document.querySelectorAll('#uni th').forEach((th,i)=>{{let asc=false;th.onclick=
  [...tb.rows].sort((a,b)=>{{const g=r=>{{const t=(r.cells[i].innerText||'').replace(/[$,%+x]/g,'').split('\\n')[0].trim();
  const v=parseFloat(t);return isNaN(v)?t.toLowerCase():v;}};const x=g(a),y=g(b);
  return (x>y?1:x<y?-1:0)*(asc?1:-1);}}).forEach(r=>tb.appendChild(r));}};}});
-</script></body></html>"""
+</script>{mobile.JS}</body></html>"""
 open("site2.html", "w").write(HTML)
 print("wrote site2.html", len(HTML), "bytes | trades", len(trades), "| watch", len(watch), "| events", len(evs))

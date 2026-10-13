@@ -76,7 +76,7 @@ def publish_public(public_dir: Path, asof: str | None = None) -> str:
 
     label = asof or date.today().isoformat()
     commit = _api("POST", f"/repos/{repo}/git/commits", token, {
-        "message": f"Weekly refresh: {label}\n\nPublished by ten-themes job.py ({len(entries)} pages).",
+        "message": f"Daily refresh: {label}\n\nPublished by ten-themes job.py ({len(entries)} pages).",
         "tree": tree,
         "parents": [head],
     })["sha"]

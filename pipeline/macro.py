@@ -112,6 +112,7 @@ def build():
             "asof": last["date"],
             "levels": {k: last.get(k) for k in ("m3", "y2", "y5", "y10", "y30")},
             "s2s10": last.get("s2s10"), "s3m10": last.get("s3m10"),
+            "chg_1d_bp":  round((last["y10"] - back(1)["y10"]) * 100) if last.get("y10") and back(1).get("y10") else None,
             "chg_1w_bp":  round((last["y10"] - back(5)["y10"]) * 100) if last.get("y10") and back(5).get("y10") else None,
             "chg_1m_bp":  round((last["y10"] - back(21)["y10"]) * 100) if last.get("y10") and back(21).get("y10") else None,
             "chg_3m_bp":  round((last["y10"] - back(63)["y10"]) * 100) if last.get("y10") and back(63).get("y10") else None,
@@ -135,6 +136,7 @@ def build():
             out["series"][sym] = {
                 "symbol": sym, "name": name, "kind": kind, "desc": desc, "source": SOURCES.get(sym),
                 "last": round(vals[-1], 2), "asof": dates[-1],
+                "chg_1d": pct(vals[-1], vals[-2]) if len(vals) > 1 else None,
                 "chg_1w": pct(vals[-1], w), "chg_1m": pct(vals[-1], m),
                 "chg_3m": pct(vals[-1], q), "chg_1y": pct(vals[-1], y),
                 "lo_1y": round(min(y1), 2), "hi_1y": round(max(y1), 2),

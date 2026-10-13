@@ -1,4 +1,4 @@
-"""What happened in the world this week, from major outlets' RSS -> world.json
+"""What is happening in the world, from major outlets' RSS -> world.json
 
 No API keys and no LLM: headlines and standfirsts from a fixed set of outlets, grouped
 when several outlets cover the same story, and ranked by how many outlets carried it
@@ -15,7 +15,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) ten-themes-weekly/1.0"
-WINDOW_DAYS = 7
+WINDOW_DAYS = 2  # the digest goes out each weekday; weight toward the last day or two
 FEEDS = [  # (outlet, section, url)
     ("BBC", "world", "https://feeds.bbci.co.uk/news/world/rss.xml"),
     ("NYT", "world", "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"),

@@ -83,8 +83,8 @@ sq = sorted([r for r in rows if r.get("short_pct_float")], key=lambda r: -r["squ
 sqrow = "".join(f"""<tr style="background:{'#111317' if i%2==0 else '#0d0f12'}">
 <td style="{TD};font-family:{M};font-weight:700;color:#e8ecf1">{e(r['ticker'])}</td>
 <td style="{TD};font-family:{M};color:#ffb020;font-weight:700">{r['squeeze']}</td>
-<td style="{TD};text-align:right;font-family:{M};color:#9fb0c4">{n(r.get('short_pct_float'),1,'','% float')}</td>
-<td style="{TD};text-align:right;font-family:{M};color:#9fb0c4">{n(r.get('short_ratio'),1)}d cover</td></tr>"""
+<td style="{TD};padding-left:4px;padding-right:6px;text-align:right;font-family:{M};font-size:11px;color:#9fb0c4;white-space:nowrap">{n(r.get('short_pct_float'),1,'','% float')}</td>
+<td style="{TD};padding-left:4px;padding-right:6px;text-align:right;font-family:{M};font-size:11px;color:#9fb0c4;white-space:nowrap">{n(r.get('short_ratio'),1)}d cover</td></tr>"""
  for i, r in enumerate(sq))
 
 ipo_hot = [p for p in IPO if p.get("status") in ("pending", "rumored")][:8]
@@ -116,18 +116,18 @@ def _snap_rows():
         if key == "Y10":
             lv = (rates.get("levels") or {}).get("y10")
             if lv is None: continue
-            bp = rates.get("chg_1w_bp")
-            chg = '<span style="color:#7d8a9c">—</span>' if bp is None else f'<span style="color:{"#ff5000" if bp > 0 else "#00c805"};font-weight:600">{bp:+d} bp</span>'
-            out.append((label, f"{lv:.2f}%", chg))
+            def bps(bp):
+                return '<span style="color:#7d8a9c">—</span>' if bp is None else f'<span style="color:{"#ff5000" if bp > 0 else "#00c805"};font-weight:600">{bp:+d} bp</span>'
+            out.append((label, f"{lv:.2f}%", bps(rates.get("chg_1d_bp")), bps(rates.get("chg_1w_bp"))))
         elif key in S:
-            out.append((label, n(S[key].get("last"), 2), sg(S[key].get("chg_1w"))))
+            out.append((label, n(S[key].get("last"), 2), sg(S[key].get("chg_1d")), sg(S[key].get("chg_1w"))))
     return out
 SNAP_ROWS = _snap_rows()
 SNAP_HTML = "" if not SNAP_ROWS else f"""<tr><td style="padding:22px 26px 4px">
-<div style="color:#5b9cff;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:10px">Markets — week to {e(MAC.get('asof') or asof)}</div>
+<div style="color:#5b9cff;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:10px">Markets — close of {e(MAC.get('asof') or asof)}</div>
 <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse">
-<tr><th style="{TH}"></th><th style="{TH};text-align:right">Last</th><th style="{TH};text-align:right">1 week</th></tr>
-{''.join(f'<tr style="background:{"#111317" if i%2==0 else "#0d0f12"}"><td style="{TD};color:#c3cede;font-size:12.5px">{l}</td><td style="{TD};text-align:right;font-family:{M};color:#e8ecf1">{v}</td><td style="{TD};text-align:right;font-family:{M};font-size:12px">{c}</td></tr>' for i,(l,v,c) in enumerate(SNAP_ROWS))}
+<tr><th style="{TH}"></th><th style="{TH};text-align:right">Last</th><th style="{TH};text-align:right">1 day</th><th style="{TH};text-align:right">1 week</th></tr>
+{''.join(f'<tr style="background:{"#111317" if i%2==0 else "#0d0f12"}"><td style="{TD};color:#c3cede;font-size:12.5px">{l}</td><td style="{TD};text-align:right;font-family:{M};color:#e8ecf1">{v}</td><td style="{TD};text-align:right;font-family:{M};font-size:12px">{d1}</td><td style="{TD};text-align:right;font-family:{M};font-size:12px">{w1}</td></tr>' for i,(l,v,d1,w1) in enumerate(SNAP_ROWS))}
 </table></td></tr>"""
 
 STAT = "".join(
@@ -137,12 +137,13 @@ STAT = "".join(
   for v, l, c in [(len(picks),"Picks","#00c805"),(len(avoids),"Avoid","#ff5000"),(len(trades),"Trades","#e8ecf1"),
                   (len(watch),"Flagged","#e8ecf1"),(D["port_beta"],"Beta","#ffb020")])
 
-H = f"""<!DOCTYPE html><html><body style="margin:0;padding:0;background:#08090b">
+H = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ten Themes — daily brief</title></head><body style="margin:0;padding:0;background:#08090b">
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#08090b"><tr><td align="center" style="padding:20px 8px">
-<table width="640" cellpadding="0" cellspacing="0" style="max-width:640px;background:#0d0f12;border:1px solid #23272e;border-radius:12px;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+<table width="100%" cellpadding="0" cellspacing="0" style="width:100%;max-width:640px;background:#0d0f12;border:1px solid #23272e;border-radius:12px;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
 
 <tr><td style="padding:24px 26px 20px;background:linear-gradient(180deg,#12161b,#0d0f12)">
-<div style="color:#00c805;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:7px">● Live desk · weekly</div>
+<div style="color:#00c805;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:7px">● Daily brief · each weekday</div>
 <div style="color:#fff;font-size:29px;font-weight:800;letter-spacing:-.8px">Ten Themes</div>
 <div style="color:#7d8a9c;font-size:11.5px;margin-top:6px">The world, the markets and the ten themes · market data {asof}</div></td></tr>
 {WORLD_HTML}
@@ -153,7 +154,7 @@ H = f"""<!DOCTYPE html><html><body style="margin:0;padding:0;background:#08090b"
 <table width="100%" cellpadding="0" cellspacing="0"><tr>{STAT}</tr></table></td></tr>
 
 <tr><td style="padding:22px 26px 4px">
-<div style="color:#5b9cff;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:10px">This Week</div>
+<div style="color:#5b9cff;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:10px">Desk Note</div>
 <div style="font-size:14.5px;line-height:1.7;color:#c3cede;background:#111317;border-left:3px solid #00c805;padding:15px 17px;border-radius:8px">{INTRO}</div></td></tr>
 
 <tr><td style="padding:24px 26px 4px">
@@ -204,9 +205,9 @@ _world_txt = "\n".join(
     f"- {r['title']} ({', '.join(r.get('outlets') or [])}) {r.get('link','')}"
     for sec in ("world", "economy", "tech") for r in ((WORLD.get("sections") or {}).get(sec) or []))
 json.dump({"to": "skyspeak@gmail.com",
- "subject": (f"Weekly brief {asof} — {_top if len(_top) <= 72 else _top[:72].rsplit(' ', 1)[0] + '…'}" if _top else f"Weekly brief {asof}")
+ "subject": (f"Daily brief {asof} — {_top if len(_top) <= 72 else _top[:72].rsplit(' ', 1)[0] + '…'}" if _top else f"Daily brief {asof}")
             + f" · Ten Themes: {len(trades)} tickets, beta {D['port_beta']}",
  "htmlBody": H,
- "textBody": (f"The world this week:\n{_world_txt}\n\n" if _world_txt else "") + f"Ten Themes weekly, data as of {asof}. {len(picks)} picks / {len(avoids)} avoids. {len(trades)} defined-risk option tickets. {len(watch)} names flagged. Book beta {D['port_beta']}, {D['cluster_w']}% in three correlated themes. Dashboard: {LINK}"},
+ "textBody": (f"The world today:\n{_world_txt}\n\n" if _world_txt else "") + f"Ten Themes daily, data as of {asof}. {len(picks)} picks / {len(avoids)} avoids. {len(trades)} defined-risk option tickets. {len(watch)} names flagged. Book beta {D['port_beta']}, {D['cluster_w']}% in three correlated themes. Dashboard: {LINK}"},
  open("email2_params.json", "w"))
 print("wrote email2.html", len(H))

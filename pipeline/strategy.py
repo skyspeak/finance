@@ -56,7 +56,7 @@ def write_copy(work: Path, data2: dict, prev_ratings: dict, research_asof: str) 
     tact = _sleeve_line(port, "Tactical")
     avoid_names = ", ".join(r["ticker"] for r in avoids) or "none"
 
-    strategy = f"""Auto-generated for the **{asof}** close. Analyst coverage, events, IPOs, 13F and private-company files are carried from the **{research_asof}** research pass — they are not refreshed by the weekly job.
+    strategy = f"""Auto-generated for the **{asof}** close. Analyst coverage, events, IPOs, 13F and private-company files are carried from the **{research_asof}** research pass — they are not refreshed by the daily job.
 
 {len(picks)} picks, {invested}% invested, {cash}% cash held back by the single-name cap. Portfolio beta is **{beta}**. {len(trades)} defined-risk tickets cleared the liquidity screen.
 
