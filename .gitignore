@@ -13,6 +13,7 @@ intro.md
 /pipeline/*.json
 /pipeline/map.html
 /pipeline/backtest.html
+/pipeline/winner.html
 
 
 # --- added by cleanup 2026-09-09 ---

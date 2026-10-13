@@ -68,6 +68,16 @@ Off Railway (or on Railway Pro), Gmail SMTP with an **App Password** also works 
 
 `MAIL_TO` (comma-separated) and `MAIL_FROM` override the defaults. The Gmail API path (`GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GMAIL_REFRESH_TOKEN`) also works, but only lasts if the OAuth consent screen is published to **Production** — in Testing, Google expires refresh tokens after 7 days.
 
+### Last year's winner tab (/winner)
+
+A separate momentum page, not part of the theme scoring: each January buy the S&P 500 stock that gained the most the year before, hold it for the year, and sell early only on a 35% drop from the purchase price (rules from @gurgavin's "Buying last year's winner" exhibits).
+
+- `pipeline/winner.py` writes `winner.json`: the stock held now and its stop, the race for next January's pick (top 25 by year-to-date gain, with a bootstrap estimate of who finishes first), and a 1997-to-date backtest at every stop level.
+- `pipeline/build_winner.py` renders `winner.html`, published as `/winner`.
+- Data: last Dec 31's close for every member comes from `data/winner_base_<year>.json`. One Nasdaq screener call shortlists candidates, then CBOE history supplies official closes and intraday lows for about 26 stocks plus SPY. The run takes under a minute.
+- In January the job rebuilds the base file from CBOE once (about 500 calls, slow) and publishes it next to the page as `/winner_base_<year>.json`. Later runs read it from the site. Commit a copy to `data/` when convenient.
+- `job.py` runs both steps after the backtest. If they fail, the desk still publishes.
+
 ### One-time setup
 
 1. Create a Railway project, attach **Postgres**, deploy this repo as a service (Dockerfile + `railway.toml`).

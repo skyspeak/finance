@@ -140,6 +140,12 @@ def copy_artifacts() -> None:
     if bt.exists():
         shutil.copy(bt, OUTPUT / "backtest.html")
         shutil.copy(bt, PUBLIC / "backtest.html")
+    if (WORK / "winner.html").exists():
+        shutil.copy(WORK / "winner.html", PUBLIC / "winner.html")
+        # Published beside the page: the next run reads its leaders and the Dec 31 base from the site.
+        for f in [WORK / "winner.json", *WORK.glob("winner_base_*.json")]:
+            if f.exists():
+                shutil.copy(f, PUBLIC / f.name)
 
 
 def seed() -> None:
@@ -224,6 +230,11 @@ def weekly() -> None:
         run_script("build_grants.py")
         run_script("backtest.py")
         run_script("build_backtest.py")
+        try:
+            run_script("winner.py")  # /winner tab; the desk doesn't depend on it
+            run_script("build_winner.py")
+        except SystemExit as e:
+            print(f"winner page failed ({e}) — site keeps the last published /winner", flush=True)
         copy_artifacts()
 
         html = (PUBLIC / "index.html").read_text() if (PUBLIC / "index.html").exists() else None

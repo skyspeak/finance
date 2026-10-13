@@ -1,4 +1,4 @@
-"""Publish public/ by committing it to the site repo; Vercel deploys every push to main.
+"""Publish public/ (pages plus the winner tab's JSON) by committing it to the site repo; Vercel deploys every push to main.
 
 The site repo (default skyspeak/industry) is Git-connected to the Vercel project, so
 this is the only publish path — a direct Vercel deploy would be overwritten by the
@@ -53,7 +53,7 @@ def publish_public(public_dir: Path, asof: str | None = None) -> str:
     branch = os.environ.get("PUBLISH_BRANCH", "main")
     prefix = os.environ.get("PUBLISH_DIR", "public").strip("/")
 
-    pages = sorted(p for p in public_dir.iterdir() if p.is_file() and p.suffix == ".html")
+    pages = sorted(p for p in public_dir.iterdir() if p.is_file() and p.suffix in (".html", ".json"))
     if not pages:
         raise SystemExit(f"no .html files in {public_dir}")
 

@@ -303,7 +303,7 @@ th,td{{padding:8px 6px;font-size:11.5px}}section{{padding:30px 0}}}}
 </style></head><body>
 <header><div class="wrap">
 <div class="top"><div><div class="kick">● Live desk · refreshed each weekday</div><h1>Ten Themes</h1></div>
-<div class="asof">Market data <b class="mono" style="color:#fff">{asof}</b><br>Options: CBOE delayed · 13F Q2 2026<br>Form 4 trailing 90d<br><a href="/map" style="color:#5b9cff">Macro map</a> · <a href="/grants" style="color:#5b9cff">Grant map</a> · <a href="/backtest" style="color:#5b9cff">Backtest →</a></div></div>
+<div class="asof">Market data <b class="mono" style="color:#fff">{asof}</b><br>Options: CBOE delayed · 13F Q2 2026<br>Form 4 trailing 90d<br><a href="/map" style="color:#5b9cff">Macro map</a> · <a href="/grants" style="color:#5b9cff">Grant map</a> · <a href="/backtest" style="color:#5b9cff">Backtest</a> · <a href="/winner" style="color:#5b9cff">Last year's winner →</a></div></div>
 <div class="hero">
 <div class="hs"><b>10</b><span>Themes</span></div>
 <div class="hs"><b>{len(rows)}</b><span>Public</span></div>

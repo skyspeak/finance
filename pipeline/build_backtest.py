@@ -118,7 +118,7 @@ footer{{padding:26px 0;color:var(--mut);font-size:11.5px}}
 <header><div class="wrap">
 <div class="top"><div><div class="kick">● Backtest lab · buy and hold</div><h1>Pick book vs the market</h1></div>
 <div class="asof">Prices {BT['start']} → {BT['end']} · {BT['n_days']} sessions<br>Ratings as of <b class="mono" style="color:#fff">{asof}</b><br>
-<a href="/">← Desk</a> · <a href="/map">Map</a> · <a href="/grants">Grants</a></div></div>
+<a href="/">← Desk</a> · <a href="/map">Map</a> · <a href="/grants">Grants</a> · <a href="/winner">Winner</a></div></div>
 <div class="hero" id="hero">{hero}</div>
 </div></header>
 
