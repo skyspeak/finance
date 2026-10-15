@@ -16,12 +16,22 @@ OUT = ROOT / "public" / "grants.html"
 
 
 def package(v: float, lab: bool, a: dict) -> float:
+    """Dollar grant that never falls as the company gets more expensive.
+
+    The chart's step function does fall: 0.20% of $99M is ~$198k and 0.10% of
+    $100M is $100k; the 0.05% band and the $200k cap cut it again. Hold across
+    each cut. $500k is the top of the 0.10% band, not the chart's $200k cap.
+    """
+    s = a["offer_schedule"]
     if lab and v >= a["lab_above"]:
         return float(a["lab_grant"])
-    for band in a["bands"]:
-        if v < band["below"]:
-            return band["pct"] * v
-    return float(a["cap_grant"])
+    if v < s["early_until"]:
+        return s["pct_early"] * v
+    if v < s["bridge_until"]:
+        return float(s["bridge_grant"])
+    if v < s["mid_until"]:
+        return s["pct_mid"] * v
+    return float(s["late_floor"])
 
 
 def stake(v: float, mark: float, keep: float, lab: bool, a: dict) -> float:
@@ -32,14 +42,27 @@ def check(data: dict) -> None:
     a = data["assumptions"]
     # Chart rule.
     assert package(56e6, False, a) == 0.002 * 56e6
+    assert package(99e6, False, a) == 0.002 * 99e6
+    assert package(100e6, False, a) == 200_000
+    assert package(150e6, False, a) == 200_000  # literal rule would pay $150k
     assert package(250e6, False, a) == 250_000
-    assert package(800e6, False, a) == 0.0005 * 800e6
-    assert package(2e9, False, a) == 200_000
-    assert package(965e9, False, a) == 200_000
+    assert package(500e6, False, a) == 500_000
+    assert package(800e6, False, a) == 500_000  # literal 0.05% would pay $400k
+    assert package(2e9, False, a) == 500_000  # literal cap would pay $200k
+    assert package(965e9, False, a) == 500_000
     assert package(965e9, True, a) == 2_000_000
-    # $250M, mark 10x, keep half -> net 5x on a $250k grant.
+    prev = 0.0
+    v = 20e6
+    while v < 40e9:
+        g = package(v, False, a)
+        if g + 1e-6 < prev:
+            raise SystemExit(f"grant fell at {v:,.0f}: {prev:,.0f} -> {g:,.0f}")
+        prev = g
+        v *= 1.05
+    # $250M, 10x, no second dilution haircut -> $2.5M, on the chart's 10x line.
+    assert stake(250e6, 10, 1, False, a) == 2_500_000
+    # Same grant with a 50% extra haircut is $1.25M, and clearing $5M then needs a $10B company.
     assert stake(250e6, 10, 0.5, False, a) == 1_250_000
-    # $5M stake from that grant needs 20x net. At 50% keep, the mark must 40x: $10B.
     grant = package(250e6, False, a)
     assert 5_000_000 / grant == 20
     assert 250e6 * (20 / 0.5) == 10_000_000_000

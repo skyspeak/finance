@@ -88,7 +88,7 @@ footer{padding:8px 0 28px;color:var(--mut);font-size:11.5px}
     <a href="/">Desk</a> · <a href="/map">Macro map</a> · <a href="/backtest">Backtest</a>
   </div>
 </div>
-<p class="lede">Hold the equity of a company valued under about $300M, with customers already paying, in a workflow or a contracted physical system that gets cheaper to deliver as inference gets cheaper. That is the seat that produced the cloud on this map. Anthropic, OpenAI, Cursor, Harvey, and Nvidia are finished versions of it. A new grant there is struck at a winner’s price.</p>
+<p class="lede">A 10× on these defaults, with dilution counted once, turns a $250M company’s grant into $2.5M. The cloud above that line is a percent of a smaller company, or a lab package that was already large and still multiplied. Joining Cursor, Harvey, Anthropic, OpenAI, or Nvidia now is a grant struck after that move.</p>
 </div></header>
 
 <section><div class="wrap">
@@ -120,10 +120,10 @@ footer{padding:8px 0 28px;color:var(--mut);font-size:11.5px}
     <label class="ctl">Mark rises <b id="m-label" class="mono"></b>
       <input id="m" type="range" min="2" max="200" value="10" step="1">
     </label>
-    <label class="ctl">Fraction of your percent you keep <b id="k-label" class="mono"></b>
-      <input id="k" type="range" min="40" max="100" value="50" step="5">
+    <label class="ctl">Extra haircut, fraction you still keep <b id="k-label" class="mono"></b>
+      <input id="k" type="range" min="40" max="100" value="100" step="5">
     </label>
-    <label class="check"><input id="lab" type="checkbox" checked> Above $50B, pay a $2M four-year package instead of the $200k cap. OpenAI’s 2023 level, not a 2026 letter.</label>
+    <label class="check"><input id="lab" type="checkbox" checked> Above $50B, pay a $2M four-year package instead of the $500k floor. OpenAI’s 2023 level, not a 2026 letter.</label>
     <div class="strip">
       <div class="strip-bar" id="strip"></div>
       <p class="rule" id="rule"></p>
@@ -179,13 +179,17 @@ function pct(x){
   const p = x * 100;
   if (p >= 1) return p.toFixed(2) + "%";
   if (p >= 0.01) return p.toFixed(3) + "%";
-  return p.toFixed(4) + "%";
+  if (p >= 0.0001) return p.toFixed(4) + "%";
+  return p.toExponential(1) + "%";
 }
 function esc(s){return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function packageOf(v, lab){
+  const s = A.offer_schedule;
   if (lab && v >= A.lab_above) return A.lab_grant;
-  for (const b of A.bands) if (v < b.below) return b.pct * v;
-  return A.cap_grant;
+  if (v < s.early_until) return s.pct_early * v;
+  if (v < s.bridge_until) return s.bridge_grant;
+  if (v < s.mid_until) return s.pct_mid * v;
+  return s.late_floor;
 }
 function offerGrant(){
   if (state.offer === "public") return A.public_grant;
@@ -219,13 +223,13 @@ function scales(){
 }
 
 function ruleText(){
-  if (state.offer === "public") return "Public RSU, modeled as Nvidia’s 2022 four-year grant ($80k a year). The keep slider is an extra haircut. The chart’s 19x already includes four years of the stock.";
+  if (state.offer === "public") return "Public RSU, modeled as Nvidia’s 2022 four-year grant ($80k a year). The chart’s 19× already includes dilution. The keep slider is a second haircut; leave it at 100% to compare with that dot.";
   const v = state.v;
-  if (state.lab && v >= A.lab_above) return "Above $50B the lab switch replaces the $200k cap with a $2M package. The percent is whatever $2M is of this mark.";
-  if (v < 1e8) return "Under $100M the chart grants 0.20% of the company.";
-  if (v <= 5e8) return "From $100M to $500M the chart grants 0.10%.";
-  if (v <= 1e9) return "From $500M to $1B the chart grants 0.05%.";
-  return "At $1B or more the chart caps the grant at $200k. A higher mark does not raise the grant. It shrinks the percent.";
+  if (state.lab && v >= A.lab_above) return "Above $50B the lab switch pays $2M over four years. That replaces the $500k floor. It is OpenAI’s 2023 level, and the percent is whatever $2M is of this mark.";
+  if (v < 1e8) return "Under $100M the grant is 0.20% of the company.";
+  if (v < 2e8) return "From $100M to $200M the literal chart rule pays 0.10%, which is less than the $200k it pays at $99M. This map holds $200k until 0.10% catches up.";
+  if (v < 5e8) return "From $200M to $500M the grant is 0.10%.";
+  return "From $500M up, the chart’s 0.05% band and its $200k cap both pay less than the $500k the 0.10% band reaches at $500M. This map holds $500k. The chart’s own $1B+ dots were drawn at $200k.";
 }
 
 function verdict(grant, net, stake){
@@ -235,7 +239,7 @@ function verdict(grant, net, stake){
     return "A public grant you can sell. Size it as part of your savings. The cloud above this dot is private stock from a cheap entry, and most of those companies were not Nvidia.";
   }
   if (v >= 1e11) return "This mark has already used up the chart. A double from here is a strong four years, and the labs keep issuing shares to pay for compute. Take the job for the work.";
-  if (v >= 1e9 && stake < A.target) return "The percent is gone. Clearing $5M from a $200k grant takes a net multiple the late-stage rows on this chart did not deliver, unless the package is a lab-sized one and the multiple is still in front of you.";
+  if (v >= 5e8 && stake < A.target) return "This grant is the $500k floor, not a percent that grows with the mark. The chart’s own $1B+ rows were $200k and did not clear $5M unless the multiple was already in front of them. A lab-sized package is the exception, and only once the company is already enormous.";
   if (grant < 200000 && stake >= A.target) return "The arithmetic still matches Harvey, Cursor, and Saronic. Those were a short list. Ten logos from the same era went to zero. The salary has to pay for your life.";
   if (stake >= A.target) return "The stake clears $5M on these settings. The exit figure under it is the company you are underwriting.";
   if (net <= 4) return "This lands near an index grant. A fine job. It is the bottom of the cloud, where Replit and Runway finished, not where Cursor started.";
@@ -258,6 +262,7 @@ function remaining(p){
 }
 
 function draw(){
+  hideTip();
   const S = scales();
   const svg = document.getElementById("plot");
   const ticksX = state.mode === "grants"
@@ -299,11 +304,14 @@ function draw(){
       h += `<text x="${PAD.l+6}" y="${y-4}" fill="#8eb6ef" font-size="10">${esc(money(yv))} stake</text>`;
     }
     const grant = offerGrant();
-    const stakeNow = grant * state.mark * state.keep;
+    const netNow = state.mark * state.keep;
+    const stakeNow = grant * netNow;
     const dx = S.x(grant), dy = S.y(stakeNow);
     const clipped = stakeNow > S.g.ymax || stakeNow < S.g.ymin || grant < S.g.xmin || grant > S.g.xmax;
+    const label = `This offer · ${trim(netNow)}×${clipped ? " (off the scale)" : ""}`;
+    const anchorEnd = dx > PAD.l + S.iw * 0.72;
     h += `<path d="M${dx} ${dy-9} L${dx+8} ${dy} L${dx} ${dy+9} L${dx-8} ${dy} Z" fill="#fff" stroke="#08090b" stroke-width="1"/>`;
-    h += `<text x="${dx+12}" y="${dy-8}" fill="#fff" font-size="11" font-family="Inter,sans-serif">This offer${clipped?" (off the scale)":""}</text>`;
+    h += `<text x="${anchorEnd ? dx - 12 : dx + 12}" y="${dy - 8}" fill="#fff" font-size="11" font-family="Inter,sans-serif" text-anchor="${anchorEnd ? "end" : "start"}">${esc(label)}</text>`;
   }
 
   const pts = points();
@@ -330,10 +338,12 @@ function points(){
       id: w.id, x: S.x(w.entry), y: S.y(w.now), color: COLOR[w.kind] || "#fff", raw: w
     }));
   }
-  const dead = DATA.peaks.filter(p => p.plot && p.assumed && p.latest === 0);
   return DATA.peaks.filter(p => p.plot && (state.peak === "all" || p.status === state.peak) && (!q || p.name.toLowerCase().includes(q))).map(p => {
     let yv = remaining(p) * 100;
-    if (p.assumed && p.latest === 0) yv = 1.6 + dead.indexOf(p) * 2.2;
+    if (p.latest === 0) {
+      const same = DATA.peaks.filter(x => x.plot && x.latest === 0 && x.peak === p.peak);
+      yv = 2.4 + Math.max(0, same.findIndex(x => x.id === p.id)) * 2.1;
+    }
     return {id: p.id, x: S.x(p.peak), y: S.y(yv), color: COLOR[p.status], raw: p};
   });
 }
@@ -348,13 +358,17 @@ function showTip(id){
     body = `<b>${esc(rec.name)}</b><span>${esc(rec.kind)} · ${esc(money(rec.entry))} → ${esc(money(rec.now))} · ${rec.mult}× net</span>`;
   } else {
     const rem = remaining(rec);
-    const latest = rec.latest == null ? "n/a" : money(rec.latest);
-    body = `<b>${esc(rec.name)}</b><span>${esc(money(rec.peak))} peak → ${esc(latest)} · ${Math.round(rem*1000)/10}% left</span>`;
+    const left = rec.latest === 0 ? "wiped" : (Math.round(rem * 1000) / 10 + "% left");
+    const mark = rec.x_note ? `${money(rec.peak)} · ${rec.x_note}` : `${money(rec.peak)} peak`;
+    const latest = rec.latest == null ? "no dollar latest" : money(rec.latest);
+    const stale = rec.stale ? " · 2022 secondary, stale" : "";
+    body = `<b>${esc(rec.name)}</b><span>${esc(mark)} → ${esc(latest)} · ${esc(left)}${esc(stale)}</span>`;
   }
   el.innerHTML = body;
   el.style.display = "block";
   const svg = document.getElementById("plot");
   const pt = points().find(p => p.id === id);
+  if (!pt) { el.style.display = "none"; return; }
   const box = svg.getBoundingClientRect();
   const host = document.getElementById("mapbox").getBoundingClientRect();
   const px = box.left - host.left + (pt.x / 860) * box.width;
@@ -393,8 +407,8 @@ function readout(){
   ];
   document.getElementById("nums").innerHTML = rows.map(([k,v]) => `<div class="num"><span>${esc(k)}</span><b>${esc(v)}</b></div>`).join("");
   document.getElementById("rule").textContent = ruleText() + (twin ? " Nearest 2022 package on the chart: " + twin.name + ", " + money(twin.entry) + " to " + money(twin.now) + " (" + twin.mult + "× net)." : "");
-  const edges = [VMIN, 1e8, 5e8, 1e9, 5e10, VMAX];
-  const labels = ["0.20%","0.10%","0.05%","$200k","$2M lab"];
+  const edges = [VMIN, 1e8, 2e8, 5e8, 5e10, VMAX];
+  const labels = ["0.20%","$200k hold","0.10%","$500k floor", state.lab ? "$2M lab" : "$500k"];
   const colors = ["#1d4e34","#1c3f66","#3d3420","#3a2a22","#3a2430"];
   const span = Math.log10(edges[5]) - Math.log10(edges[0]);
   let bar = "";
@@ -416,7 +430,13 @@ function readout(){
 function picked(){
   const box = document.getElementById("picked");
   const rec = state.selected ? find(state.selected) : null;
-  if (!rec){ box.innerHTML = `<div class="kicker">On the map</div><p class="why">Click a dot. The diamond is this offer, on the same axes as the late-2022 grants.</p>`; return; }
+  if (!rec){
+    const msg = state.mode === "peaks"
+      ? "Click a dot. Wiped companies are drawn just above 0% so the circle is visible. The table has the real figure, which is zero."
+      : "Click a dot. The diamond is this offer. At 100% kept it sits on the multiple line named by the slider.";
+    box.innerHTML = `<div class="kicker">On the map</div><p class="why">${msg}</p>`;
+    return;
+  }
   if (rec.entry != null){
     box.innerHTML = `<div class="kicker">${esc(rec.kind)}</div><h3 style="font-size:15px;margin:0 0 6px">${esc(rec.name)}</h3><p class="why">${esc(rec.why)}</p>`;
   } else {
@@ -494,7 +514,7 @@ function filters(){
   if (state.mode === "grants"){
     leg.innerHTML = KINDS.map(k => `<span><i class="sw" style="background:${COLOR[k]}"></i>${esc(k)}</span>`).join("") + `<span><i class="sw" style="background:#fff;border-radius:1px"></i>This offer</span>`;
   } else {
-    leg.innerHTML = `<span><i class="sw" style="background:${COLOR.dead}"></i>Equity wiped</span><span><i class="sw" style="background:${COLOR.impaired}"></i>Still operating, far below the peak</span><span>Unicorns with no dollar peak are staggered just above zero so four dots are not one dot.</span>`;
+    leg.innerHTML = `<span><i class="sw" style="background:${COLOR.dead}"></i>Equity wiped</span><span><i class="sw" style="background:${COLOR.impaired}"></i>Still operating, far below the peak</span><span>Companies with no dollar peak are placed at $1B and stacked. Northvolt is capital raised, not a valuation.</span>`;
   }
 }
 
@@ -525,7 +545,7 @@ document.getElementById("presets").addEventListener("click", e => {
   state.offer = b.dataset.offer;
   if (state.offer === "private") state.v = Number(b.dataset.v);
   document.getElementById("v").value = vToSlider(state.v);
-  if (state.mode !== "grants") { state.mode = "grants"; state.sort = "now"; state.dir = -1; }
+  if (state.mode !== "grants") { state.mode = "grants"; state.sort = "c"; state.dir = -1; state.selected = null; }
   render();
 });
 document.getElementById("v").addEventListener("input", e => { state.offer = "private"; state.v = sliderToV(Number(e.target.value)); readout(); draw(); });
