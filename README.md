@@ -74,7 +74,7 @@ A separate momentum page, not part of the theme scoring: each January buy the S&
 
 - `pipeline/winner.py` writes `winner.json`: the stock held now and its stop, the race for next January's pick (top 25 by year-to-date gain, with a bootstrap estimate of who finishes first), and a 1997-to-date backtest at every stop level.
 - `pipeline/build_winner.py` renders `winner.html`, published as `/winner`.
-- Data: last Dec 31's close for every member comes from `data/winner_base_<year>.json`. One Nasdaq screener call shortlists candidates, then CBOE history supplies official closes and intraday lows for about 26 stocks plus SPY. The run takes under a minute.
+- Data: last Dec 31's close for every member comes from `data/winner_base_<year>.json`. Each run ranks today's S&P 500 members from Wikipedia, so stocks added during the year count. New additions and spinoffs get their starting price from CBOE: the prior Dec 31 close, or the first close if they listed this year. One Nasdaq screener call shortlists 15 candidates, then CBOE history supplies official closes and intraday lows for them, the held stock and SPY (about 35 calls).
 - In January the job rebuilds the base file from CBOE once (about 500 calls, slow) and publishes it next to the page as `/winner_base_<year>.json`. Later runs read it from the site. Commit a copy to `data/` when convenient.
 - `job.py` runs both steps after the backtest. If they fail, the desk still publishes.
 

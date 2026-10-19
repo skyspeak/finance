@@ -37,7 +37,9 @@ def spark(vals):
             f'<circle cx="{x(len(vals) - 1):.1f}" cy="{y(vals[-1]):.1f}" r="2.5" fill="#00c805"/></svg>')
 
 
-lead, second = B[0], B[1]
+SP = round(W["stop"] * 100)
+lead = B[0]
+second = B[1] if len(B) > 1 else B[0]
 next_jan = dt.date(Y + 1, 1, 1)
 while next_jan.weekday() >= 5 or next_jan.day == 1:
     next_jan += dt.timedelta(days=1)
@@ -45,8 +47,8 @@ odds = sorted(B[:10], key=lambda r: -r["p_win"])[:4]
 cushion = (1 - P["stop_price"] / P["last"]) * 100
 
 if P["stopped"]:
-    hold_note = (f'<b class="dn">Stopped out.</b> {e(P["sym"])} hit {P["stop_price"]:,.2f} on or before {day(P["low_date"])}. '
-                 f'The rules hold cash until {day(next_jan.isoformat())}.')
+    hold_note = (f'<b class="dn">Stopped out.</b> {e(P["sym"])} traded down to the ${P["stop_price"]:,.2f} stop on {day(P["stop_date"])}. '
+                 f'The rules sold there and hold cash until {day(next_jan.isoformat())}.')
     hold_tag = "Stopped · in cash"
 else:
     hold_note = (f'<b>Hold.</b> The stop needs a {cushion:.0f}% fall from here to fire. '
@@ -63,7 +65,7 @@ race_note = ("The year is over: this is the pick." if W["trading_days_left"] == 
 
 board_rows = "".join(f"""<tr{' class="lead"' if i == 0 else ''}>
 <td class="mono mut">{i + 1}</td>
-<td class="tk">{e(r['sym'])}{' <span class="chip">held</span>' if r['sym'] == P['sym'] else ''}<div class="sub">{e(r['name'][:34])}</div></td>
+<td class="tk">{e(r['sym'])}{' <span class="chip">held</span>' if r['sym'] == P['sym'] else ''}<div class="sub">{e(r['name'][:34])}{f' · listed {Y}, counted from its first close' if r.get('listed') else ''}</div></td>
 <td class="sub hide-m">{e(r['sector'])}</td>
 <td class="n mono"><b>{pct(r['ytd'])}</b></td>
 <td>{spark(r['spark'])}</td>
@@ -73,14 +75,20 @@ board_rows = "".join(f"""<tr{' class="lead"' if i == 0 else ''}>
 </tr>""" for i, r in enumerate(B[:15]))
 
 hero = "".join(f'<div class="hs"><b class="mono {c}">{v}</b><span>{k}</span></div>' for k, v, c in [
-    ("$100 in 1997 · 35% stop", money(S["stop_end"]), "up"),
+    (f"$100 in 1997 · {SP}% stop", money(S["stop_end"]), "up"),
     ("Same, no stop", money(S["nostop_end"]), ""),
     ("S&amp;P 500 (SPY)", money(S["spy_end"]), ""),
     ("Per year · stop", f'{S["stop_cagr"]}%', "up"),
     ("Per year · no stop", f'{S["nostop_cagr"]}%', ""),
     ("Per year · S&amp;P", f'{S["spy_cagr"]}%', ""),
 ])
-fired = ", ".join(str(y) for y in S["fired"])
+fy = S["fired"]
+if not fy:
+    fired_txt = "The stop has never sold in this sample."
+else:
+    yrs = ", ".join(str(y) for y in fy[:-1]) + (" and " if len(fy) > 1 else "") + str(fy[-1])
+    fired_txt = (f"The stop sold in {yrs}"
+                 + (f", and has not fired since {fy[-1]}." if fy[-1] < Y else f", including this year."))
 
 payload = json.dumps({k: W[k] for k in ("years", "paths", "sweep", "stop")}, separators=(",", ":"))
 
@@ -117,6 +125,7 @@ h2{font:700 11px/1 'JetBrains Mono';letter-spacing:.2em;text-transform:uppercase
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .card{background:var(--pan);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;gap:14px;align-content:start}
 .card.hold{border-color:rgba(0,200,5,.45)}
+.card.out{border-color:rgba(255,80,0,.5)}
 .tag{font:700 10px/1 'JetBrains Mono';letter-spacing:.14em;text-transform:uppercase;color:var(--up)}
 .big{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
 .big b{font:700 34px/1 'JetBrains Mono';letter-spacing:-1px}
@@ -157,16 +166,16 @@ __MOBILE_CSS__
 
 <section><div class="wrap">
 <h2>What the rules hold</h2>
-<p class="lede">Each January, put everything into the S&amp;P 500 stock that rose the most the year before and hold it for twelve months. Sell early only if it falls 35% below the price paid.</p>
+<p class="lede">Each January, put everything into the S&amp;P 500 stock that rose the most the year before and hold it for twelve months. Sell early only if it falls __SP__% below the price paid.</p>
 <div class="cols">
-<div class="card hold">
-<div class="tag">__HOLD_TAG__</div>
+<div class="card __HCARD__">
+<div class="tag"__HTAGSTYLE__>__HOLD_TAG__</div>
 <div class="big"><b>__HSYM__</b><span>__HNAME__, __PY__'s top S&amp;P 500 stock (__HPREV__)</span></div>
 <div class="kv">
 <div><span>Bought (Dec 31)</span><b>$__HBUY__</b></div>
 <div><span>Last</span><b>$__HLAST__</b></div>
 <div><span>__Y__ so far</span><b class="__HCLS__">__HYTD__</b></div>
-<div><span>35% stop</span><b>$__HSTOP__</b></div>
+<div><span>__SP__% stop</span><b>$__HSTOP__</b></div>
 </div>
 <p class="note">__HNOTE__</p>
 </div>
@@ -190,10 +199,10 @@ __MOBILE_CSS__
 <h2>How it works</h2>
 <ol class="rules">
 <li><b>Pick.</b> On the first trading day of January, rank every stock in the S&amp;P 500 at the previous year-end by its calendar-year price gain. Buy the top one with the whole balance.</li>
-<li><b>Protect.</b> Set a stop 35% below the purchase price (the Dec 31 close). If the stock trades there at any point in the year, sell at the stop and hold cash until next January.</li>
+<li><b>Protect.</b> Set a stop __SP__% below the purchase price (the Dec 31 close). If the stock trades there at any point in the year, sell at the stop and hold cash until next January.</li>
 <li><b>Rotate.</b> Next January, sell and buy the new winner, even if it is the same stock.</li>
 </ol>
-<p class="lede"><b>Test period:</b> January 1997 to __ASOF__. <b>Benchmark:</b> SPY with dividends reinvested (__Y__ so far is price only). Returns are price-only through 2011 and total return from 2012, matching the source exhibits. No taxes or trading costs. The stop sold in __FIRED__, every time in a year the stock collapsed, and has not fired since.</p>
+<p class="lede"><b>Test period:</b> January 1997 to __ASOF__. <b>Benchmark:</b> SPY with dividends reinvested (__Y__ so far is price only). Returns are price-only through 2011 and total return from 2012, matching the source exhibits. No taxes or trading costs. __FIRED__</p>
 <div class="chart" id="growth"></div>
 </div></section>
 
@@ -215,7 +224,7 @@ __MOBILE_CSS__
 <li><b>The 35% level was picked with hindsight.</b> It fits the four crashes in this sample almost perfectly.</li>
 <li><b>One stock holds everything.</b> Without the stop, 2002 (Nvidia −83%) or 2008 (NOV −67%) would have wiped out most of the balance.</li>
 <li><b>The stop stays at the January price.</b> It does not trail, so it protects none of a big gain made during the year.</li>
-<li><b>Gaps.</b> A stock can open far below the stop on bad news. The backtest assumes a clean exit at exactly −35%.</li>
+<li><b>Gaps.</b> A stock can open far below the stop on bad news. The backtest assumes a clean exit at exactly −__SP__%.</li>
 <li><b>Taxes.</b> Every sale is a short-term gain in a taxable account.</li>
 <li><b>Data.</b> The race uses today's index members. Pre-2000 years and delisted names come from the source exhibits. The chance of finishing first is a rough estimate, not a forecast.</li>
 </ul>
@@ -224,6 +233,7 @@ __MOBILE_CSS__
 <footer><div class="wrap">Ten Themes · last year's winner · rules from @gurgavin's "Buying last year's winner" exhibits · prices CBOE delayed, shortlist from Nasdaq · __ASOF__ · not investment advice</div></footer>
 <script>
 const W = __PAYLOAD__;
+const SP = Math.round(W.stop*100);
 const C = {stop:'#00c805', nostop:'#5b9cff', spy:'#8ea0b5', dn:'#ff5000', soft:'rgba(255,80,0,.28)', mut:'#7d8a9c', line:'#23272e'};
 const fm = v => v>=1e6 ? '$'+(v/1e6).toFixed(2)+'M' : '$'+Math.round(v).toLocaleString('en-US');
 const fp = v => (v>0?'+':v<0?'−':'')+Math.abs(v).toFixed(0)+'%';
@@ -235,13 +245,13 @@ function mk(id){ const c = echarts.init(document.getElementById(id)); charts.pus
   const x = ['1997', ...W.years.map(y => y.ytd ? 'Now' : String(y.year+1))];  // year-end points
   const s = k => [100, ...W.paths[k]];
   const stopPts = W.years.map((y,i) => y.stopped ? [i+1, W.paths.stop[i]] : null).filter(Boolean);
-  const end = (k, c) => ({type:'line', name:{stop:'With 35% stop', nostop:'No stop', spy:'S&P 500'}[k], data:s(k), showSymbol:false,
+  const end = (k, c) => ({type:'line', name:{stop:'With '+SP+'% stop', nostop:'No stop', spy:'S&P 500'}[k], data:s(k), showSymbol:false,
     lineStyle:{width:k==='stop'?2.4:1.6,color:c}, itemStyle:{color:c},
     endLabel:{show:true,color:'#e8ecf1',fontFamily:'JetBrains Mono',fontSize:11,formatter:p=>fm(p.value)}});
   mk('growth').setOption({backgroundColor:'transparent', grid:{left:58,right:96,top:34,bottom:34},
     legend:{top:4,textStyle:{color:C.mut,fontSize:11}},
     tooltip:{trigger:'axis', formatter: ps => { const i = ps[0].dataIndex; const y = W.years[i-1];
-      return (y ? '<b>'+(y.ytd?y.year+' to date':'End of '+y.year)+'</b> · held '+y.sym+' ('+fp(y.stopped?-35:y.ret)+(y.stopped?', stopped':'')+')<br>' : '<b>Jan 1997</b><br>')
+      return (y ? '<b>'+(y.ytd?y.year+' to date':'End of '+y.year)+'</b> · held '+y.sym+' ('+fp(y.stopped?-SP:y.ret)+(y.stopped?', stopped':'')+')<br>' : '<b>Jan 1997</b><br>')
         + ps.filter(p=>p.seriesType==='line').map(p => p.marker+p.seriesName+' '+fm(p.value)).join('<br>'); }},
     xAxis:{type:'category', data:x, boundaryGap:false, ...ax, splitLine:{show:false}, axisLabel:{color:C.mut,fontSize:10,interval:(i,v)=>v==='Now'||(i%5===0&&i<x.length-3)}},
     yAxis:{type:'log', min:10, max:1e7, ...ax, axisLabel:{color:C.mut,fontSize:10,formatter:v=>v>=1e6?'$'+v/1e6+'M':v>=1e3?'$'+v/1e3+'K':'$'+v}},
@@ -251,20 +261,20 @@ function mk(id){ const c = echarts.init(document.getElementById(id)); charts.pus
 
 (function(){
   const cap = 260, Y = W.years;
-  const shown = Y.map(y => y.stopped ? -35 : y.ret);
+  const shown = Y.map(y => y.stopped ? -SP : y.ret);
   mk('bars').setOption({backgroundColor:'transparent', grid:{left:48,right:12,top:26,bottom:46},
     tooltip:{trigger:'axis', axisPointer:{type:'shadow'}, formatter: ps => { const y = Y[ps[0].dataIndex];
-      return '<b>'+y.year+(y.ytd?' to date':'')+'</b> · '+y.name+' ('+y.sym+')<br>Return '+fp(y.ret)+(y.stopped?' → stopped at −35%':'')
+      return '<b>'+y.year+(y.ytd?' to date':'')+'</b> · '+y.name+' ('+y.sym+')<br>Return '+fp(y.ret)+(y.stopped?' → stopped at −'+SP+'%':'')
         +' · S&P '+fp(y.spy)+(y.dip!=null?'<br>Deepest dip vs January '+fp(y.dip):''); }},
     xAxis:{type:'category', data:Y.map(y => "'"+String(y.year).slice(2)+'\\n'+y.sym), ...ax, splitLine:{show:false},
       axisLabel:{color:C.mut,fontSize:9,interval:0,lineHeight:13}},
     yAxis:{type:'value', min:-100, max:cap, interval:50, ...ax, axisLabel:{color:C.mut,fontSize:10,formatter:v=>(v>0?'+':'')+v+'%'}},
     series:[
-      {type:'bar', stack:'a', barWidth:'62%', data:Y.map(y => y.stopped ? -35 : 0), itemStyle:{color:'transparent'}, silent:true},
-      {type:'bar', stack:'a', barWidth:'62%', data:Y.map(y => y.stopped ? y.ret+35 : 0), itemStyle:{color:C.soft}, silent:true},
+      {type:'bar', stack:'a', barWidth:'62%', data:Y.map(y => y.stopped ? -SP : 0), itemStyle:{color:'transparent'}, silent:true},
+      {type:'bar', stack:'a', barWidth:'62%', data:Y.map(y => y.stopped ? {value:y.ret+SP, label:{show:true, position:'bottom', color:'#c6d1de', fontFamily:'JetBrains Mono', fontSize:10, formatter:()=>'−'+SP+'%'}} : 0), itemStyle:{color:C.soft}, silent:true},
       {type:'bar', stack:'b', barGap:'-100%', barWidth:'62%', data:shown.map((v,i) => ({value:Math.min(v,cap),
         itemStyle:{color:v>=0?C.stop:C.dn, borderRadius:v>=0?[3,3,0,0]:[0,0,3,3]},
-        label:{show:Math.abs(v)>=60||Y[i].stopped, position:v>=0?'top':'bottom', color:'#c6d1de', fontFamily:'JetBrains Mono', fontSize:10, formatter:()=>fp(v)}}))}]});
+        label:{show:Math.abs(v)>=60&&!Y[i].stopped, position:v>=0?'top':'bottom', color:'#c6d1de', fontFamily:'JetBrains Mono', fontSize:10, formatter:()=>fp(v)}}))}]});
 })();
 
 (function(){
@@ -289,12 +299,14 @@ fill = {
     "__MOBILE_CSS__": mobile.CSS, "__MOBILE_JS__": mobile.JS,
     "__ASOF__": day(asof), "__LEFT__": str(W["trading_days_left"]), "__Y__": str(Y), "__NY__": str(Y + 1),
     "__PY__": str(Y - 1), "__HERO__": hero, "__HOLD_TAG__": hold_tag,
+    "__SP__": str(SP), "__HCARD__": "out" if P["stopped"] else "hold",
+    "__HTAGSTYLE__": ' style="color:var(--dn)"' if P["stopped"] else "",
     "__HSYM__": e(P["sym"]), "__HNAME__": e(P["name"]), "__HPREV__": pct(P["prev_ret"], 0),
     "__HBUY__": f'{P["dec31"]:,.2f}', "__HLAST__": f'{P["last"]:,.2f}', "__HSTOP__": f'{P["stop_price"]:,.2f}',
     "__HYTD__": pct(P["year_ret"]), "__HCLS__": "up" if P["year_ret"] >= 0 else "dn", "__HNOTE__": hold_note,
     "__NEXTJAN__": day(next_jan.isoformat()), "__LSYM__": e(lead["sym"]), "__LNAME__": e(lead["name"]),
     "__LYTD__": pct(lead["ytd"], 0), "__ODDS__": odds_rows, "__RACE__": race_note,
-    "__BOARD__": board_rows, "__FIRED__": fired, "__PAYLOAD__": payload,
+    "__BOARD__": board_rows, "__FIRED__": fired_txt, "__PAYLOAD__": payload,
 }
 for k, v in fill.items():
     HTML = HTML.replace(k, v)

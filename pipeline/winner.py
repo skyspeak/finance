@@ -37,7 +37,7 @@ DATA = os.path.join(os.path.dirname(HERE), "data")
 PUBLIC_URL = (open(os.path.join(HERE, "link.txt")).read().strip() if os.path.exists(os.path.join(HERE, "link.txt"))
               else os.environ.get("PUBLIC_URL", "https://ten-themes.vercel.app")).rstrip("/")
 STOP = 0.35
-SHORTLIST = 25
+SHORTLIST = 15
 SIMS = 4000
 NASDAQ = "https://api.nasdaq.com/api/screener/stocks?tableonly=true&download=true"
 WIKI = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
@@ -77,18 +77,28 @@ def http_json(url: str, timeout: int = 60):
         return json.load(r)
 
 
-def cboe_rows(sym: str) -> list[tuple]:
-    """[(date, close, high, low)] ascending, latest close appended from the quote. CBOE spells
+def _row(day, close, high, low):
+    # A low under half the same day's close is a bad print, not a trade; it would fake a stop-out.
+    low = low if low and low >= close * 0.5 else close
+    high = high if high and high >= close else close
+    return (day, close, high, low)
+
+
+def cboe_rows(sym: str, quote: bool = True) -> list[tuple]:
+    """[(date, close, high, low)] ascending, split-adjusted. The history file lags a session, so
+    the quote's official close (its `close` field, not `current_price`) is appended. CBOE spells
     class shares with a dot (BRK.B)."""
     s = sym.replace("-", ".")
     data = json.loads(md._get(md.CBOE_HIST.format(s=s))).get("data") or []
     rows = [(d["date"], md._num(d.get("close")), md._num(d.get("high")), md._num(d.get("low"))) for d in data]
-    rows = [r for r in rows if r[1]]
+    rows = [_row(*r) for r in rows if r[1]]
+    if not quote:
+        return rows
     try:
         q = json.loads(md._get(md.CBOE_QUOTE.format(s=s), tries=2)).get("data") or {}
         day, px = (q.get("last_trade_time") or "")[:10], md._num(q.get("close")) or md._num(q.get("current_price"))
         if day and px and rows and day > rows[-1][0]:
-            rows.append((day, px, md._num(q.get("high")), md._num(q.get("low"))))
+            rows.append(_row(day, px, md._num(q.get("high")), md._num(q.get("low"))))
     except Exception:
         pass
     return rows
@@ -97,6 +107,12 @@ def cboe_rows(sym: str) -> list[tuple]:
 def year_close(rows, year):
     yr = [r for r in rows if r[0][:4] == str(year)]
     return yr[-1][1] if yr else None
+
+
+def start_price(rows, year):
+    """Purchase basis for `year`: the prior Dec 31 close, or the first close for a stock that
+    listed during the year (how the exhibits count Sandisk's 2025)."""
+    return year_close(rows, year - 1) or next((r[1] for r in rows if r[0][:4] == str(year)), None)
 
 
 # ---------------------------------------------------------------- base files
@@ -120,28 +136,30 @@ def build_base(year: int, prev_base: dict | None) -> dict:
     members = []
     for i, m in enumerate(sp500_members()):
         try:
-            rows = cboe_rows(m["sym"])
+            rows = cboe_rows(m["sym"], quote=False)
         except Exception as e:
             print(f"  skip {m['sym']}: {str(e)[:60]}", flush=True)
             continue
-        end, start = year_close(rows, year), year_close(rows, year - 1)
-        first = next((r[1] for r in rows if r[0][:4] == str(year)), None)
-        start = start or first
+        end, start = year_close(rows, year), start_price(rows, year)
         if end and start:
             members.append({**m, "close": round(end, 4), "prev_ret": round((end / start - 1) * 100, 2)})
         if i % 50 == 0:
             print(f"  {i} members fetched", flush=True)
     base = {"year": year, "asof": f"{year}-12-31", "source": "CBOE delayed history",
             "held": max(members, key=lambda m: m["prev_ret"])["sym"], "members": members}
+    if len(members) < 400:
+        raise SystemExit(f"winner: only {len(members)} members priced for {year}; not saving a base")
     if prev_base:  # record how the stock held during `year` finished, for the backtest
         sym = prev_base["held"]
-        p0 = next(m for m in prev_base["members"] if m["sym"] == sym)["close"]
-        rows = [r for r in cboe_rows(sym) if r[0][:4] == str(year)]
-        spy = cboe_rows("SPY")
+        held_m = next(m for m in prev_base["members"] if m["sym"] == sym)
+        all_rows = cboe_rows(sym, quote=False)
+        p0 = year_close(all_rows, year - 1) or held_m["close"]
+        rows = [r for r in all_rows if r[0][:4] == str(year)]
+        spy = cboe_rows("SPY", quote=False)
         base["completed"] = {
-            "year": year, "sym": sym, "name": next(m for m in prev_base["members"] if m["sym"] == sym)["name"],
+            "year": year, "sym": sym, "name": held_m["name"],
             "ret": round((rows[-1][1] / p0 - 1) * 100, 1),
-            "dip": round((min(r[3] or r[1] for r in rows) / p0 - 1) * 100, 1),
+            "dip": round((min(r[3] for r in rows) / p0 - 1) * 100, 1),
             "spy": round((year_close(spy, year) / year_close(spy, year - 1) - 1) * 100, 1),  # price only
         }
     json.dump(base, open(os.path.join(HERE, f"winner_base_{year}.json"), "w"), separators=(",", ":"))
@@ -176,7 +194,14 @@ def trading_days_left(asof: dt.date) -> int:
     def observed(d):
         return d - dt.timedelta(days=1) if d.weekday() == 5 else d + dt.timedelta(days=1) if d.weekday() == 6 else d
 
-    hol = {nth(5, 0, -1), observed(dt.date(y, 6, 19)), observed(dt.date(y, 7, 4)), nth(9, 0, 1),
+    a, b, c = y % 19, y // 100, y % 100  # Gregorian Easter (anonymous algorithm)
+    dd, e, f = b // 4, b % 4, (b + 8) // 25
+    h = (19 * a + b - dd - (b - f + 1) // 3 + 15) % 30
+    l = (32 + 2 * e + 2 * (c // 4) - h - c % 4) % 7
+    m = (a + 11 * h + 22 * l) // 451
+    easter = dt.date(y, (h + l - 7 * m + 114) // 31, (h + l - 7 * m + 114) % 31 + 1)
+    hol = {observed(dt.date(y, 1, 1)), nth(1, 0, 3), nth(2, 0, 3), easter - dt.timedelta(days=2),
+           nth(5, 0, -1), observed(dt.date(y, 6, 19)), observed(dt.date(y, 7, 4)), nth(9, 0, 1),
            nth(11, 3, 4), observed(dt.date(y, 12, 25))}
     d, n = asof + dt.timedelta(days=1), 0
     while d.year == y:
@@ -186,10 +211,11 @@ def trading_days_left(asof: dt.date) -> int:
     return n
 
 
-def backtest(years, stop, case="known"):
+def backtest(years, stop, case="known"):  # case: known | best | worst
     bal, path, fired = 100.0, [], []
     for y in years:
-        dip = y["dip"] if y["dip"] is not None else (0.0 if case == "best" else UNKNOWN_WORST_DIP)
+        # No intraday data: assume it never dipped, except in the "worst" bound of the stop sweep.
+        dip = y["dip"] if y["dip"] is not None else (UNKNOWN_WORST_DIP if case == "worst" else 0.0)
         hit = stop is not None and dip <= -stop * 100
         bal *= 1 + (-stop * 100 if hit else y["ret"]) / 100
         path.append(round(bal, 2))
@@ -204,23 +230,43 @@ def main():
     Y = asof.year
     base = load_base(Y - 1, build=True)
     held = base["held"]
-    mem = {m["sym"]: m for m in base["members"]}
+    mem = {m["sym"]: dict(m) for m in base["members"]}
+
+    # The race counts stocks in the index at year-end, so rank today's members. Stocks added
+    # since the base was saved (including spinoffs that listed this year) get their basis from CBOE.
+    try:
+        current = {m["sym"]: m for m in sp500_members()}
+        if len(current) < 450:
+            raise ValueError(f"only {len(current)} rows parsed")
+    except Exception as e:
+        print(f"winner: S&P list unavailable ({str(e)[:60]}); ranking last Dec 31's members", flush=True)
+        current = {s: m for s, m in mem.items()}
+    for s in [s for s in current if s not in mem]:
+        try:
+            p0 = start_price(cboe_rows(s, quote=False), Y)
+        except Exception as e:
+            print(f"  new member {s}: {str(e)[:60]}", flush=True)
+            continue
+        if p0:
+            mem[s] = {**current[s], "close": p0, "prev_ret": None}
+            print(f"winner: added {s} (joined the index after the base was saved)", flush=True)
+    ranked_pool = [s for s in mem if s in current]
 
     # Shortlist: top of the Nasdaq last-sale ranking, last run's leaders (covers a split that
     # makes a leader look like a loser) and the held stock.
     short = set()
     try:
         rows = http_json(NASDAQ)["data"]["rows"]
-        last = {r["symbol"].replace("/", "-").replace("^", "-"): md._num(r["lastsale"].lstrip("$")) for r in rows}
-        ranked = sorted((s for s in mem if last.get(s)), key=lambda s: last[s] / mem[s]["close"], reverse=True)
+        last = {r["symbol"].replace("/", "-"): md._num((r.get("lastsale") or "").lstrip("$")) for r in rows}
+        ranked = sorted((s for s in ranked_pool if last.get(s)), key=lambda s: last[s] / mem[s]["close"], reverse=True)
         short.update(ranked[:SHORTLIST])
-        print(f"winner: nasdaq priced {len(ranked)} of {len(mem)} members", flush=True)
+        print(f"winner: nasdaq priced {len(ranked)} of {len(ranked_pool)} members", flush=True)
     except Exception as e:
         print(f"winner: nasdaq screener failed ({str(e)[:80]}); using last run's leaders", flush=True)
     try:
         prev = http_json(f"{PUBLIC_URL}/winner.json")
         if prev.get("year") == Y:
-            short.update(r["sym"] for r in prev.get("screen", [])[:SHORTLIST])
+            short.update(r["sym"] for r in prev.get("screen", [])[:SHORTLIST] if r["sym"] in current)
     except Exception:
         pass
     short.add(held)
@@ -236,21 +282,29 @@ def main():
         except Exception as e:
             print(f"  {s}: {str(e)[:60]}", flush=True)
             continue
-        p0 = year_close(rows, Y - 1) or mem[s]["close"]
         yr = [r for r in rows if r[0][:4] == str(Y)]
-        if not yr:
+        p0 = start_price(rows, Y) or mem[s]["close"]
+        if not yr or not p0:
             continue
         lastpx = yr[-1][1]
+        stop_hit = next((r[0] for r in yr if r[3] <= p0 * (1 - STOP)), None)
         series[s] = [r[1] for r in rows]
         board.append({
             "sym": s, "name": mem[s]["name"], "sector": mem[s]["sector"],
             "dec31": round(p0, 2), "last": round(lastpx, 2), "ytd": round((lastpx / p0 - 1) * 100, 1),
-            "low": round((min(r[3] or r[1] for r in yr) / p0 - 1) * 100, 1),
-            "low_date": min(yr, key=lambda r: r[3] or r[1])[0],
-            "offhigh": round((lastpx / max(r[2] or r[1] for r in yr) - 1) * 100, 1),
+            "low": round((min(r[3] for r in yr) / p0 - 1) * 100, 1),
+            "stop_date": stop_hit, "listed": year_close(rows, Y - 1) is None,
+            "offhigh": round((lastpx / max(r[2] for r in yr) - 1) * 100, 1),
             "spark": [round(r[1] / p0, 3) for r in yr[::3]] + [round(lastpx / p0, 3)],
+            "in_index": s in current,
         })
-    board.sort(key=lambda r: r["ytd"], reverse=True)
+    if not any(r["sym"] == held for r in board):
+        raise SystemExit(f"winner: no CBOE prices for the held stock {held}")
+    held_row = next(r for r in board if r["sym"] == held)
+    # The race only counts current members; the held stock stays on the board for its own card.
+    board = sorted((r for r in board if r["in_index"]), key=lambda r: r["ytd"], reverse=True)
+    if len(board) < 2:
+        raise SystemExit(f"winner: only {len(board)} candidates priced")
 
     # Who finishes the year first? Bootstrap whole days from the last six months (keeps
     # correlation and fat tails), each stock's drift removed so trend isn't projected forward.
@@ -260,26 +314,28 @@ def main():
     for r in top:
         c = series[r["sym"]][-127:]
         lr = [math.log(c[i] / c[i - 1]) for i in range(1, len(c))]
-        mu = sum(lr) / len(lr)
-        rets[r["sym"]] = [x - mu for x in lr]
-    n = min(len(v) for v in rets.values())
-    rets = {k: v[-n:] for k, v in rets.items()}
+        mu = sum(lr) / len(lr) if lr else 0.0
+        rets[r["sym"]] = [x - mu for x in lr] or [0.0]
+    # Days are drawn by position from the end so all stocks share the same session; a stock with
+    # a shorter history (a recent listing) wraps around its own days.
+    n = max(len(v) for v in rets.values())
     wins = {r["sym"]: 0 for r in top}
     rng = random.Random(7)
     start = {r["sym"]: math.log(1 + r["ytd"] / 100) for r in top}
     for _ in range(SIMS if left else 1):
         days = [rng.randrange(n) for _ in range(left)]
-        best = max(top, key=lambda r: start[r["sym"]] + sum(rets[r["sym"]][d] for d in days))
+        best = max(top, key=lambda r: start[r["sym"]] + sum(rets[r["sym"]][-1 - d % len(rets[r["sym"]])] for d in days))
         wins[best["sym"]] += 1
     tot = sum(wins.values())
     for r in board:
         r["p_win"] = round(wins.get(r["sym"], 0) / tot * 100, 1)
 
     # Position
-    h = next(r for r in board if r["sym"] == held)
+    h = held_row
+    h.setdefault("p_win", 0.0)
     stop_px = round(h["dec31"] * (1 - STOP), 2)
-    stopped = h["low"] <= -STOP * 100
-    position = {**{k: h[k] for k in ("sym", "name", "dec31", "last", "ytd", "low", "low_date", "offhigh", "spark")},
+    stopped = h["stop_date"] is not None
+    position = {**{k: h[k] for k in ("sym", "name", "dec31", "last", "ytd", "low", "stop_date", "offhigh", "spark")},
                 "prev_ret": mem[held]["prev_ret"], "stop_price": stop_px, "stopped": stopped,
                 "year_ret": -STOP * 100 if stopped else h["ytd"]}
 
@@ -308,7 +364,7 @@ def main():
 
     out = dict(
         asof=asof.isoformat(), year=Y, trading_days_left=left, stop=STOP, spy_ytd=spy_ytd,
-        position=position, screen=board[:25], years=years,
+        position=position, screen=board[:SHORTLIST], years=years,
         paths=dict(stop=withstop, nostop=nostop, spy=spy_path),
         summary=dict(stop_end=withstop[-1], nostop_end=nostop[-1], spy_end=spy_path[-1],
                      stop_cagr=cagr(withstop[-1]), nostop_cagr=cagr(nostop[-1]), spy_cagr=cagr(spy_path[-1]),
