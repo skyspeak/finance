@@ -160,7 +160,7 @@ __MOBILE_CSS__
 <header><div class="wrap">
 <div class="top"><div><div class="kick">● Momentum rotation · S&amp;P 500</div><h1>Last Year's Winner</h1></div>
 <div class="asof">Prices <b class="mono" style="color:#fff">__ASOF__</b> · CBOE delayed<br>__LEFT__ sessions left in __Y__<br>
-<a href="/">← Desk</a> · <a href="/map">Map</a> · <a href="/backtest">Backtest</a></div></div>
+<a href="/">← Desk</a> · <a href="/map">Map</a> · <a href="/backtest">Backtest</a> · <a href="/grants">Grants</a></div></div>
 <div class="hero">__HERO__</div>
 </div></header>
 
